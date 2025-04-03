@@ -1,0 +1,152 @@
+[gd_scene load_steps=19 format=3 uid="uid://1p7ehfbnyl48"]
+
+[ext_resource type="Texture2D" uid="uid://dfxkttmylqa23" path="res://Anevenewerstreet-1.png-1.png.png" id="1_bnq3m"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_1tjbd"]
+[ext_resource type="AudioStream" uid="uid://07a1fga52aya" path="res://addons/night-ambience-17064.mp3" id="3_ecg2y"]
+[ext_resource type="PackedScene" uid="uid://c110dexaids8c" path="res://Axman.tscn" id="4_h0fig"]
+[ext_resource type="Script" uid="uid://mrmvujgnp1y7" path="res://AxmanStreetSpawn.gd" id="5_6t15k"]
+[ext_resource type="Script" uid="uid://comqugpqyov3x" path="res://door.gd" id="6_irlgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypui2"]
+size = Vector2(1006, 1872)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igswm"]
+size = Vector2(679, 679)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdkyv"]
+size = Vector2(800, 1704)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndx40"]
+size = Vector2(840.5, 343.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pa7y"]
+size = Vector2(4564.25, 1162.88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntob1"]
+size = Vector2(892.5, 246)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_40j2a"]
+normal = Vector2(1, 0)
+distance = -789.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bqyuw"]
+normal = Vector2(-1, 0)
+distance = -3774.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8vqf"]
+size = Vector2(155, 106)
+
+[sub_resource type="Animation" id="Animation_ph7ag"]
+resource_name = "Trigger"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Guy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_process"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31p2i"]
+_data = {
+&"Trigger": SubResource("Animation_ph7ag")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxkdn"]
+size = Vector2(311.5, 263.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Anevenewerstreet-1_png-1_png" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1491, 1739)
+scale = Vector2(15.2171, 15.2171)
+texture = ExtResource("1_bnq3m")
+
+[node name="Guy" parent="." instance=ExtResource("2_1tjbd")]
+position = Vector2(554, 483)
+
+[node name="Camera2D" type="Camera2D" parent="Guy"]
+position_smoothing_enabled = true
+
+[node name="Houses" type="StaticBody2D" parent="."]
+
+[node name="HousesLeft" type="CollisionShape2D" parent="Houses"]
+position = Vector2(-286, 925)
+shape = SubResource("RectangleShape2D_ypui2")
+
+[node name="Road" type="CollisionShape2D" parent="Houses"]
+position = Vector2(547.5, 988.5)
+shape = SubResource("RectangleShape2D_igswm")
+
+[node name="HousesRight" type="CollisionShape2D" parent="Houses"]
+position = Vector2(1454, 858)
+shape = SubResource("RectangleShape2D_bdkyv")
+
+[node name="OwnHouse" type="CollisionShape2D" parent="Houses"]
+position = Vector2(640.75, 165.75)
+shape = SubResource("RectangleShape2D_ndx40")
+
+[node name="HousesBottom" type="CollisionShape2D" parent="Houses"]
+position = Vector2(1502, 3303.44)
+shape = SubResource("RectangleShape2D_7pa7y")
+
+[node name="Manor1" type="CollisionShape2D" parent="Houses"]
+position = Vector2(2289.75, 1581)
+shape = SubResource("RectangleShape2D_ntob1")
+
+[node name="Manor2" type="CollisionShape2D" parent="Houses"]
+position = Vector2(3525, 1606)
+shape = SubResource("RectangleShape2D_ntob1")
+
+[node name="Manor 3" type="CollisionShape2D" parent="Houses"]
+position = Vector2(2984, 1406)
+shape = SubResource("RectangleShape2D_ntob1")
+
+[node name="West" type="CollisionShape2D" parent="Houses"]
+shape = SubResource("WorldBoundaryShape2D_40j2a")
+
+[node name="East" type="CollisionShape2D" parent="Houses"]
+shape = SubResource("WorldBoundaryShape2D_bqyuw")
+
+[node name="Night Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ecg2y")
+volume_db = 0.1
+autoplay = true
+
+[node name="Axman" parent="." node_paths=PackedStringArray("playerposition") instance=ExtResource("4_h0fig")]
+position = Vector2(985, 630)
+scale = Vector2(1.75, 1.75)
+playerposition = NodePath("../Guy")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_6t15k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(970, 1136)
+shape = SubResource("RectangleShape2D_p8vqf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+libraries = {
+"": SubResource("AnimationLibrary_31p2i")
+}
+
+[node name="Highland Door" type="Area2D" parent="."]
+position = Vector2(-232, 228)
+script = ExtResource("6_irlgv")
+Destination = "res://Level1Transition.tscn"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Highland Door"]
+position = Vector2(3131.25, 1434.25)
+shape = SubResource("RectangleShape2D_mxkdn")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Highland Door" to="Highland Door" method="_on_body_entered"]

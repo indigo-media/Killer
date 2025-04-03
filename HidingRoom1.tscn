@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://by1nub72cyt7e"]
+
+[ext_resource type="Script" uid="uid://bbpjop1pkiyoj" path="res://hiding_room_1.gd" id="1_3v6b7"]
+[ext_resource type="Texture2D" uid="uid://6qehqfs2na55" path="res://StoneRoom.png" id="1_ejkdj"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_5t0g3"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="3_rqp5y"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="5_aopak"]
+[ext_resource type="PackedScene" uid="uid://dbvugpsvqrtmd" path="res://Crates.tscn" id="6_ck132"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hi5uu"]
+normal = Vector2(0, 1)
+distance = -1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l05k0"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e3pjl"]
+normal = Vector2(1, 0)
+distance = 519.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p0vua"]
+distance = -645.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3v6b7")
+
+[node name="NewPiskel-1_png(8)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(583, 321)
+scale = Vector2(10.7833, 10.7833)
+texture = ExtResource("1_ejkdj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_hi5uu")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(905, -10)
+shape = SubResource("WorldBoundaryShape2D_l05k0")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-261, 0)
+shape = SubResource("WorldBoundaryShape2D_e3pjl")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_p0vua")
+
+[node name="Door" parent="StaticBody2D" instance=ExtResource("2_5t0g3")]
+position = Vector2(885, 286)
+scale = Vector2(2.0709, 0.917187)
+Destination = "res://Highland_Manor_Entrance.tscn"
+
+[node name="Door2" parent="StaticBody2D" instance=ExtResource("2_5t0g3")]
+position = Vector2(279, 285)
+scale = Vector2(2.0709, 0.917187)
+Destination = "res://HorizontalRoomHM1.tscn"
+
+[node name="Guy" parent="." instance=ExtResource("3_rqp5y")]
+position = Vector2(790, 285)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Path2D" parent="." instance=ExtResource("5_aopak")]
+position = Vector2(-281, 298)
+
+[node name="Crates" parent="." instance=ExtResource("6_ck132")]
+position = Vector2(806, 556)

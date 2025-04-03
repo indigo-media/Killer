@@ -1,0 +1,172 @@
+[gd_scene load_steps=17 format=3 uid="uid://c110dexaids8c"]
+
+[ext_resource type="Script" uid="uid://d3rvgwyle3g3u" path="res://axmanstreetchase.gd" id="1_bwue5"]
+[ext_resource type="Texture2D" uid="uid://cggwuvaeqr7kw" path="res://AxmanStreer.png" id="1_xch1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd8sv"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(0, 16, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_112jw"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(10, 16, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgt1x"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(0, 16, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4srn"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(20, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7o3"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(30, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pbkx"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(0, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g4cs"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(10, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkh1e"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(20, 16, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vknft"]
+atlas = ExtResource("1_xch1o")
+region = Rect2(30, 16, 10, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jnei6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yd8sv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_112jw")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgt1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgt1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgt1x")
+}],
+"loop": true,
+"name": &"Entrance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4srn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm7o3")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pbkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5g4cs")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkh1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vknft")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_lxen3"]
+resource_name = "Entrance"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.192157), Color(1, 1, 1, 0.545098), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_06aof"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.192157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_purak"]
+_data = {
+&"Entrance": SubResource("Animation_lxen3"),
+&"RESET": SubResource("Animation_06aof")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtrv3"]
+size = Vector2(46, 102)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_bwue5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.192157)
+texture_filter = 1
+scale = Vector2(6.1, 6.25)
+sprite_frames = SubResource("SpriteFrames_jnei6")
+animation = &"Right"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_purak")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gtrv3")
+
+[node name="StraightTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="ChaseTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="StraightTimer" to="." method="_on_straight_timer_timeout"]
+[connection signal="timeout" from="ChaseTimer" to="." method="_on_chase_timer_timeout"]

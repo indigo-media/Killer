@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://n6tkn07omu5m"]
+
+[ext_resource type="Script" uid="uid://bi7c4qb51ntrf" path="res://heartbeat.gd" id="1_gfau8"]
+
+[sub_resource type="Animation" id="Animation_xems0"]
+resource_name = "Heartbeat"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.615686), Color(0, 0, 0, 0), Color(0, 0, 0, 0.615686)]
+}
+
+[sub_resource type="Animation" id="Animation_lbxfr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpp6f"]
+_data = {
+&"Heartbeat": SubResource("Animation_xems0"),
+&"RESET": SubResource("Animation_lbxfr")
+}
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_gfau8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xpp6f")
+}

@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://ntkspg1v7vj4"]
+
+[ext_resource type="Texture2D" uid="uid://b6ws7w4chkrid" path="res://RockCorner.png" id="1_84jc8"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_km153"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="3_15e4h"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="4_tayhx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mthg4"]
+normal = Vector2(0, 1)
+distance = -44.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e1yrx"]
+normal = Vector2(1, 0)
+distance = 309.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmxr8"]
+normal = Vector2(-1, 0)
+distance = -861.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2khaa"]
+distance = -669.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qhu4"]
+size = Vector2(540, 165)
+
+[sub_resource type="Curve2D" id="Curve2D_lefus"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 837.377, 204, 0, 0, 0, 0, 576.034, 211, 0, 0, 0, 0, 580.009, 387, 0, 0, 0, 0, 577.028, 659)
+}
+point_count = 4
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RockCorner" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(595, 307)
+rotation = 1.5708
+scale = Vector2(9.64609, 9.64609)
+texture = ExtResource("1_84jc8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(294, 1)
+shape = SubResource("WorldBoundaryShape2D_mthg4")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_e1yrx")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_mmxr8")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(237, 26)
+shape = SubResource("WorldBoundaryShape2D_2khaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(597, 61.5)
+shape = SubResource("RectangleShape2D_8qhu4")
+
+[node name="Guy" parent="." instance=ExtResource("2_km153")]
+position = Vector2(585, 518)
+
+[node name="Door" parent="." instance=ExtResource("3_15e4h")]
+position = Vector2(589, 675)
+rotation = 1.57079
+scale = Vector2(1.66667, 0.780077)
+Destination = "res://VerticalHallHLM2.tscn"
+
+[node name="Path2D" parent="." instance=ExtResource("4_tayhx")]
+curve = SubResource("Curve2D_lefus")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(562, 328)
+zoom = Vector2(0.75, 0.75)
+
+[node name="Door2" parent="." instance=ExtResource("3_15e4h")]
+position = Vector2(858, 211)
+scale = Vector2(2, 0.688127)
+Destination = "res://HorizontalRoomHM2.tscn"

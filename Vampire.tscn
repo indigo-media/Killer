@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=3 uid="uid://dv6eu1vxbtlnr"]
+
+[ext_resource type="Script" uid="uid://diywr1nmwfeg4" path="res://vampire.gd" id="1_20hyj"]
+[ext_resource type="Texture2D" uid="uid://y60ds84vb6w4" path="res://KnifeVampire-1.png.png" id="1_x51fx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndx61"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(0, 16, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y0kq"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(10, 16, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_364pk"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(20, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdlym"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(30, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llhe3"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(0, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3mxc"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(10, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecmfn"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(20, 16, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81vhg"]
+atlas = ExtResource("1_x51fx")
+region = Rect2(30, 16, 10, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lelpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndx61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y0kq")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_364pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdlym")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llhe3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3mxc")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecmfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81vhg")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nfx7"]
+size = Vector2(50, 101)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ce5gd"]
+radius = 150.213
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_20hyj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 0)
+scale = Vector2(6.1, 6.25)
+sprite_frames = SubResource("SpriteFrames_lelpv")
+animation = &"Right"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, -0.5)
+shape = SubResource("RectangleShape2D_6nfx7")
+
+[node name="Kill Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Area"]
+shape = SubResource("CircleShape2D_ce5gd")
+disabled = true
+
+[connection signal="body_entered" from="Kill Area" to="." method="_on_kill_area_body_entered"]

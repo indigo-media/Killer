@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://besx24tcxy0qc"]
+
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://addons/dialogic/manaspc.ttf" id="1_1srag"]
+[ext_resource type="Script" uid="uid://ckccwxofycrw3" path="res://interactable.gd" id="1_jew57"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28mtb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_4gqtq"]
+font_size = 25
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Interactable" type="Area2D"]
+script = ExtResource("1_jew57")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+z_index = 100
+texture_filter = 1
+offset_right = 151.0
+offset_bottom = 109.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_28mtb")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1srag")
+theme_override_font_sizes/font_size = 30
+text = " Press 
+   Y"
+label_settings = SubResource("LabelSettings_4gqtq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

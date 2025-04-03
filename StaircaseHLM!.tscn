@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://neardqtrxmj8"]
+
+[ext_resource type="Texture2D" uid="uid://c0p8hxdde54t0" path="res://FF1Staircase.png" id="1_feyml"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_eq0fi"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="3_f1je2"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="4_nmg42"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmtd7"]
+distance = -648.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpkm5"]
+normal = Vector2(1, 0)
+distance = 171.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7qhwc"]
+normal = Vector2(-1, 0)
+distance = -1034.0
+
+[sub_resource type="Curve2D" id="Curve2D_22u10"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 183.523, 331, 0, 0, 0, 0, 239.17, 330, 0, 0, 0, 0, 236.189, 486, 0, 0, 0, 0, 282.893, 477, 0, 0, 0, 0, 288.855, 328, 0, 0, 0, 0, 514.425, 332, 0, 0, 0, 0, 514.425, 190, 0, 0, 0, 0, 906.936, 190)
+}
+point_count = 8
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FfHall" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(573, 323.25)
+scale = Vector2(10.8417, 10.8417)
+texture = ExtResource("1_feyml")
+
+[node name="Door" parent="." instance=ExtResource("2_eq0fi")]
+position = Vector2(987, 196)
+scale = Vector2(2.5494, 0.929413)
+Destination = "res://HidingRoom1.tscn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ic1db")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_rmtd7")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-33, 6)
+shape = SubResource("WorldBoundaryShape2D_cpkm5")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_7qhwc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-25.9069, -3.05176e-05)
+scale = Vector2(1.02261, 1)
+polygon = PackedVector2Array(537, 438, 625, 461, 1005, 462, 1002, 408, 650, 410, 535, 374)
+
+[node name="Door2" parent="." instance=ExtResource("2_eq0fi")]
+position = Vector2(166, 325)
+scale = Vector2(1.99086, 0.790282)
+Destination = "res://HorizontalRoomHM2.tscn"
+
+[node name="Path2D2" parent="." instance=ExtResource("3_f1je2")]
+curve = SubResource("Curve2D_22u10")
+
+[node name="Guy" parent="." instance=ExtResource("4_nmg42")]
+position = Vector2(283, 323)

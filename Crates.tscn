@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbvugpsvqrtmd"]
+
+[ext_resource type="Script" uid="uid://c2g4wnhmfy2mn" path="res://crates.gd" id="1_ay824"]
+[ext_resource type="Texture2D" uid="uid://bl0joswrmk38d" path="res://crates.png" id="1_na0j3"]
+[ext_resource type="Texture2D" uid="uid://d1fpdvbgx0wnj" path="res://player.png" id="3_0p47h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l33g7"]
+size = Vector2(192, 176)
+
+[sub_resource type="Animation" id="Animation_baqae"]
+resource_name = "InCrate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.633333, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, -171), Vector2(-4, -250), Vector2(-4, -250), Vector2(-4, -150), Vector2(-4, -50), Vector2(-4, -142)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Crates:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(9.5, 9.5), Vector2(9.5, 9.5), Vector2(9.5, 11.75), Vector2(9.5, 9.5)]
+}
+
+[sub_resource type="Animation" id="Animation_qee7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, -171)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Crates:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9.5, 9.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qe5bk"]
+_data = {
+&"InCrate": SubResource("Animation_baqae"),
+&"RESET": SubResource("Animation_qee7c")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ay824")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-4, -171)
+scale = Vector2(10.675, 10.938)
+texture = ExtResource("3_0p47h")
+region_enabled = true
+region_rect = Rect2(0, 16.0135, 9.83718, 15.9865)
+
+[node name="Crates" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2.99998, -13)
+scale = Vector2(9.5, 9.5)
+texture = ExtResource("1_na0j3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_l33g7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qe5bk")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

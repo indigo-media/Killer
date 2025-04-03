@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://4kq4pbu6burk"]
+
+[ext_resource type="Script" uid="uid://dy5p0plkxou21" path="res://wardrobe.gd" id="1_806db"]
+[ext_resource type="Texture2D" uid="uid://4wxh2hdi5qxx" path="res://Wardrobe.png" id="1_mk15l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2f7q"]
+size = Vector2(176.5, 247.25)
+
+[node name="Wardrobe" type="Node2D"]
+script = ExtResource("1_806db")
+
+[node name="Wardrobe" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, 1)
+scale = Vector2(11.26, 11.26)
+texture = ExtResource("1_mk15l")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_c2f7q")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

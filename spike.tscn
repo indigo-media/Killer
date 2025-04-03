@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://g5rfl7jukq48"]
+
+[ext_resource type="Texture2D" uid="uid://bondn115nv0bq" path="res://Spike.png" id="1_7ltld"]
+[ext_resource type="Script" uid="uid://ddkm3vaopgg8a" path="res://spike.gd" id="1_ldqht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lxbv"]
+size = Vector2(4.10658, 20.1304)
+
+[sub_resource type="Animation" id="Animation_c8c44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6br14"]
+resource_name = "Spike"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 250), Vector2(0, 200), Vector2(0, 150), Vector2(0, 100), Vector2(0, 50), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2qdc"]
+_data = {
+&"RESET": SubResource("Animation_c8c44"),
+&"Spike": SubResource("Animation_6br14")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ldqht")
+
+[node name="Spike" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(7.975, 13.425)
+texture = ExtResource("1_7ltld")
+
+[node name="Area2D" type="Area2D" parent="Spike"]
+position = Vector2(-26.0815, -6.18249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/Area2D"]
+position = Vector2(25.7053, 6.25698)
+shape = SubResource("RectangleShape2D_3lxbv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spike"]
+libraries = {
+"": SubResource("AnimationLibrary_e2qdc")
+}
+autoplay = "Spike"
+
+[connection signal="body_entered" from="Spike/Area2D" to="." method="_on_body_entered"]

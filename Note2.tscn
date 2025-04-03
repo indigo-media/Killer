@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://lto3rppw3x1j"]
+
+[ext_resource type="Texture2D" uid="uid://cxk6y5pdp441t" path="res://IconFirstNote.png" id="1_ly7ss"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="IconFirstNote" type="Sprite2D" parent="."]
+position = Vector2(13, 25)
+texture = ExtResource("1_ly7ss")

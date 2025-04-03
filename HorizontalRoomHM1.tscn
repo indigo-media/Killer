@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://eyjfkw7f505k"]
+
+[ext_resource type="Texture2D" uid="uid://1lmtjqqideyg" path="res://FFHallCorner.png" id="1_exkd8"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_1vq7t"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="3_r37qe"]
+[ext_resource type="PackedScene" uid="uid://4kq4pbu6burk" path="res://wardrobe.tscn" id="4_qia2e"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="5_jwq4o"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmtd7"]
+distance = -648.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpkm5"]
+normal = Vector2(1, 0)
+distance = 171.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7qhwc"]
+normal = Vector2(-1, 0)
+distance = -1034.0
+
+[sub_resource type="Curve2D" id="Curve2D_gqrta"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 434.929, 50, 0, 0, 0, 0, 432.941, 332, 0, 0, 0, 0, 964.571, 332)
+}
+point_count = 3
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FfHallCorner" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(607.903, 316)
+scale = Vector2(10.6274, 10.7)
+texture = ExtResource("1_exkd8")
+
+[node name="Door" parent="." instance=ExtResource("2_1vq7t")]
+position = Vector2(1007, 321)
+scale = Vector2(2.5494, 0.929413)
+Destination = "res://HidingRoom1.tscn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ic1db")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_rmtd7")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_cpkm5")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_7qhwc")
+
+[node name="Wardrobe" parent="." instance=ExtResource("4_qia2e")]
+position = Vector2(295, 490)
+
+[node name="Door2" parent="." instance=ExtResource("2_1vq7t")]
+position = Vector2(435, 25)
+rotation = 1.57079
+scale = Vector2(1.99086, 0.790282)
+Destination = "res://VerticalHallHLM1.tscn"
+
+[node name="Path2D2" parent="." instance=ExtResource("5_jwq4o")]
+curve = SubResource("Curve2D_gqrta")
+
+[node name="Guy" parent="." instance=ExtResource("3_r37qe")]
+position = Vector2(922, 318)

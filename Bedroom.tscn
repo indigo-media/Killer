@@ -1,0 +1,108 @@
+[gd_scene load_steps=15 format=3 uid="uid://baws2r3t8klad"]
+
+[ext_resource type="Texture2D" uid="uid://108gw28rf13t" path="res://rooms.png" id="1_5yuwm"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_kwkcu"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="3_2ruul"]
+[ext_resource type="AudioStream" uid="uid://07a1fga52aya" path="res://addons/night-ambience-17064.mp3" id="4_tlxlq"]
+[ext_resource type="PackedScene" uid="uid://cwjj45m4pe8al" path="res://Save.tscn" id="5_75xpw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_532h7"]
+distance = -2.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ytoxu"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_payt7"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dtx44"]
+normal = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvl50"]
+size = Vector2(114, 219.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu2gq"]
+size = Vector2(97, 80.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gk4d"]
+size = Vector2(97, 80.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0n8w"]
+size = Vector2(231.5, 93.1875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htuju"]
+size = Vector2(82.75, 148.594)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rooms" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(600, 325)
+scale = Vector2(10.72, 10.72)
+texture = ExtResource("1_5yuwm")
+vframes = 2
+
+[node name="Edges" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="World Boundary South" type="CollisionShape2D" parent="Edges"]
+position = Vector2(573, 644)
+shape = SubResource("WorldBoundaryShape2D_532h7")
+
+[node name="World Boundary West" type="CollisionShape2D" parent="Edges"]
+position = Vector2(268, 3)
+shape = SubResource("WorldBoundaryShape2D_ytoxu")
+
+[node name="World Boundary East" type="CollisionShape2D" parent="Edges"]
+position = Vector2(919, 0)
+shape = SubResource("WorldBoundaryShape2D_payt7")
+
+[node name="World Boundary North" type="CollisionShape2D" parent="Edges"]
+position = Vector2(285, 2)
+shape = SubResource("WorldBoundaryShape2D_dtx44")
+
+[node name="Furniture" type="StaticBody2D" parent="."]
+
+[node name="Bed1" type="CollisionShape2D" parent="Furniture"]
+position = Vector2(860, 120.25)
+shape = SubResource("RectangleShape2D_vvl50")
+
+[node name="Bed2" type="CollisionShape2D" parent="Furniture"]
+position = Vector2(857, 523)
+shape = SubResource("RectangleShape2D_vvl50")
+
+[node name="Nightstand1" type="CollisionShape2D" parent="Furniture"]
+position = Vector2(751.5, 48.625)
+shape = SubResource("RectangleShape2D_mu2gq")
+
+[node name="Nightstand2" type="CollisionShape2D" parent="Furniture"]
+position = Vector2(751, 592)
+shape = SubResource("RectangleShape2D_3gk4d")
+
+[node name="Couch" type="CollisionShape2D" parent="Furniture"]
+position = Vector2(556, 590.594)
+shape = SubResource("RectangleShape2D_n0n8w")
+
+[node name="Wardrobe" type="CollisionShape2D" parent="Furniture"]
+position = Vector2(326, 80)
+shape = SubResource("RectangleShape2D_htuju")
+
+[node name="Door" parent="." instance=ExtResource("3_2ruul")]
+position = Vector2(296, 298)
+
+[node name="Night Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tlxlq")
+volume_db = -20.0
+autoplay = true
+
+[node name="Node2D" parent="." instance=ExtResource("5_75xpw")]
+position = Vector2(422, 262)
+Destination = "res://Bedroom.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(587, 321)
+
+[node name="Guy" parent="." instance=ExtResource("2_kwkcu")]
+position = Vector2(599, 301)
+
+[editable path="Door"]

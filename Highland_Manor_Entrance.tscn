@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://cwhx6y3t8l1i0"]
+
+[ext_resource type="Texture2D" uid="uid://bibfv4ahyu7de" path="res://Foyer.png" id="1_lju2t"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_wvape"]
+[ext_resource type="PackedScene" uid="uid://cwjj45m4pe8al" path="res://Save.tscn" id="3_7iuj4"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="4_5gtj1"]
+[ext_resource type="Script" uid="uid://c5r5tiipgebqk" path="res://plinth.gd" id="5_7e1ih"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="6_ns3r0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wkic"]
+normal = Vector2(0.999994, 0.0034722)
+distance = 251.112
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m7n1m"]
+normal = Vector2(-1, 0)
+distance = -892.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kwyad"]
+normal = Vector2(0, 1)
+distance = -1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wwhvm"]
+distance = -649.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmkos"]
+size = Vector2(127, 181)
+
+[sub_resource type="Curve2D" id="Curve2D_qpp54"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 368, 293, 0, 0, 0, 0, 480, 291, 0, 0, 0, 0, 483, 141, 0, 0, 0, 0, 734, 136, 0, 0, 0, 0, 734, 303, 0, 0, 0, 0, 840, 302)
+}
+point_count = 6
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NewPiskel-1_png(5)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(575, 323)
+scale = Vector2(10.8333, 10.8333)
+texture = ExtResource("1_lju2t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_4wkic")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_m7n1m")
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_kwyad")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = -0.00357026
+shape = SubResource("WorldBoundaryShape2D_wwhvm")
+
+[node name="Guy" parent="." instance=ExtResource("2_wvape")]
+position = Vector2(597, 486)
+
+[node name="Node2D" parent="." instance=ExtResource("3_7iuj4")]
+position = Vector2(377, 259)
+Destination = "res://Highland_Manor_Entrance.tscn"
+
+[node name="Door" parent="." instance=ExtResource("4_5gtj1")]
+position = Vector2(863, 295)
+scale = Vector2(2.06816, 0.919624)
+Destination = "res://SpikeHall1.tscn"
+
+[node name="Plinth" type="Area2D" parent="."]
+script = ExtResource("5_7e1ih")
+
+[node name="Plinth" type="CollisionShape2D" parent="Plinth"]
+position = Vector2(596.5, 280.5)
+shape = SubResource("RectangleShape2D_wmkos")
+
+[node name="Door2" parent="." instance=ExtResource("4_5gtj1")]
+position = Vector2(281, 294)
+scale = Vector2(-2.01587, 0.90729)
+Destination = "res://HidingRoom1.tscn"
+
+[node name="Path2D2" parent="." instance=ExtResource("6_ns3r0")]
+curve = SubResource("Curve2D_qpp54")
+
+[connection signal="body_entered" from="Plinth" to="Plinth" method="_on_body_entered"]

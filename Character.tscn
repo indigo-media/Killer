@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddmofayag5ey4"]
+
+[ext_resource type="Script" uid="uid://dr8jdmb24v03d" path="res://Character.gd" id="1_slmq1"]
+[ext_resource type="SpriteFrames" uid="uid://xp37guyn37n2" path="res://Sister.tres" id="2_0w3mg"]
+[ext_resource type="AudioStream" uid="uid://dtdl03n1gre5b" path="res://addons/footsteps-on-wood-floor-14735.mp3" id="3_k6ps3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1pgo"]
+size = Vector2(46, 102)
+
+[node name="Guy" type="CharacterBody2D"]
+scale = Vector2(1.75, 1.75)
+motion_mode = 1
+script = ExtResource("1_slmq1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6.1, 6.25)
+sprite_frames = ExtResource("2_0w3mg")
+animation = &"Up"
+frame_progress = 0.311013
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c1pgo")
+
+[node name="footOnWood" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k6ps3")
+volume_db = 0.5
+pitch_scale = 1.5
+parameters/looping = true

@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://do0yxivlnp1bu"]
+
+[ext_resource type="Script" uid="uid://cb0m51k4v04ea" path="res://name.gd" id="1_ivn07"]
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://addons/dialogic/manaspc.ttf" id="2_nx4m6"]
+[ext_resource type="Texture2D" uid="uid://bofuu1jdwsvoo" path="res://ActualPlayer.png" id="3_arcrk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ivn07")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -236.0
+offset_right = 577.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_font_sizes/font_size = 40
+placeholder_text = "[Enter Name]"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -568.0
+offset_top = 15.0
+offset_right = 584.0
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_font_sizes/font_size = 40
+text = "Your Character's Name:"
+
+[node name="Brother" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(161, 226)
+scale = Vector2(9.19687, 9.19687)
+texture = ExtResource("3_arcrk")
+hframes = 8
+vframes = 2
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 301.0
+offset_right = 288.0
+offset_bottom = 393.0
+theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_font_sizes/font_size = 40
+text = "Brother"
+expand_icon = true
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
