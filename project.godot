@@ -21,6 +21,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 TransitionFull="*res://Transition.tscn"
 Heartbeat="*res://Heartbeat.tscn"
 Gamedata="*res://addons/dialogic/gamedata.gd"
+Music="*res://music.tscn"
 
 [dialogic]
 

@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://buo2d6si8sc4u"]
+[gd_scene load_steps=11 format=3 uid="uid://djwr6ht2xlpr2"]
 
-[ext_resource type="Texture2D" uid="uid://1lmtjqqideyg" path="res://FFHallCorner.png" id="1_dxgka"]
-[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_3dwm5"]
-[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="4_ssxu8"]
-[ext_resource type="PackedScene" uid="uid://g5rfl7jukq48" path="res://spike.tscn" id="5_dxgka"]
-[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="5_qboyh"]
+[ext_resource type="Texture2D" uid="uid://1lmtjqqideyg" path="res://FFHallCorner.png" id="1_32jlp"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_u5w0g"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="3_qf70p"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="4_nsye2"]
+[ext_resource type="PackedScene" uid="uid://g5rfl7jukq48" path="res://spike.tscn" id="5_2hc1p"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
 normal = Vector2(0, 1)
@@ -35,10 +35,10 @@ texture_filter = 1
 position = Vector2(607.903, 316)
 rotation = -1.5708
 scale = Vector2(10.6274, 10.7)
-texture = ExtResource("1_dxgka")
+texture = ExtResource("1_32jlp")
 flip_h = true
 
-[node name="Door" parent="." instance=ExtResource("2_3dwm5")]
+[node name="Door" parent="." instance=ExtResource("2_u5w0g")]
 position = Vector2(615, 709)
 rotation = 1.5708
 scale = Vector2(2.5494, 0.929413)
@@ -58,30 +58,30 @@ shape = SubResource("WorldBoundaryShape2D_cpkm5")
 [node name="East" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
-[node name="Door2" parent="." instance=ExtResource("2_3dwm5")]
+[node name="Door2" parent="." instance=ExtResource("2_u5w0g")]
 position = Vector2(319, 138)
 scale = Vector2(1.99086, 0.790282)
 Destination = "uid://cmp2022h4gtv4"
 
-[node name="Path2D2" parent="." instance=ExtResource("4_ssxu8")]
+[node name="Path2D2" parent="." instance=ExtResource("3_qf70p")]
 curve = SubResource("Curve2D_aprn0")
 
-[node name="Guy" parent="." instance=ExtResource("5_qboyh")]
+[node name="Guy" parent="." instance=ExtResource("4_nsye2")]
 position = Vector2(413, 115)
 
-[node name="Node2D" parent="." instance=ExtResource("5_dxgka")]
+[node name="Node2D" parent="." instance=ExtResource("5_2hc1p")]
 position = Vector2(229, 286)
 rotation = -1.5708
 
-[node name="Node2D2" parent="." instance=ExtResource("5_dxgka")]
+[node name="Node2D2" parent="." instance=ExtResource("5_2hc1p")]
 position = Vector2(236, 493)
 rotation = -1.5708
 
-[node name="Node2D3" parent="." instance=ExtResource("5_dxgka")]
+[node name="Node2D3" parent="." instance=ExtResource("5_2hc1p")]
 position = Vector2(966, 413)
 rotation = -4.71239
 
-[node name="Node2D4" parent="." instance=ExtResource("5_dxgka")]
+[node name="Node2D4" parent="." instance=ExtResource("5_2hc1p")]
 position = Vector2(957, 166)
 rotation = -4.71239
 

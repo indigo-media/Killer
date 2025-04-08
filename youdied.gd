@@ -3,7 +3,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	$Respawn.grab_focus()
-
+	Music._stop()
 
 func _on_exit_to_main_menu_pressed() -> void:
 	get_tree().paused = false

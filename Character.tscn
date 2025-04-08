@@ -24,6 +24,6 @@ shape = SubResource("RectangleShape2D_c1pgo")
 
 [node name="footOnWood" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_k6ps3")
-volume_db = 0.5
+volume_db = -80.0
 pitch_scale = 1.5
 parameters/looping = true

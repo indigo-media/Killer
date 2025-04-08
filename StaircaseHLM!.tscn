@@ -36,7 +36,7 @@ texture = ExtResource("1_feyml")
 [node name="Door" parent="." instance=ExtResource("2_eq0fi")]
 position = Vector2(987, 196)
 scale = Vector2(2.5494, 0.929413)
-Destination = "res://HidingRoom1.tscn"
+Destination = "uid://cmp2022h4gtv4"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

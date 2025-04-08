@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwhx6y3t8l1i0"]
+[gd_scene load_steps=14 format=3 uid="uid://cwhx6y3t8l1i0"]
 
+[ext_resource type="Script" uid="uid://c0r2ewnr2lpa8" path="res://highland_manor_entrance.gd" id="1_k0hst"]
 [ext_resource type="Texture2D" uid="uid://bibfv4ahyu7de" path="res://Foyer.png" id="1_lju2t"]
 [ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_wvape"]
 [ext_resource type="PackedScene" uid="uid://cwjj45m4pe8al" path="res://Save.tscn" id="3_7iuj4"]
@@ -32,6 +33,7 @@ _data = {
 point_count = 6
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_k0hst")
 
 [node name="NewPiskel-1_png(5)" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://j6q5tdr2mxp0"]
+
+[ext_resource type="Texture2D" uid="uid://dm5c61rxins2e" path="res://TallHall.tres" id="1_uglyy"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_fsjvt"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="3_vhrxn"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="4_aswk7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mthg4"]
+normal = Vector2(0, 1)
+distance = -44.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e1yrx"]
+normal = Vector2(1, 0)
+distance = 309.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmxr8"]
+normal = Vector2(-1, 0)
+distance = -861.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2khaa"]
+distance = -669.0
+
+[sub_resource type="Curve2D" id="Curve2D_qbwr2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 580.009, 1, 0, 0, 0, 0, 581.003, 11, 0, 0, 0, 0, 580.009, 387, 0, 0, 0, 0, 577.028, 659)
+}
+point_count = 4
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VerticalHall" type="Sprite2D" parent="."]
+modulate = Color(0.466181, 0.466181, 0.466181, 1)
+light_mask = 513
+texture_filter = 1
+position = Vector2(586, 326)
+scale = Vector2(9.25833, 9.25833)
+texture = ExtResource("1_uglyy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(294, 1)
+shape = SubResource("WorldBoundaryShape2D_mthg4")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_e1yrx")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_mmxr8")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(237, 26)
+shape = SubResource("WorldBoundaryShape2D_2khaa")
+
+[node name="Guy" parent="." instance=ExtResource("2_fsjvt")]
+position = Vector2(583, 125)
+
+[node name="Door" parent="." instance=ExtResource("3_vhrxn")]
+position = Vector2(589, 675)
+rotation = 1.57079
+scale = Vector2(1.66667, 0.780077)
+Destination = "res://VerticalHallHLM1.tscn"
+
+[node name="Path2D" parent="." instance=ExtResource("4_aswk7")]
+curve = SubResource("Curve2D_qbwr2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 333)
+zoom = Vector2(0.75, 0.75)
+
+[node name="Door2" parent="." instance=ExtResource("3_vhrxn")]
+position = Vector2(586, -20)
+rotation = 1.57079
+scale = Vector2(1.72, 0.8)
+Destination = "uid://ens7gclcbl0g"
