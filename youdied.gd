@@ -13,9 +13,9 @@ func _on_exit_to_main_menu_pressed() -> void:
 
 func _on_respawn_pressed() -> void:
 	get_tree().paused = false
-	var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
+	var file = FileAccess.open("user://save_game%d.dat" %Gamedata.savedgame, FileAccess.READ)
 	if file:
-		var Destination = file.get_as_text() 
+		var Destination = file.get_line() 
 		TransitionFull.transition(Destination)
 	else:
 		TransitionFull.transition("res://Bedroom.tscn")

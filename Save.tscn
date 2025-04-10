@@ -99,7 +99,7 @@ text = "Your game has been saved!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xxq8q")
+&"": SubResource("AnimationLibrary_xxq8q")
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

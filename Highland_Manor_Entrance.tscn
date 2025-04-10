@@ -62,6 +62,7 @@ position = Vector2(597, 486)
 [node name="Node2D" parent="." instance=ExtResource("3_7iuj4")]
 position = Vector2(377, 259)
 Destination = "res://Highland_Manor_Entrance.tscn"
+fanciestName = "HLM"
 
 [node name="Door" parent="." instance=ExtResource("4_5gtj1")]
 position = Vector2(863, 295)

@@ -4,20 +4,18 @@ var deleteMode = false
 
 func _ready() -> void:
 	$VBoxContainer/Play.grab_focus()
-	var file = FileAccess.open("user://save_game1.dat", FileAccess.READ)
-	var _file2 = FileAccess.open("user://save_game2.dat", FileAccess.READ)
-	var _file3 = FileAccess.open("user://save_game3.dat", FileAccess.READ)
-	var _file4 = FileAccess.open("user://save_game4.dat", FileAccess.READ)
-	if file:
-		var Destination = file.get_line().get_file()
-		var DOTposition = Destination.find(".") 
-		var fancierName = Destination.substr(0, DOTposition)
-		var Gamename = file.get_line()
-		var charactertype = file.get_line() 
-		$"Grid Container/Save1".text = "%s: %s" % [Gamename, fancierName]
-		$"Grid Container/Save1".set_meta("dest", Destination)
-		$"Grid Container/Save1".set_meta ("Gamename", Gamename)
-		$"Grid Container/Save1".set_meta ("charactertype", charactertype)
+	for i in range(1, 5):
+		var file = FileAccess.open("user://save_game%d.dat" %i, FileAccess.READ)
+		if file:
+			var Destination = file.get_line().get_file()
+			var Gamename = file.get_line()
+			var charactertype = file.get_line() 
+			var FNAME = file.get_line()
+			var saveButton:Button = get_node("Grid Container/Save%d" % i)
+			saveButton.text = "%s: %s"% [Gamename, FNAME]
+			saveButton.set_meta("dest", Destination)
+			saveButton.set_meta ("Gamename", Gamename)
+			saveButton.set_meta ("charactertype", charactertype)
 
 
 

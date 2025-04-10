@@ -122,7 +122,7 @@ volume_db = 0.1
 autoplay = true
 
 [node name="Axman" parent="." node_paths=PackedStringArray("playerposition") instance=ExtResource("4_h0fig")]
-position = Vector2(985, 630)
+position = Vector2(972, 740)
 scale = Vector2(1.75, 1.75)
 playerposition = NodePath("../Guy")
 
@@ -135,7 +135,7 @@ shape = SubResource("RectangleShape2D_p8vqf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
 libraries = {
-"": SubResource("AnimationLibrary_31p2i")
+&"": SubResource("AnimationLibrary_31p2i")
 }
 
 [node name="Highland Door" type="Area2D" parent="."]

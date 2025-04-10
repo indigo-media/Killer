@@ -98,6 +98,7 @@ autoplay = true
 [node name="Node2D" parent="." instance=ExtResource("5_75xpw")]
 position = Vector2(422, 262)
 Destination = "res://Bedroom.tscn"
+fanciestName = "Bedroom"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(587, 321)

@@ -1,6 +1,6 @@
 extends Area2D
 
-var SPEED: float = 325
+var SPEED: float = 285
 
 
 # Called when the node enters the scene tree for the first time.

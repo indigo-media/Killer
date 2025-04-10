@@ -53,6 +53,11 @@ position = Vector2(27, 310)
 scale = Vector2(1.64267, 0.884813)
 Destination = "res://Highland_Manor_Entrance.tscn"
 
+[node name="Door2" parent="." instance=ExtResource("2_1gseh")]
+position = Vector2(1130, 312)
+scale = Vector2(1.64267, 0.884813)
+Destination = "uid://dnlkv3gpgqy53"
+
 [node name="Guy" parent="." instance=ExtResource("3_6kc1l")]
 position = Vector2(116, 318)
 

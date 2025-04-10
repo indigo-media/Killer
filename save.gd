@@ -1,5 +1,6 @@
 extends Area2D
 @export_file("*.tscn") var Destination: String 
+@export var fanciestName: String
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Guy":
@@ -7,5 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 		file.store_line(Destination)
 		file.store_line(Gamedata.gamename)
 		file.store_line (Gamedata.charactertype)
+		file.store_line(fanciestName)
 		$AnimationPlayer.play ("SavedGame")
 	
