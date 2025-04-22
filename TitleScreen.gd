@@ -48,7 +48,7 @@ func _on_save_pressed(savei: int) -> void:
 			TransitionFull.transition("res://CreateAChar.tscn")
 		else:
 			Gamedata.gamename = (saveButton.get_meta("Gamename"))
-			Gamedata.gamename = (saveButton.get_meta("charactertype"))
+			Gamedata.charactertype = (saveButton.get_meta("charactertype"))
 			TransitionFull.transition(saveButton.get_meta("dest"))
 	
 func _on_delete_save_pressed() -> void:

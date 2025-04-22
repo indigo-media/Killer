@@ -3,9 +3,6 @@ extends CharacterBody2D
 
 const SPEED = 330.0
 
-var footstep = false
-
-
 var islocked = false 
 
 var ishiding = false
@@ -26,9 +23,6 @@ func _physics_process(delta: float) -> void:
 		var directionX := Input.get_axis("Left", "Right")
 		if directionX != 0:
 			velocity.x = directionX * SPEED
-			if footstep == false:
-				$footOnWood.play()
-				footstep = true
 
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED) 
@@ -37,9 +31,6 @@ func _physics_process(delta: float) -> void:
 		var directionY := Input.get_axis("Up", "Down")
 		if directionY !=0 :
 			velocity.y = directionY * SPEED
-			if footstep == false:
-				$footOnWood.play()
-				footstep = true
 			
 		else:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
@@ -56,8 +47,6 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("Right")
 		if directionX == 0 and directionY == 0:
 			$AnimatedSprite2D.stop() 
-			footstep = false
-			$footOnWood.stop()
 
 func hideincrate():
 	visible = false
@@ -73,3 +62,17 @@ func _input(event: InputEvent) -> void:
 			
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = load (Gamedata.charactertype)
+	Gamedata.healthChanged.connect(_updateHealth)
+	$CanvasLayer/Health.frame = 9 - Gamedata.Health
+func _updateHealth(Damage:int):
+	$CanvasLayer/Health.frame = 9 - Gamedata.Health 
+	if Gamedata.Health < 1:
+		$AnimatedSprite2D.play("Idle (Down)")
+		get_tree().paused = true
+		$AnimationPlayer.play("Death")
+		await $AnimationPlayer.animation_finished
+		var clone = preload("res://Youdied.tscn").instantiate()
+		get_tree().root.add_child(clone)
+	elif  Damage < 0:
+		$Hurt.play()
+		$AnimationPlayer.play("Hurt")

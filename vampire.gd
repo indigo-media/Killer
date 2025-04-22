@@ -8,9 +8,7 @@ func _on_kill_area_body_entered(body: Node2D) -> void:
 	if body.name == "Guy":
 		if body.ishiding == false and visible == true:
 			Heartbeat.end()
-			var clone = preload("res://Youdied.tscn").instantiate()
-			get_tree().root.add_child(clone)
-			get_tree().paused = true
+			Gamedata._takeDamage(9)
 
 func setactive ():
 	$"Kill Area"/CollisionShape2D.disabled = false

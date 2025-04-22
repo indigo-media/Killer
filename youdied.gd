@@ -20,3 +20,4 @@ func _on_respawn_pressed() -> void:
 	else:
 		TransitionFull.transition("res://Bedroom.tscn")
 	queue_free()
+	Gamedata.Health = 9

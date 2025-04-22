@@ -1,11 +1,170 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddmofayag5ey4"]
+[gd_scene load_steps=23 format=3 uid="uid://ddmofayag5ey4"]
 
 [ext_resource type="Script" uid="uid://dr8jdmb24v03d" path="res://Character.gd" id="1_slmq1"]
 [ext_resource type="SpriteFrames" uid="uid://xp37guyn37n2" path="res://Sister.tres" id="2_0w3mg"]
-[ext_resource type="AudioStream" uid="uid://dtdl03n1gre5b" path="res://addons/footsteps-on-wood-floor-14735.mp3" id="3_k6ps3"]
+[ext_resource type="AudioStream" uid="uid://cvwk24kqohtv4" path="res://hitHurt.wav" id="3_atbvg"]
+[ext_resource type="Texture2D" uid="uid://cl7f62nehdftk" path="res://Health.png" id="4_cxxw8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_atbvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1pgo"]
 size = Vector2(46, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k7lb"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(0, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcsrs"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(32, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtxv0"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(0, 8, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t6ex"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(32, 8, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehraw"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(0, 16, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiekw"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(32, 16, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyspk"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(0, 24, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5cqu"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(32, 24, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j06e8"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(0, 32, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urrup"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(32, 32, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1ouj"]
+atlas = ExtResource("4_cxxw8")
+region = Rect2(0, 40, 32, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gddd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k7lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcsrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtxv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t6ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehraw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiekw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyspk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5cqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j06e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urrup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1ouj")
+}],
+"loop": true,
+"name": &"Health",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_atbvg"]
+resource_name = "Hurt"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.533333, 0.75, 1, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cxxw8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e24yd"]
+resource_name = "Death"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.25, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -86.2857), Vector2(0, -102.286), Vector2(0, 886.286)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e24yd"]
+_data = {
+&"Death": SubResource("Animation_e24yd"),
+&"Hurt": SubResource("Animation_atbvg"),
+&"RESET": SubResource("Animation_cxxw8")
+}
 
 [node name="Guy" type="CharacterBody2D"]
 scale = Vector2(1.75, 1.75)
@@ -14,16 +173,31 @@ script = ExtResource("1_slmq1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("CanvasItemMaterial_atbvg")
 scale = Vector2(6.1, 6.25)
 sprite_frames = ExtResource("2_0w3mg")
-animation = &"Up"
-frame_progress = 0.311013
+animation = &"Idle (Down)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_c1pgo")
 
-[node name="footOnWood" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_k6ps3")
-volume_db = -80.0
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_atbvg")
+volume_db = -5.0
 pitch_scale = 1.5
-parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health" type="AnimatedSprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(149.88, 47.97)
+scale = Vector2(8.5075, 8.5075)
+sprite_frames = SubResource("SpriteFrames_5gddd")
+animation = &"Health"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_e24yd")
+}
