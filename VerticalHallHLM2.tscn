@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8o44hgfxi8ns"]
+[gd_scene load_steps=11 format=3 uid="uid://c8o44hgfxi8ns"]
 
 [ext_resource type="Texture2D" uid="uid://dm5c61rxins2e" path="res://TallHall.tres" id="1_qph3h"]
 [ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_2ldd8"]
 [ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="3_txc1u"]
+[ext_resource type="PackedScene" uid="uid://b1331tbs15k8j" path="res://BearTrap.tscn" id="5_4p651"]
 [ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="5_j5w6r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mthg4"]
@@ -29,7 +30,7 @@ point_count = 4
 [node name="Node2D" type="Node2D"]
 
 [node name="VerticalHall" type="Sprite2D" parent="."]
-modulate = Color(0.466181, 0.466181, 0.466181, 1)
+modulate = Color(0.838897, 0.838897, 0.838897, 1)
 light_mask = 513
 texture_filter = 1
 position = Vector2(586, 326)
@@ -52,9 +53,6 @@ shape = SubResource("WorldBoundaryShape2D_mmxr8")
 position = Vector2(237, 26)
 shape = SubResource("WorldBoundaryShape2D_2khaa")
 
-[node name="Guy" parent="." instance=ExtResource("2_2ldd8")]
-position = Vector2(585, 518)
-
 [node name="Door" parent="." instance=ExtResource("3_txc1u")]
 position = Vector2(589, 675)
 rotation = 1.57079
@@ -73,3 +71,15 @@ position = Vector2(586, -20)
 rotation = 1.57079
 scale = Vector2(1.72, 0.8)
 Destination = "res://CornerRock.tscn"
+
+[node name="Node2D" parent="." instance=ExtResource("5_4p651")]
+position = Vector2(583, 100)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_4p651")]
+position = Vector2(587, 239)
+
+[node name="Node2D3" parent="." instance=ExtResource("5_4p651")]
+position = Vector2(579, 387)
+
+[node name="Guy" parent="." instance=ExtResource("2_2ldd8")]
+position = Vector2(585, 518)

@@ -63,10 +63,11 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = load (Gamedata.charactertype)
 	Gamedata.healthChanged.connect(_updateHealth)
-	$CanvasLayer/Health.frame = 9 - Gamedata.Health
+	_updateHealth(0)
 func _updateHealth(Damage:int):
 	$CanvasLayer/Health.frame = 9 - Gamedata.Health 
 	if Gamedata.Health < 1:
+		$Hurt.play()
 		$AnimatedSprite2D.play("Idle (Down)")
 		get_tree().paused = true
 		$AnimationPlayer.play("Death")
@@ -76,3 +77,5 @@ func _updateHealth(Damage:int):
 	elif  Damage < 0:
 		$Hurt.play()
 		$AnimationPlayer.play("Hurt")
+	if  Gamedata.Health == 1:
+		$CanvasLayer/Health.play("Almost Death!")

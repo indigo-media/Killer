@@ -61,7 +61,7 @@ shape = SubResource("RectangleShape2D_3lxbv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spike"]
 libraries = {
-"": SubResource("AnimationLibrary_e2qdc")
+&"": SubResource("AnimationLibrary_e2qdc")
 }
 autoplay = "Spike"
 

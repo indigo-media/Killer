@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxjne3trq50ys"]
+[gd_scene load_steps=9 format=3 uid="uid://bxjne3trq50ys"]
 
 [ext_resource type="Texture2D" uid="uid://565mjwmlj6jc" path="res://Hall.png" id="1_6x8mn"]
 [ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_1gseh"]
 [ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="3_6kc1l"]
 [ext_resource type="PackedScene" uid="uid://g5rfl7jukq48" path="res://spike.tscn" id="4_4dbu7"]
-[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="5_7jebr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oxwna"]
 normal = Vector2(1, 0)
@@ -19,12 +18,6 @@ distance = -547.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_leytm"]
 normal = Vector2(-1, 0)
 distance = -1150.0
-
-[sub_resource type="Curve2D" id="Curve2D_3p8hn"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 112, 317, 0, 0, 0, 0, 90, 315, 0, 0, 0, 0, 1123, 318)
-}
-point_count = 3
 
 [node name="Node2D" type="Node2D"]
 
@@ -79,15 +72,3 @@ offset_top = -92.0
 offset_right = 1178.0
 offset_bottom = 115.0
 color = Color(0.113725, 0.113725, 0.113725, 1)
-
-[node name="Path2D2" parent="." instance=ExtResource("5_7jebr")]
-curve = SubResource("Curve2D_3p8hn")
-
-[node name="PathFollow2D" parent="Path2D2" index="0"]
-position = Vector2(112, 317)
-rotation = -3.05093
-
-[node name="Vampire" parent="Path2D2/PathFollow2D" index="0"]
-rotation = 3.05165
-
-[editable path="Path2D2"]
