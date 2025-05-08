@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://qoycdsp4xlr5"]
+[gd_scene load_steps=11 format=3 uid="uid://qoycdsp4xlr5"]
 
 [ext_resource type="Texture2D" uid="uid://ditn7v3hum3dk" path="res://HorizontalHall.png" id="1_6r57e"]
 [ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_8pe7u"]
 [ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="3_10rkr"]
 [ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="4_bsrbu"]
+[ext_resource type="PackedScene" uid="uid://d2m01sw8tlfri" path="res://FallingFloor.tscn" id="5_8pe7u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
 normal = Vector2(0, 1)
@@ -62,6 +63,18 @@ Destination = "uid://neardqtrxmj8"
 
 [node name="Path2D2" parent="." instance=ExtResource("3_10rkr")]
 curve = SubResource("Curve2D_22u10")
+
+[node name="Node2D" parent="." instance=ExtResource("5_8pe7u")]
+position = Vector2(411, 116)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_8pe7u")]
+position = Vector2(249, 487)
+
+[node name="Node2D3" parent="." instance=ExtResource("5_8pe7u")]
+position = Vector2(688, 548)
+
+[node name="Node2D4" parent="." instance=ExtResource("5_8pe7u")]
+position = Vector2(728, 75)
 
 [node name="Guy" parent="." instance=ExtResource("4_bsrbu")]
 position = Vector2(283, 323)

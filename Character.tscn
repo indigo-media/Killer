@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://ddmofayag5ey4"]
+[gd_scene load_steps=27 format=3 uid="uid://ddmofayag5ey4"]
 
 [ext_resource type="Script" uid="uid://dr8jdmb24v03d" path="res://Character.gd" id="1_slmq1"]
 [ext_resource type="SpriteFrames" uid="uid://xp37guyn37n2" path="res://Sister.tres" id="2_0w3mg"]
 [ext_resource type="AudioStream" uid="uid://cvwk24kqohtv4" path="res://hitHurt.wav" id="3_atbvg"]
 [ext_resource type="Texture2D" uid="uid://cl7f62nehdftk" path="res://Health.png" id="4_cxxw8"]
+[ext_resource type="AudioStream" uid="uid://cio2fqc6l72cj" path="res://DIE.wav" id="5_cxxw8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_atbvg"]
 
@@ -129,10 +130,38 @@ tracks/0/path = NodePath("AnimatedSprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.25, 2.5),
+"times": PackedFloat32Array(0, 1.8, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -86.2857), Vector2(0, -102.286), Vector2(0, 886.286)]
+"values": [Vector2(0, 0), Vector2(0, -86.2857), Vector2(0, -86.286), Vector2(0, 886.286)]
+}
+
+[sub_resource type="Animation" id="Animation_5gddd"]
+resource_name = "Falling Floor"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 177.714), Vector2(-1.19209e-07, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.24, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_atbvg"]
@@ -181,6 +210,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e24yd"]
 _data = {
 &"Death": SubResource("Animation_e24yd"),
+&"Falling Floor": SubResource("Animation_5gddd"),
 &"Hurt": SubResource("Animation_atbvg"),
 &"RESET": SubResource("Animation_cxxw8")
 }
@@ -196,9 +226,9 @@ material = SubResource("CanvasItemMaterial_atbvg")
 scale = Vector2(6.1, 6.25)
 sprite_frames = ExtResource("2_0w3mg")
 animation = &"Idle (Down)"
+frame_progress = 0.688265
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_c1pgo")
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
@@ -220,3 +250,7 @@ process_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_e24yd")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 2
+stream = ExtResource("5_cxxw8")

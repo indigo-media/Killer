@@ -66,4 +66,7 @@ scale = Vector2(0.237624, 0.237624)
 position = Vector2(1.25, 2)
 shape = SubResource("RectangleShape2D_2wv4s")
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

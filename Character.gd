@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 330.0
 
@@ -59,6 +59,9 @@ func _input(event: InputEvent) -> void:
 			visible = true
 			ishiding = false
 			islocked = false
+	if event.is_action_pressed("Menu"):
+		var clone = preload("res://Exit.tscn").instantiate()
+		get_tree().root.add_child(clone)
 			
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = load (Gamedata.charactertype)
@@ -67,7 +70,7 @@ func _ready() -> void:
 func _updateHealth(Damage:int):
 	$CanvasLayer/Health.frame = 9 - Gamedata.Health 
 	if Gamedata.Health < 1:
-		$Hurt.play()
+		$AudioStreamPlayer.play()
 		$AnimatedSprite2D.play("Idle (Down)")
 		get_tree().paused = true
 		$AnimationPlayer.play("Death")
@@ -79,3 +82,4 @@ func _updateHealth(Damage:int):
 		$AnimationPlayer.play("Hurt")
 	if  Gamedata.Health == 1:
 		$CanvasLayer/Health.play("Almost Death!")
+		
