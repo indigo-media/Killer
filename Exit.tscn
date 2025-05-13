@@ -1,46 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://wl3n8edne2xe"]
+[gd_scene load_steps=7 format=3 uid="uid://wl3n8edne2xe"]
 
 [ext_resource type="Script" uid="uid://clek262gkiir4" path="res://exit.gd" id="1_v5bdx"]
 [ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://addons/dialogic/manaspc.ttf" id="1_vs230"]
-
-[sub_resource type="Animation" id="Animation_v5bdx"]
-resource_name = "fall"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2, -655), Vector2(-2, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Continue:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(438, -529), Vector2(438, 126)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Exit:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(438, -309), Vector2(438, 346)]
-}
 
 [sub_resource type="Animation" id="Animation_bf2d0"]
 length = 0.001
@@ -81,8 +42,87 @@ tracks/2/keys = {
 "values": [Vector2(438, -309)]
 }
 
+[sub_resource type="Animation" id="Animation_v5bdx"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -655), Vector2(-2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Continue:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(438, -529), Vector2(438, 126)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Exit:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(438, -309), Vector2(438, 346)]
+}
+
+[sub_resource type="Animation" id="Animation_sqxco"]
+resource_name = "Leave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Exit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(438, 344), Vector2(438, -301)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Continue:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(438, 124), Vector2(438, -521)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2, -2), Vector2(-2, -647)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sqxco"]
 _data = {
+&"Leave": SubResource("Animation_sqxco"),
 &"RESET": SubResource("Animation_bf2d0"),
 &"fall": SubResource("Animation_v5bdx")
 }
@@ -97,27 +137,27 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -2.0
-offset_top = -655.0
+offset_top = -2.0
 offset_right = -2.0
-offset_bottom = -655.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.172833, 0.172833, 0.172833, 1)
 
 [node name="Continue" type="Button" parent="."]
 offset_left = 438.0
-offset_top = -529.0
+offset_top = 124.0
 offset_right = 709.0
-offset_bottom = -385.0
+offset_bottom = 268.0
 theme_override_fonts/font = ExtResource("1_vs230")
 theme_override_font_sizes/font_size = 40
 text = "Continue"
 
 [node name="Exit" type="Button" parent="."]
 offset_left = 438.0
-offset_top = -309.0
+offset_top = 344.0
 offset_right = 709.0
-offset_bottom = -165.0
+offset_bottom = 488.0
 theme_override_fonts/font = ExtResource("1_vs230")
 theme_override_font_sizes/font_size = 40
 text = "Exit to

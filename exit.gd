@@ -4,6 +4,8 @@ func _ready() -> void:
 	get_tree().paused = true
 	
 func _on_continue_pressed() -> void:
+	$AnimationPlayer.play("Leave")
+	await $AnimationPlayer.animation_finished
 	get_tree().paused = false
 	queue_free()
 

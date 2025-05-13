@@ -11,7 +11,7 @@ var ishiding = false
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Add the gravity.
 
 
@@ -56,7 +56,7 @@ func hideincrate():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
 		if ishiding == true:
-			visible = true
+			visible = true 
 			ishiding = false
 			islocked = false
 	if event.is_action_pressed("Menu"):
