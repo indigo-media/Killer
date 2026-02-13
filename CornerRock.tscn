@@ -1,9 +1,84 @@
-[gd_scene load_steps=11 format=3 uid="uid://ntkspg1v7vj4"]
+[gd_scene load_steps=22 format=3 uid="uid://ntkspg1v7vj4"]
 
-[ext_resource type="Texture2D" uid="uid://b6ws7w4chkrid" path="res://RockCorner.png" id="1_84jc8"]
+[ext_resource type="Script" uid="uid://cnu4fmi4x0jam" path="res://corner_rock.gd" id="1_7ykds"]
+[ext_resource type="Texture2D" uid="uid://n7i6s1lr1l7v" path="res://RockCorner(NEW).png" id="1_ukt85"]
 [ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="2_km153"]
 [ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="3_15e4h"]
 [ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="4_tayhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ykds"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(80, 120, 80, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjp1g"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(0, 0, 80, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bvws"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(0, 0, 80, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eovch"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(80, 0, 80, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34xv8"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(0, 60, 80, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq13v"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(80, 60, 80, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6kcx"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(0, 120, 80, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qwt8"]
+atlas = ExtResource("1_ukt85")
+region = Rect2(80, 120, 80, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7eu8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ykds")
+}],
+"loop": true,
+"name": &"After",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjp1g")
+}],
+"loop": true,
+"name": &"Before",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bvws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eovch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34xv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq13v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6kcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qwt8")
+}],
+"loop": false,
+"name": &"Explosion",
+"speed": 5.0
+}]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mthg4"]
 normal = Vector2(0, 1)
@@ -29,14 +104,19 @@ _data = {
 }
 point_count = 4
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukt85"]
+size = Vector2(551, 177)
 
-[node name="RockCorner" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7ykds")
+
+[node name="RockCorner" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(595, 307)
+position = Vector2(595, 306.00003)
 rotation = 1.5708
 scale = Vector2(9.64609, 9.64609)
-texture = ExtResource("1_84jc8")
+sprite_frames = SubResource("SpriteFrames_7eu8g")
+animation = &"Before"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -65,16 +145,26 @@ position = Vector2(585, 518)
 position = Vector2(589, 675)
 rotation = 1.57079
 scale = Vector2(1.66667, 0.780077)
-Destination = "res://VerticalHallHLM2.tscn"
+Destination = "uid://c8o44hgfxi8ns"
 
 [node name="Path2D" parent="." instance=ExtResource("4_tayhx")]
 curve = SubResource("Curve2D_lefus")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(562, 328)
-zoom = Vector2(0.75, 0.75)
-
 [node name="Door2" parent="." instance=ExtResource("3_15e4h")]
 position = Vector2(858, 211)
 scale = Vector2(2, 0.688127)
-Destination = "res://HorizontalRoomHM2.tscn"
+Destination = "uid://crcd38lkxc6p3"
+
+[node name="Door3" parent="." instance=ExtResource("3_15e4h")]
+position = Vector2(589, -50)
+rotation = 1.5526073
+scale = Vector2(2, 0.688127)
+Destination = "uid://dhryfnulvjpxi"
+
+[node name="Bomb Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bomb Area"]
+position = Vector2(601.5, 109.5)
+shape = SubResource("RectangleShape2D_ukt85")
+
+[connection signal="body_entered" from="Bomb Area" to="." method="_on_bomb_area_body_entered"]

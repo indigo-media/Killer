@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://do0yxivlnp1bu"]
+[gd_scene load_steps=10 format=3 uid="uid://do0yxivlnp1bu"]
 
 [ext_resource type="Script" uid="uid://cb0m51k4v04ea" path="res://name.gd" id="1_ivn07"]
-[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://addons/dialogic/manaspc.ttf" id="2_nx4m6"]
+[ext_resource type="Theme" uid="uid://bokj63lg7xdm4" path="res://theme_pixelfont.tres" id="1_urckf"]
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://manaspc.ttf" id="2_nx4m6"]
 [ext_resource type="Texture2D" uid="uid://bofuu1jdwsvoo" path="res://ActualPlayer.png" id="3_arcrk"]
+[ext_resource type="Texture2D" uid="uid://b2agg0724dn6q" path="res://normal.png" id="4_lob43"]
+[ext_resource type="Texture2D" uid="uid://d0osyuksli2p0" path="res://Hard.png" id="5_urckf"]
+[ext_resource type="Texture2D" uid="uid://cqkk0vpy82kxh" path="res://Incredible.png" id="6_0p2n6"]
+[ext_resource type="Texture2D" uid="uid://dakqn2o7m8t8g" path="res://Troll.png" id="7_vy06t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p2n6"]
+bg_color = Color(0.41951287, 0.6821127, 0.2689254, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.26444712, 0.46832442, 0.28128585, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_urckf")
 script = ExtResource("1_ivn07")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -37,7 +51,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_nx4m6")
 theme_override_font_sizes/font_size = 40
-placeholder_text = "[Enter Name]"
+placeholder_text = "[Enter Name] "
+max_length = 16
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -72,5 +87,88 @@ theme_override_font_sizes/font_size = 40
 text = "Brother"
 expand_icon = true
 
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 178.0
+offset_right = 1104.0
+offset_bottom = 246.0
+theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_font_sizes/font_size = 40
+expand_icon = true
+selected = 0
+item_count = 4
+popup/item_0/text = "Normal"
+popup/item_0/icon = ExtResource("4_lob43")
+popup/item_0/id = 0
+popup/item_1/text = "Hard"
+popup/item_1/icon = ExtResource("5_urckf")
+popup/item_1/id = 1
+popup/item_2/text = "Incredible"
+popup/item_2/icon = ExtResource("6_0p2n6")
+popup/item_2/id = 2
+popup/item_3/text = "Troll"
+popup/item_3/icon = ExtResource("7_vy06t")
+popup/item_3/id = 3
+
+[node name="Normal" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.051000003
+anchor_bottom = 0.035
+offset_left = 615.0
+offset_top = 285.0
+offset_right = 596.248
+offset_bottom = 285.32
+
+[node name="Hard" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.051000003
+anchor_bottom = 0.035
+offset_left = 615.0
+offset_top = 285.0
+offset_right = 596.248
+offset_bottom = 285.32
+
+[node name="Incredible" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.051000003
+anchor_bottom = 0.035
+offset_left = 615.0
+offset_top = 285.0
+offset_right = 596.248
+offset_bottom = 285.32
+
+[node name="Troll" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.051000003
+anchor_bottom = 0.035
+offset_left = 613.0
+offset_top = 284.0
+offset_right = 594.248
+offset_bottom = 284.32
+
+[node name="Play" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -315.0
+offset_top = -118.0
+offset_right = -26.0
+offset_bottom = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_0p2n6")
+text = "Play>"
+
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

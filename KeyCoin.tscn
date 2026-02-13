@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://csei30jkcrp6"]
+
+[ext_resource type="Texture2D" uid="uid://cl3t2i7rk382a" path="res://KeyCoin.png" id="1_k3unu"]
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://manaspc.ttf" id="2_j1481"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KeyCoin" type="Sprite2D" parent="."]
+position = Vector2(1104, 51)
+scale = Vector2(5.375, 5.375)
+texture = ExtResource("1_k3unu")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1013.0
+offset_top = 31.0
+offset_right = 1053.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("2_j1481")
+theme_override_font_sizes/font_size = 27
+text = "x0"

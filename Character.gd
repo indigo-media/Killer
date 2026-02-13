@@ -49,13 +49,14 @@ func _physics_process(_delta: float) -> void:
 			$AnimatedSprite2D.stop() 
 
 func hideincrate():
+	$"hiding cooldown".start()
 	visible = false
 	ishiding = true
 	islocked = true
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
-		if ishiding == true:
+		if ishiding == true and $"hiding cooldown".is_stopped():
 			visible = true 
 			ishiding = false
 			islocked = false
@@ -67,16 +68,13 @@ func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = load (Gamedata.charactertype)
 	Gamedata.healthChanged.connect(_updateHealth)
 	_updateHealth(0)
+	Gamedata.player = self
 func _updateHealth(Damage:int):
 	$CanvasLayer/Health.frame = 9 - Gamedata.Health 
 	if Gamedata.Health < 1:
-		$AudioStreamPlayer.play()
-		$AnimatedSprite2D.play("Idle (Down)")
 		get_tree().paused = true
-		$AnimationPlayer.play("Death")
-		await $AnimationPlayer.animation_finished
-		var clone = preload("res://Youdied.tscn").instantiate()
-		get_tree().root.add_child(clone)
+		var jumpscare = load(Gamedata.getScaredBro()).instantiate()
+		get_tree().root.add_child(jumpscare)
 	elif  Damage < 0:
 		$Hurt.play()
 		$AnimationPlayer.play("Hurt")

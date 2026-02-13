@@ -1,0 +1,191 @@
+[gd_scene load_steps=16 format=3 uid="uid://esmejeem2d85"]
+
+[ext_resource type="Script" uid="uid://sgc2fca45se4" path="res://jumpscare.gd" id="1_dkw4f"]
+[ext_resource type="Texture2D" uid="uid://b4qq126mi8myj" path="res://jumpscare01.png" id="1_lc0cw"]
+[ext_resource type="AudioStream" uid="uid://ci1efuj0v0qfl" path="res://JUMPSCAREEEE.sfxr" id="3_6rciv"]
+
+[sub_resource type="Animation" id="Animation_fw0pg"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Jumpscare01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Jumpscare01:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_ufxpa"]
+resource_name = "jumpscare"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Jumpscare01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.87266463]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Jumpscare01:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8.781248, 8.781248), Vector2(24, 24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hno7x"]
+_data = {
+&"RESET": SubResource("Animation_fw0pg"),
+&"jumpscare": SubResource("Animation_ufxpa")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkw4f"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rciv"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qc3y"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_578iv"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gnpd"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xrnq"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svq7v"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqikd"]
+atlas = ExtResource("1_lc0cw")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70uj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkw4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rciv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qc3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_578iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gnpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xrnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svq7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqikd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+metadata/_edit_horizontal_guides_ = [113.0]
+
+[node name="Node2D" type="Control" parent="."]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dkw4f")
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0480001
+offset_left = -337.0
+offset_top = -195.0
+offset_right = 355.0
+offset_bottom = 227.89594
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_hno7x")
+}
+autoplay = "jumpscare"
+
+[node name="Control" type="Control" parent="Node2D"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jumpscare01" type="AnimatedSprite2D" parent="Node2D/Control"]
+rotation = -0.87266463
+scale = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_70uj5")
+autoplay = "default"
+frame = 4
+frame_progress = 0.62264025
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("3_6rciv")
+volume_db = 16.367
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[connection signal="animation_finished" from="Node2D/Control/Jumpscare01" to="Node2D" method="_on_jumpscare_01_animation_finished"]
+[connection signal="timeout" from="Timer" to="Node2D" method="_on_timer_timeout"]

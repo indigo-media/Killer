@@ -1,0 +1,311 @@
+[gd_scene load_steps=34 format=3 uid="uid://fx7bts3t687a"]
+
+[ext_resource type="Texture2D" uid="uid://ditn7v3hum3dk" path="res://HorizontalHall.png" id="1_m1c66"]
+[ext_resource type="Script" uid="uid://bla7pxwgofek3" path="res://damaged_room.gd" id="1_yys6s"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://door.tscn" id="2_60p30"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Killer Path.tscn" id="3_cbp1m"]
+[ext_resource type="PackedScene" uid="uid://d2m01sw8tlfri" path="res://FallingFloor.tscn" id="4_3g3ip"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character.tscn" id="5_gjok1"]
+[ext_resource type="Texture2D" uid="uid://c1pfyg1drvo8a" path="res://Candle4.png" id="7_ffen7"]
+[ext_resource type="Texture2D" uid="uid://dy4aqibw6r83k" path="res://Candle3.png" id="8_hkacj"]
+[ext_resource type="Shader" uid="uid://bie774u7mp8ms" path="res://Darkness.gdshader" id="8_x01io"]
+[ext_resource type="Texture2D" uid="uid://sdefeyy76ssd" path="res://Candle1.png" id="9_ggmob"]
+[ext_resource type="Script" uid="uid://c0yw5dvok5q3s" path="res://darkness.gd" id="9_hy57m"]
+[ext_resource type="Texture2D" uid="uid://rr4n5dnp8h40" path="res://Candle2.png" id="10_rwjpw"]
+[ext_resource type="Script" uid="uid://cuh3nafp8rt3f" path="res://candle.gd" id="11_8sjod"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmtd7"]
+distance = -648.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpkm5"]
+normal = Vector2(1, 0)
+distance = 171.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7qhwc"]
+normal = Vector2(-1, 0)
+distance = -1034.0
+
+[sub_resource type="Curve2D" id="Curve2D_22u10"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 183.523, 331, 0, 0, 0, 0, 432.941, 332, 0, 0, 0, 0, 964.571, 332)
+}
+point_count = 3
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcgl6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ffen7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hkacj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ggmob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rwjpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rwjpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ffen7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hkacj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ggmob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mouko"]
+radius = 29.999998
+height = 86.383575
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yf3lx"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_2njjd"]
+colors = PackedColorArray(0.61, 0.55550665, 0.2013, 1, 0.96, 0.4032, 0.4032, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8kcob"]
+gradient = SubResource("Gradient_2njjd")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bcrd8"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -20, 0)
+scale_min = 8.0
+scale_max = 8.0
+color = Color(1, 1, 1, 0.14117648)
+
+[sub_resource type="Shader" id="Shader_ffen7"]
+code = "shader_type canvas_item;
+
+uniform vec2 position = vec2(0.0);
+uniform float radius = 0.5;
+
+uniform sampler2D grad_text;
+
+void fragment() {
+	COLOR = texture(grad_text, UV);
+}"
+
+[sub_resource type="Gradient" id="Gradient_hkacj"]
+offsets = PackedFloat32Array(0, 0.059322033, 1)
+colors = PackedColorArray(0, 0, 0, 0.5058824, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ggmob"]
+gradient = SubResource("Gradient_hkacj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwjpw"]
+shader = SubResource("Shader_ffen7")
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/radius = 0.5
+shader_parameter/grad_text = SubResource("GradientTexture2D_ggmob")
+
+[sub_resource type="Gradient" id="Gradient_76nds"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ffen7"]
+gradient = SubResource("Gradient_76nds")
+width = 850
+height = 850
+
+[sub_resource type="Gradient" id="Gradient_ffen7"]
+offsets = PackedFloat32Array(0.13559322, 0.19491525, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hkacj"]
+gradient = SubResource("Gradient_ffen7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilggv"]
+shader = ExtResource("8_x01io")
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/radius = 0.5
+shader_parameter/grad_text = SubResource("GradientTexture2D_hkacj")
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("candle", "darkness")]
+script = ExtResource("1_yys6s")
+candle = NodePath("Guy/Candle")
+darkness = NodePath("Guy/Darkness")
+
+[node name="FfHall" type="Sprite2D" parent="."]
+modulate = Color(0.2665752, 0.26657522, 0.26657513, 1)
+texture_filter = 1
+position = Vector2(574, 323.25)
+scale = Vector2(10.8417, 10.8417)
+texture = ExtResource("1_m1c66")
+
+[node name="Door" parent="." instance=ExtResource("2_60p30")]
+position = Vector2(984, 328)
+scale = Vector2(2.5494, 0.929413)
+Destination = "uid://drmln3sjxwsbi"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ic1db")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_rmtd7")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-29, -2)
+shape = SubResource("WorldBoundaryShape2D_cpkm5")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-30, 7)
+shape = SubResource("WorldBoundaryShape2D_7qhwc")
+
+[node name="Door2" parent="." instance=ExtResource("2_60p30")]
+position = Vector2(166, 325)
+scale = Vector2(1.99086, 0.790282)
+Destination = "uid://qoycdsp4xlr5"
+
+[node name="Path2D2" parent="." instance=ExtResource("3_cbp1m")]
+curve = SubResource("Curve2D_22u10")
+
+[node name="Node2D4" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(200, 476)
+
+[node name="Node2D5" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(296, 476)
+
+[node name="Node2D6" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(402, 477)
+
+[node name="Node2D7" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(403, 360)
+
+[node name="Node2D8" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(404, 250)
+
+[node name="Node2D9" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(510, 250)
+
+[node name="Node2D21" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(507, 359)
+
+[node name="Node2D22" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(510, 475)
+
+[node name="Node2D23" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(510, 588)
+
+[node name="Node2D24" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(820, 278)
+
+[node name="Node2D25" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(821, 169)
+
+[node name="Node2D26" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(821, 65)
+
+[node name="Node2D27" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(916, 64)
+
+[node name="Node2D28" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(198, 189)
+
+[node name="Node2D29" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(198, 76)
+
+[node name="Node2D10" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(634, 251)
+
+[node name="Node2D11" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(634, 367)
+
+[node name="Node2D12" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(634, 480)
+
+[node name="Node2D13" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(195, 595)
+
+[node name="Node2D14" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(635, 586)
+
+[node name="Node2D15" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(741, 583)
+
+[node name="Node2D16" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(857, 589)
+
+[node name="Node2D17" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(960, 588)
+
+[node name="Node2D18" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(402, 593)
+
+[node name="Node2D19" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(295, 595)
+
+[node name="Node2D20" parent="." instance=ExtResource("4_3g3ip")]
+position = Vector2(943, 473)
+
+[node name="Guy" parent="." instance=ExtResource("5_gjok1")]
+position = Vector2(258.00003, 326)
+
+[node name="Candle" type="AnimatedSprite2D" parent="Guy"]
+visible = false
+z_index = 4
+position = Vector2(38.857117, -7.4285736)
+scale = Vector2(0.69523805, 0.695238)
+sprite_frames = SubResource("SpriteFrames_tcgl6")
+autoplay = "default"
+frame_progress = 0.108580895
+script = ExtResource("11_8sjod")
+
+[node name="Area2D" type="Area2D" parent="Guy/Candle"]
+process_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guy/Candle/Area2D"]
+position = Vector2(2.0547943, -0.36986053)
+shape = SubResource("CapsuleShape2D_mouko")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Guy/Candle"]
+material = SubResource("CanvasItemMaterial_yf3lx")
+position = Vector2(1.6438355, -27.123293)
+texture = SubResource("GradientTexture2D_8kcob")
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bcrd8")
+
+[node name="TheRealDarkness" type="Sprite2D" parent="Guy"]
+material = SubResource("ShaderMaterial_rwjpw")
+position = Vector2(-0.57144594, -22.285715)
+scale = Vector2(1.8541175, 1.3808403)
+texture = SubResource("GradientTexture2D_ffen7")
+script = ExtResource("9_hy57m")
+
+[node name="Darkness" type="Sprite2D" parent="Guy"]
+visible = false
+material = SubResource("ShaderMaterial_ilggv")
+position = Vector2(40.571404, -7.9999905)
+scale = Vector2(1.8110924, 1.3808404)
+texture = SubResource("GradientTexture2D_ffen7")
+script = ExtResource("9_hy57m")
+
+[connection signal="body_entered" from="Guy/Candle/Area2D" to="Guy/Candle" method="_on_area_2d_body_entered"]

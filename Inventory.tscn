@@ -1,32 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://byfkuxdl1xxau"]
+[gd_scene load_steps=16 format=3 uid="uid://byfkuxdl1xxau"]
 
-[ext_resource type="Texture2D" uid="uid://v2fmd0pm7qf4" path="res://Inventory.png" id="1_r6wp5"]
-[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://addons/dialogic/manaspc.ttf" id="2_rejiv"]
+[ext_resource type="Texture2D" uid="uid://dvaaga5snvnt0" path="res://StatScreens.png" id="1_ki15f"]
+[ext_resource type="Script" uid="uid://ccy5r1h8gxrry" path="res://Inventory.gd" id="2_nwt7c"]
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://manaspc.ttf" id="2_rejiv"]
+[ext_resource type="PackedScene" uid="uid://cfjsxfmkyri2u" path="res://MKCounter.tscn" id="4_jqulp"]
+[ext_resource type="Texture2D" uid="uid://bo4d8y1unu17m" path="res://Candle.png" id="5_3xuxb"]
+[ext_resource type="Texture2D" uid="uid://cni207ivhniqm" path="res://Bomb.png" id="5_arhjh"]
 
-[sub_resource type="GDScript" id="GDScript_hnjdt"]
+[sub_resource type="LabelSettings" id="LabelSettings_jqulp"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control"]
-visible = false
-layout_mode = 3
+[sub_resource type="Animation" id="Animation_ki15f"]
+resource_name = "Cominin"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(147, -197), Vector2(147, -197), Vector2(147, 58)]
+}
+
+[sub_resource type="Animation" id="Animation_jqulp"]
+resource_name = "Inventory"
+
+[sub_resource type="Animation" id="Animation_nwt7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(147, -197)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqulp"]
+_data = {
+&"Cominin": SubResource("Animation_ki15f"),
+&"Inventory": SubResource("Animation_jqulp"),
+&"RESET": SubResource("Animation_nwt7c")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki15f"]
+atlas = ExtResource("1_ki15f")
+region = Rect2(0, 0, 50, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ki15f"]
+font_size = 40
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwt7c"]
+atlas = ExtResource("1_ki15f")
+region = Rect2(0, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqulp"]
+atlas = ExtResource("1_ki15f")
+region = Rect2(0, 64, 48, 32)
+
+[node name="Invent Tory" type="CanvasLayer"]
+layer = 17
+script = ExtResource("2_nwt7c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_hnjdt")
-
-[node name="Inventory" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(582.556, 320)
-scale = Vector2(9.05556, 9.05556)
-texture = ExtResource("1_r6wp5")
+color = Color(0.078431375, 0.078431375, 0.078431375, 0.8)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 836.0
-offset_top = 21.0
-offset_right = 1152.0
-offset_bottom = 61.0
+offset_left = 147.0
+offset_top = -197.0
+offset_right = 463.0
+offset_bottom = -157.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 60
@@ -34,3 +91,127 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_rejiv")
 theme_override_font_sizes/font_size = 40
 text = "Inventory"
+label_settings = SubResource("LabelSettings_jqulp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jqulp")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 2.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 64
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+current_tab = 1
+tabs_visible = false
+use_hidden_tabs_for_min_size = true
+
+[node name="Inventory" type="TextureRect" parent="MarginContainer/TabContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_ki15f")
+metadata/_tab_index = 0
+
+[node name="Bomb" type="Sprite2D" parent="MarginContainer/TabContainer/Inventory"]
+position = Vector2(108, 168)
+scale = Vector2(0.79999757, 0.79999757)
+texture = ExtResource("5_arhjh")
+hframes = 4
+vframes = 4
+
+[node name="Candle" type="Sprite2D" parent="MarginContainer/TabContainer/Inventory"]
+position = Vector2(266, 170)
+texture = ExtResource("5_3xuxb")
+hframes = 2
+vframes = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Inventory"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 32.0
+offset_right = 330.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("2_rejiv")
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+label_settings = SubResource("LabelSettings_ki15f")
+
+[node name="BombCounter" type="Label" parent="MarginContainer/TabContainer/Inventory"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 191.0
+offset_right = 180.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("2_rejiv")
+theme_override_font_sizes/font_size = 21
+text = "0"
+
+[node name="CandleCounter" type="Label" parent="MarginContainer/TabContainer/Inventory"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 187.0
+offset_right = 342.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("2_rejiv")
+theme_override_font_sizes/font_size = 21
+text = "0"
+
+[node name="Map and Stats" type="TextureRect" parent="MarginContainer/TabContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nwt7c")
+metadata/_tab_index = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/TabContainer/Map and Stats"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 27.0
+offset_right = 356.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_rejiv")
+theme_override_font_sizes/font_size = 41
+text = "Your Level"
+label_settings = SubResource("LabelSettings_ki15f")
+
+[node name="MasterKey" parent="MarginContainer/TabContainer/Map and Stats" instance=ExtResource("4_jqulp")]
+layout_mode = 0
+offset_left = -333.0
+offset_top = 136.99998
+offset_right = -333.0
+offset_bottom = 136.99998
+
+[node name="Character" type="TextureRect" parent="MarginContainer/TabContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_jqulp")
+metadata/_tab_index = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/TabContainer/Character"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 39.0
+offset_right = 381.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("2_rejiv")
+theme_override_font_sizes/font_size = 60
+text = "Character"
+label_settings = SubResource("LabelSettings_ki15f")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

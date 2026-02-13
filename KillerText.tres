@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DialogicStyle" load_steps=19 format=3 uid="uid://wmbiirl1u73a"]
 
-[ext_resource type="Script" uid="uid://8nqnlmf5elm6" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_8g850"]
+[ext_resource type="Script" uid="uid://8nqnlmf5elm6" path="res://Resources/dialogic_style_layer.gd" id="1_8g850"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_d5wpq"]
 [ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_tb7kw"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_36rao"]
@@ -9,53 +9,45 @@
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_5a4a6"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_xpf1b"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_tmvvr"]
-[ext_resource type="Script" uid="uid://bdwdcyqph2nl2" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_hgnko"]
+[ext_resource type="Script" uid="uid://bdwdcyqph2nl2" path="res://Resources/dialogic_style.gd" id="10_hgnko"]
 
 [sub_resource type="Resource" id="Resource_nuu52"]
 script = ExtResource("1_8g850")
 scene = ExtResource("2_d5wpq")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_rg767"]
 script = ExtResource("1_8g850")
 scene = ExtResource("3_tb7kw")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_kyrpp"]
 script = ExtResource("1_8g850")
 scene = ExtResource("4_36rao")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_wcye2"]
 script = ExtResource("1_8g850")
 scene = ExtResource("5_7ykh4")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_ssae0"]
 script = ExtResource("1_8g850")
 scene = ExtResource("6_tuyu6")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_glmha"]
 script = ExtResource("1_8g850")
 scene = ExtResource("7_5a4a6")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_ew6sw"]
 script = ExtResource("1_8g850")
 scene = ExtResource("8_xpf1b")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_ot3bf"]
 script = ExtResource("1_8g850")
 scene = ExtResource("9_tmvvr")
-overrides = {}
 
 [resource]
 script = ExtResource("10_hgnko")
 name = "KillerText"
 base_overrides = {
-"global_font": "\"res://addons/dialogic/manaspc.ttf\""
+"global_font": "\"res://manaspc.ttf\""
 }
 layers = Array[ExtResource("1_8g850")]([SubResource("Resource_nuu52"), SubResource("Resource_rg767"), SubResource("Resource_kyrpp"), SubResource("Resource_wcye2"), SubResource("Resource_ssae0"), SubResource("Resource_glmha"), SubResource("Resource_ew6sw"), SubResource("Resource_ot3bf")])
 metadata/_latest_layer = -1

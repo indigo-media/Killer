@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://be30br2a1sjrk"]
 
 [ext_resource type="Script" uid="uid://wv7085aebyxu" path="res://TitleScreen.gd" id="1_ofply"]
-[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://addons/dialogic/manaspc.ttf" id="2_xecc0"]
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://manaspc.ttf" id="2_xecc0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xyau2"]
 font = ExtResource("2_xecc0")

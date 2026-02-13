@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://d15sp7fks427g"
+path="res://.godot/imported/snap.sfxr-0ff16ff2a764a070deb2d948a4149d36.sample"
+
+[deps]
+
+source_file="res://snap.sfxr"
+dest_files=["res://.godot/imported/snap.sfxr-0ff16ff2a764a070deb2d948a4149d36.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

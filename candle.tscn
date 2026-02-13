@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://disps1bqm3wns"]
+
+[ext_resource type="Texture2D" uid="uid://sdefeyy76ssd" path="res://Candle1.png" id="1_yf3lx"]
+[ext_resource type="Texture2D" uid="uid://rr4n5dnp8h40" path="res://Candle2.png" id="2_2njjd"]
+[ext_resource type="Script" uid="uid://cuh3nafp8rt3f" path="res://candle.gd" id="2_wmlv8"]
+[ext_resource type="Texture2D" uid="uid://dy4aqibw6r83k" path="res://Candle3.png" id="3_8kcob"]
+[ext_resource type="Texture2D" uid="uid://c1pfyg1drvo8a" path="res://Candle4.png" id="4_bcrd8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcgl6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bcrd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8kcob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yf3lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2njjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2njjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bcrd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8kcob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yf3lx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mouko"]
+radius = 29.999998
+height = 86.383575
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yf3lx"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_2njjd"]
+colors = PackedColorArray(0.61, 0.55550665, 0.2013, 1, 0.96, 0.4032, 0.4032, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8kcob"]
+gradient = SubResource("Gradient_2njjd")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bcrd8"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -20, 0)
+scale_min = 8.0
+scale_max = 8.0
+color = Color(1, 1, 1, 0.14117648)
+
+[node name="Candle" type="AnimatedSprite2D"]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(1.2166667, 1.2166666)
+sprite_frames = SubResource("SpriteFrames_tcgl6")
+autoplay = "default"
+frame_progress = 0.108580895
+script = ExtResource("2_wmlv8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.0547943, -0.36986053)
+shape = SubResource("CapsuleShape2D_mouko")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_yf3lx")
+position = Vector2(1.6438355, -27.123293)
+texture = SubResource("GradientTexture2D_8kcob")
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bcrd8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

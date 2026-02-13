@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://btppuno11rrs"]
 
-[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://addons/dialogic/manaspc.ttf" id="1_ibqia"]
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://manaspc.ttf" id="1_ibqia"]
 [ext_resource type="Script" uid="uid://d110kljxot0xl" path="res://TransitionHighlandManor.gd" id="1_ojgmd"]
 
 [sub_resource type="Theme" id="Theme_efbdh"]
@@ -105,7 +105,7 @@ text = "Highland Manor"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tk0ty")
+&"": SubResource("AnimationLibrary_tk0ty")
 }
 autoplay = "Transition1"
 

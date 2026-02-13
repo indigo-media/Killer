@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bokj63lg7xdm4"]
+
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://manaspc.ttf" id="1_qbq75"]
+
+[resource]
+default_font = ExtResource("1_qbq75")

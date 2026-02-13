@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwhx6y3t8l1i0"]
+[gd_scene load_steps=15 format=3 uid="uid://cwhx6y3t8l1i0"]
 
 [ext_resource type="Script" uid="uid://c0r2ewnr2lpa8" path="res://highland_manor_entrance.gd" id="1_k0hst"]
 [ext_resource type="Texture2D" uid="uid://bibfv4ahyu7de" path="res://Foyer.png" id="1_lju2t"]
@@ -26,6 +26,9 @@ distance = -649.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmkos"]
 size = Vector2(127, 181)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0hst"]
+size = Vector2(246.5, 42.5)
+
 [sub_resource type="Curve2D" id="Curve2D_qpp54"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 368, 293, 0, 0, 0, 0, 480, 291, 0, 0, 0, 0, 483, 141, 0, 0, 0, 0, 734, 136, 0, 0, 0, 0, 734, 303, 0, 0, 0, 0, 840, 302)
@@ -33,6 +36,7 @@ _data = {
 point_count = 6
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(1, -1)
 script = ExtResource("1_k0hst")
 
 [node name="NewPiskel-1_png(5)" type="Sprite2D" parent="."]
@@ -75,6 +79,10 @@ script = ExtResource("5_7e1ih")
 [node name="Plinth" type="CollisionShape2D" parent="Plinth"]
 position = Vector2(596.5, 280.5)
 shape = SubResource("RectangleShape2D_wmkos")
+
+[node name="Enterance" type="CollisionShape2D" parent="Plinth"]
+position = Vector2(1424, 58)
+shape = SubResource("RectangleShape2D_k0hst")
 
 [node name="Door2" parent="." instance=ExtResource("4_5gtj1")]
 position = Vector2(281, 294)

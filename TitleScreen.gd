@@ -3,6 +3,7 @@ extends Control
 var deleteMode = false
 
 func _ready() -> void:
+	onLevel.gameState = -1
 	$VBoxContainer/Play.grab_focus()
 	for i in range(1, 5):
 		var file = FileAccess.open("user://save_game%d.dat" %i, FileAccess.READ)
@@ -16,8 +17,7 @@ func _ready() -> void:
 			saveButton.set_meta("dest", Destination)
 			saveButton.set_meta ("Gamename", Gamename)
 			saveButton.set_meta ("charactertype", charactertype)
-
-
+			
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

@@ -9,7 +9,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_atbvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1pgo"]
-size = Vector2(46, 102)
+size = Vector2(46, 69.28572)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atbvg"]
 atlas = ExtResource("4_cxxw8")
@@ -229,6 +229,8 @@ animation = &"Idle (Down)"
 frame_progress = 0.688265
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.357141)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_c1pgo")
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
@@ -254,3 +256,8 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 2
 stream = ExtResource("5_cxxw8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="hiding cooldown" type="Timer" parent="."]
+one_shot = true
