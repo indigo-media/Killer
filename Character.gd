@@ -34,6 +34,8 @@ func _physics_process(_delta: float) -> void:
 			
 		else:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
+			
+		$imWalkingere.playing = directionX != 0 or directionY !=0
 
 		move_and_slide()
 
@@ -73,8 +75,7 @@ func _updateHealth(Damage:int):
 	$CanvasLayer/Health.frame = 9 - Gamedata.Health 
 	if Gamedata.Health < 1:
 		get_tree().paused = true
-		var jumpscare = load(Gamedata.getScaredBro()).instantiate()
-		get_tree().root.add_child(jumpscare)
+		get_tree().change_scene_to_file(Gamedata.getScaredBro())
 	elif  Damage < 0:
 		$Hurt.play()
 		$AnimationPlayer.play("Hurt")

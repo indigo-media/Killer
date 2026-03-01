@@ -66,7 +66,7 @@ polygon = PackedVector2Array(537, 438, 625, 461, 1005, 462, 1002, 408, 650, 410,
 [node name="Door2" parent="." instance=ExtResource("2_aqtry")]
 position = Vector2(166, 325)
 scale = Vector2(1.99086, 0.790282)
-Destination = "res://HorizontalRoomHM2.tscn"
+Destination = "uid://crcd38lkxc6p3"
 
 [node name="Path2D2" parent="." instance=ExtResource("3_bfdat")]
 curve = SubResource("Curve2D_22u10")

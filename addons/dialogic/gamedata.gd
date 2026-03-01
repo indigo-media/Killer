@@ -42,9 +42,12 @@ var bombPlanted = false
 
 var bombPicked = false
 
+var hasHammer = false
+
 signal candleCountChange(count : int)
 var hasCandle = 0:
 	set(value):
+		print(value)
 		hasCandle = value
 		candleCountChange.emit(hasCandle)
 
@@ -55,5 +58,15 @@ func _takeDamage(Damage:int):
 	
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
-	hasBomb = 0
-	hasCandle = 0
+	#hasBomb = 0
+	#hasCandle = 0
+
+func save() -> Dictionary:
+	var saveDict = {
+		"Bomb" : hasBomb,
+		"Candle" : hasCandle,
+		"Hammer" : hasHammer,
+		"MasterKey" : MasterKey
+		
+	}
+	return saveDict

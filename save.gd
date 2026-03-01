@@ -10,4 +10,11 @@ func _on_body_entered(body: Node2D) -> void:
 		file.store_line (Gamedata.charactertype)
 		file.store_line(fanciestName)
 		$AnimationPlayer.play ("SavedGame")
-	
+		saveGame()
+
+func saveGame():
+	var saveFile = FileAccess.open("res://KillerSaveData.txt", FileAccess.WRITE)
+	var gamedata = Gamedata.save()
+	var jsonString = JSON.stringify(gamedata)
+	saveFile.store_line(jsonString)
+	print("Ladies and Gentleman... we gotem")
