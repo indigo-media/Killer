@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://dakqn2o7m8t8g" path="res://Troll.png" id="7_vy06t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p2n6"]
-bg_color = Color(0.41951287, 0.6821127, 0.2689254, 1)
+bg_color = Color(0.419513, 0.682113, 0.268925, 1)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-border_color = Color(0.26444712, 0.46832442, 0.28128585, 1)
+border_color = Color(0.264447, 0.468324, 0.281286, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -66,7 +66,7 @@ offset_bottom = 65.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_nx4m6")
 theme_override_font_sizes/font_size = 40
-text = "Your Character's Name:"
+text = "Your Character:"
 
 [node name="Brother" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -114,7 +114,7 @@ popup/item_3/id = 3
 [node name="Normal" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.051000003
+anchor_right = 0.051
 anchor_bottom = 0.035
 offset_left = 615.0
 offset_top = 285.0
@@ -124,7 +124,7 @@ offset_bottom = 285.32
 [node name="Hard" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.051000003
+anchor_right = 0.051
 anchor_bottom = 0.035
 offset_left = 615.0
 offset_top = 285.0
@@ -134,7 +134,7 @@ offset_bottom = 285.32
 [node name="Incredible" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.051000003
+anchor_right = 0.051
 anchor_bottom = 0.035
 offset_left = 615.0
 offset_top = 285.0
@@ -144,7 +144,7 @@ offset_bottom = 285.32
 [node name="Troll" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.051000003
+anchor_right = 0.051
 anchor_bottom = 0.035
 offset_left = 613.0
 offset_top = 284.0
