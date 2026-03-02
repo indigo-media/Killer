@@ -23,6 +23,21 @@ distance = 171.0
 normal = Vector2(-1, 0)
 distance = -1034.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udoyv"]
+size = Vector2(609, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k037r"]
+size = Vector2(87.5, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t8hk"]
+size = Vector2(203, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osjsb"]
+size = Vector2(437.5, 123.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbwww"]
+size = Vector2(95.75, 114.75)
+
 [sub_resource type="Curve2D" id="Curve2D_22u10"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 183.523, 331, 0, 0, 0, 0, 432.941, 332, 0, 0, 0, 0, 964.571, 332)
@@ -58,6 +73,26 @@ shape = SubResource("WorldBoundaryShape2D_cpkm5")
 [node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=194747158]
 position = Vector2(-30, 7)
 shape = SubResource("WorldBoundaryShape2D_7qhwc")
+
+[node name="East2" type="CollisionShape2D" parent="StaticBody2D" unique_id=245298308]
+position = Vector2(689, 588)
+shape = SubResource("RectangleShape2D_udoyv")
+
+[node name="East3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1356001440]
+position = Vector2(949.75, 529)
+shape = SubResource("RectangleShape2D_k037r")
+
+[node name="East4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1364516816]
+position = Vector2(251.5, 531.5)
+shape = SubResource("RectangleShape2D_3t8hk")
+
+[node name="East5" type="CollisionShape2D" parent="StaticBody2D" unique_id=340404701]
+position = Vector2(763.25, 66.25)
+shape = SubResource("RectangleShape2D_osjsb")
+
+[node name="East6" type="CollisionShape2D" parent="StaticBody2D" unique_id=2067219573]
+position = Vector2(935.125, 185.625)
+shape = SubResource("RectangleShape2D_rbwww")
 
 [node name="Door2" parent="." unique_id=204048446 instance=ExtResource("2_ctad4")]
 position = Vector2(166, 325)

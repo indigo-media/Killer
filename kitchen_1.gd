@@ -7,3 +7,4 @@ func _ready() -> void:
 		return
 	else:
 		$Node2D3.call_deferred("queue_free")
+	

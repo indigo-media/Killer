@@ -205,8 +205,9 @@ theme_override_font_sizes/font_size = 30
 text = "Tools:"
 
 [node name="Hammer" type="Sprite2D" parent="MarginContainer/TabContainer/Map and Stats" unique_id=2051435289]
-position = Vector2(155, 225)
-scale = Vector2(3.680001, 3.680001)
+modulate = Color(1, 1, 1, 0.29803923)
+position = Vector2(128, 227)
+scale = Vector2(4.334999, 4.334999)
 texture = ExtResource("7_0261c")
 hframes = 2
 vframes = 3

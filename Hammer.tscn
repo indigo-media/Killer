@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dkiq8n6w6kacq" path="res://hammer_2.sfxr" id="4_0xno1"]
 [ext_resource type="AudioStream" uid="uid://dwpqqh5ipyipi" path="res://hammer_3.sfxr" id="5_tvrcd"]
 [ext_resource type="Texture2D" uid="uid://btxoa5dwgdofo" path="res://Hammer (1).png" id="6_663uh"]
-[ext_resource type="Texture2D" uid="uid://dpogsudmxbled" path="res://Hammer (2).png" id="7_wywa4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqgrq"]
 atlas = ExtResource("2_663uh")
@@ -220,99 +219,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4tq5"]
 size = Vector2(11.069519, 21.122993)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwtf0"]
-atlas = ExtResource("2_663uh")
-region = Rect2(0, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4jin"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(0, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5nahl"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(20, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_25os5"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(40, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bsh68"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(0, 20, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_in6fr"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(20, 20, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtsrq"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(40, 20, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7viwe"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(0, 40, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tnsof"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(20, 40, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_amg53"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(40, 40, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1p3or"]
-atlas = ExtResource("7_wywa4")
-region = Rect2(0, 60, 20, 20)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xpacs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fwtf0")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r4jin")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5nahl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_25os5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bsh68")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_in6fr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtsrq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7viwe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tnsof")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_amg53")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1p3or")
-}],
-"loop": false,
-"name": &"Swing",
-"speed": 8.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtenk"]
-size = Vector2(71, 35.5)
-
 [sub_resource type="Animation" id="Animation_663uh"]
 length = 0.001
 tracks/0/type = "value"
@@ -374,22 +280,6 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/GrabArea" unique_id=554522570]
 position = Vector2(2.7807484, -0.21390374)
 shape = SubResource("RectangleShape2D_g4tq5")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897489132]
-visible = false
-position = Vector2(-1.5258789e-05, 0.99998474)
-scale = Vector2(6.0999994, 6.0999994)
-sprite_frames = SubResource("SpriteFrames_xpacs")
-animation = &"Swing"
-autoplay = "Idle"
-
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=60904584]
-position = Vector2(-10, -10)
-scale = Vector2(0.16393445, 0.16393445)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=1184409764]
-position = Vector2(59.5, 23.25)
-shape = SubResource("RectangleShape2D_dtenk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=10185032]
 libraries/ = SubResource("AnimationLibrary_wywa4")

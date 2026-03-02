@@ -62,4 +62,6 @@ func _input(event: InputEvent) -> void:
 			visible = not visible
 			Gamedata.player.islocked = visible
 
-			
+func hammerShow():
+	Gamedata.hasHammer=true
+	$"MarginContainer/TabContainer/Map and Stats/Hammer".modulate.a = 1

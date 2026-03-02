@@ -7,6 +7,8 @@ var islocked = false
 
 var ishiding = false
 
+var directionX
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -65,6 +67,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Menu"):
 		var clone = preload("res://Exit.tscn").instantiate()
 		get_tree().root.add_child(clone)
+	if event.is_action_pressed("Hammer"):
+		if Gamedata.hasHammer == true:
+			$AnimatedSprite2D2.visible = true
+			if directionX < 0:
+				$AnimatedSprite2D.play("Left")
+			if directionX > 0:
+				$AnimatedSprite2D.play("Right")
+			$AnimatedSprite2D2.play("default")
+			await $AnimatedSprite2D2.animation_finished 
+			$AnimatedSprite2D2.visible = false
+		else:
+			return
 			
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = load (Gamedata.charactertype)
