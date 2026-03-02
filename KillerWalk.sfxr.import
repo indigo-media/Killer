@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://cnovdevxnn5wv"
+path="res://.godot/imported/KillerWalk.sfxr-9c1e80a95029c9ef7b08be581a530b57.sample"
+
+[deps]
+
+source_file="res://KillerWalk.sfxr"
+dest_files=["res://.godot/imported/KillerWalk.sfxr-9c1e80a95029c9ef7b08be581a530b57.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

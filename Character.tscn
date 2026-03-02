@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://ddmofayag5ey4"]
+[gd_scene format=3 uid="uid://ddmofayag5ey4"]
 
 [ext_resource type="Script" uid="uid://dr8jdmb24v03d" path="res://Character.gd" id="1_slmq1"]
 [ext_resource type="SpriteFrames" uid="uid://xp37guyn37n2" path="res://Sister.tres" id="2_0w3mg"]
 [ext_resource type="AudioStream" uid="uid://cvwk24kqohtv4" path="res://hitHurt.wav" id="3_atbvg"]
 [ext_resource type="Texture2D" uid="uid://cl7f62nehdftk" path="res://Health.png" id="4_cxxw8"]
 [ext_resource type="AudioStream" uid="uid://cio2fqc6l72cj" path="res://DIE.wav" id="5_cxxw8"]
+[ext_resource type="AudioStream" uid="uid://dk02bbnd8jw2w" path="res://PlayerWalk.sfxr" id="6_e24yd"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_atbvg"]
 
@@ -215,12 +216,12 @@ _data = {
 &"RESET": SubResource("Animation_cxxw8")
 }
 
-[node name="Guy" type="CharacterBody2D"]
+[node name="Guy" type="CharacterBody2D" unique_id=11020634]
 scale = Vector2(1.75, 1.75)
 motion_mode = 1
 script = ExtResource("1_slmq1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=198881129]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_atbvg")
 scale = Vector2(6.1, 6.25)
@@ -228,36 +229,39 @@ sprite_frames = ExtResource("2_0w3mg")
 animation = &"Idle (Down)"
 frame_progress = 0.688265
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062440408]
 position = Vector2(0, 16.357141)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_c1pgo")
 
-[node name="Hurt" type="AudioStreamPlayer" parent="."]
+[node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=1236897595]
 stream = ExtResource("3_atbvg")
 volume_db = -5.0
 pitch_scale = 1.5
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1164585797]
 
-[node name="Health" type="AnimatedSprite2D" parent="CanvasLayer"]
+[node name="Health" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1471853641]
 texture_filter = 1
 position = Vector2(149.88, 47.97)
 scale = Vector2(8.5075, 8.5075)
 sprite_frames = SubResource("SpriteFrames_5gddd")
 animation = &"Health"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1647994112]
 process_mode = 3
-libraries = {
-&"": SubResource("AnimationLibrary_e24yd")
-}
+libraries/ = SubResource("AnimationLibrary_e24yd")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=194057631]
 process_mode = 2
 stream = ExtResource("5_cxxw8")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=106164429]
 
-[node name="hiding cooldown" type="Timer" parent="."]
+[node name="hiding cooldown" type="Timer" parent="." unique_id=367819408]
 one_shot = true
+
+[node name="imWalkingere" type="AudioStreamPlayer" parent="." unique_id=870945044]
+stream = ExtResource("6_e24yd")
+volume_db = -80.0
+autoplay = true

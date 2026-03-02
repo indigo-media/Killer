@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b75d64ldq0703"]
+[gd_scene format=3 uid="uid://b75d64ldq0703"]
 
 [ext_resource type="Script" uid="uid://dp03mdgqf0gku" path="res://triprope.gd" id="1_aux00"]
 [ext_resource type="Texture2D" uid="uid://bdcs7pjoeiyhe" path="res://Triprope 2.png" id="1_h4epc"]
@@ -77,31 +77,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4epc"]
 size = Vector2(195, 264)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=374678838]
 script = ExtResource("1_aux00")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1475441977]
 position = Vector2(-1, 1)
 scale = Vector2(7.9112906, 7.9112906)
 sprite_frames = SubResource("SpriteFrames_veutg")
 animation = &"Sideways"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1217773078]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=41726607]
 position = Vector2(14, 1)
 shape = SubResource("RectangleShape2D_h4epc")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=270430963]
 stream = ExtResource("3_y1hto")
-volume_db = 9.986
+volume_db = -2.779
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=76992757]
 stream = ExtResource("4_bs7be")
-volume_db = 9.986
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+volume_db = -5.187
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

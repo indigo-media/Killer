@@ -1,0 +1,2 @@
+{"Bomb":0,"Candle":0,"Hammer":false,"MasterKey":0}
+  

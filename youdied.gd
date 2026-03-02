@@ -20,5 +20,5 @@ func _on_respawn_pressed() -> void:
 		TransitionFull.transition(Destination)
 	else:
 		TransitionFull.transition("res://Bedroom.tscn")
-		queue_free()
+	queue_free()
 	Gamedata.Health = 9

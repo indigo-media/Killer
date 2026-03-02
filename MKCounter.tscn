@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfjsxfmkyri2u"]
+[gd_scene format=3 uid="uid://cfjsxfmkyri2u"]
 
 [ext_resource type="Script" uid="uid://cxtcsqq683sfi" path="res://mk_counter.gd" id="1_1a4wq"]
 [ext_resource type="Texture2D" uid="uid://bj1o3irwowu0h" path="res://Master Key.png" id="1_5m7kf"]
 [ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://manaspc.ttf" id="2_1a4wq"]
 
-[node name="MasterKey" type="Control"]
+[node name="MasterKey" type="Control" unique_id=1230418801]
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(1.7943583, 1.7954643)
 script = ExtResource("1_1a4wq")
 
-[node name="Master Key" type="Sprite2D" parent="."]
+[node name="Master Key" type="Sprite2D" parent="." unique_id=1365531693]
 position = Vector2(617.49097, 31.189705)
 scale = Vector2(3.8149054, 3.8149054)
 texture = ExtResource("1_5m7kf")
 hframes = 3
 vframes = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1589282183]
 texture_filter = 1
 layout_mode = 0
 offset_left = 568.44836

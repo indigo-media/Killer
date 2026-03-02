@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwhx6y3t8l1i0"]
+[gd_scene format=3 uid="uid://cwhx6y3t8l1i0"]
 
 [ext_resource type="Script" uid="uid://c0r2ewnr2lpa8" path="res://highland_manor_entrance.gd" id="1_k0hst"]
 [ext_resource type="Texture2D" uid="uid://bibfv4ahyu7de" path="res://Foyer.png" id="1_lju2t"]
@@ -35,61 +35,61 @@ _data = {
 }
 point_count = 6
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1938431254]
 position = Vector2(1, -1)
 script = ExtResource("1_k0hst")
 
-[node name="NewPiskel-1_png(5)" type="Sprite2D" parent="."]
+[node name="NewPiskel-1_png(5)" type="Sprite2D" parent="." unique_id=1264939276]
 texture_filter = 1
 position = Vector2(575, 323)
 scale = Vector2(10.8333, 10.8333)
 texture = ExtResource("1_lju2t")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=329874951]
 
-[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=715391811]
 shape = SubResource("WorldBoundaryShape2D_4wkic")
 
-[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=1851626818]
 shape = SubResource("WorldBoundaryShape2D_m7n1m")
 
-[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=796450803]
 shape = SubResource("WorldBoundaryShape2D_kwyad")
 
-[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=1181887096]
 rotation = -0.00357026
 shape = SubResource("WorldBoundaryShape2D_wwhvm")
 
-[node name="Guy" parent="." instance=ExtResource("2_wvape")]
+[node name="Guy" parent="." unique_id=264731009 instance=ExtResource("2_wvape")]
 position = Vector2(597, 486)
 
-[node name="Node2D" parent="." instance=ExtResource("3_7iuj4")]
+[node name="Node2D" parent="." unique_id=1347570598 instance=ExtResource("3_7iuj4")]
 position = Vector2(377, 259)
 Destination = "res://Highland_Manor_Entrance.tscn"
 fanciestName = "HLM"
 
-[node name="Door" parent="." instance=ExtResource("4_5gtj1")]
+[node name="Door" parent="." unique_id=209815998 instance=ExtResource("4_5gtj1")]
 position = Vector2(863, 295)
 scale = Vector2(2.06816, 0.919624)
 Destination = "res://SpikeHall1.tscn"
 
-[node name="Plinth" type="Area2D" parent="."]
+[node name="Plinth" type="Area2D" parent="." unique_id=246576378]
 script = ExtResource("5_7e1ih")
 
-[node name="Plinth" type="CollisionShape2D" parent="Plinth"]
+[node name="Plinth" type="CollisionShape2D" parent="Plinth" unique_id=434153657]
 position = Vector2(596.5, 280.5)
 shape = SubResource("RectangleShape2D_wmkos")
 
-[node name="Enterance" type="CollisionShape2D" parent="Plinth"]
+[node name="Enterance" type="CollisionShape2D" parent="Plinth" unique_id=637829301]
 position = Vector2(1424, 58)
 shape = SubResource("RectangleShape2D_k0hst")
 
-[node name="Door2" parent="." instance=ExtResource("4_5gtj1")]
+[node name="Door2" parent="." unique_id=1017589216 instance=ExtResource("4_5gtj1")]
 position = Vector2(281, 294)
 scale = Vector2(-2.01587, 0.90729)
 Destination = "res://HidingRoom1.tscn"
 
-[node name="Path2D2" parent="." instance=ExtResource("6_ns3r0")]
+[node name="Path2D2" parent="." unique_id=422350341 instance=ExtResource("6_ns3r0")]
 curve = SubResource("Curve2D_qpp54")
 
 [connection signal="body_entered" from="Plinth" to="Plinth" method="_on_body_entered"]

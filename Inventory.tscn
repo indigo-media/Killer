@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://byfkuxdl1xxau"]
+[gd_scene format=3 uid="uid://byfkuxdl1xxau"]
 
 [ext_resource type="Texture2D" uid="uid://dvaaga5snvnt0" path="res://StatScreens.png" id="1_ki15f"]
 [ext_resource type="Script" uid="uid://ccy5r1h8gxrry" path="res://Inventory.gd" id="2_nwt7c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfjsxfmkyri2u" path="res://MKCounter.tscn" id="4_jqulp"]
 [ext_resource type="Texture2D" uid="uid://bo4d8y1unu17m" path="res://Candle.png" id="5_3xuxb"]
 [ext_resource type="Texture2D" uid="uid://cni207ivhniqm" path="res://Bomb.png" id="5_arhjh"]
+[ext_resource type="Texture2D" uid="uid://dan2spxd700r5" path="res://Hammer.png" id="7_0261c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jqulp"]
 font_size = 40
@@ -67,11 +68,11 @@ region = Rect2(0, 32, 48, 32)
 atlas = ExtResource("1_ki15f")
 region = Rect2(0, 64, 48, 32)
 
-[node name="Invent Tory" type="CanvasLayer"]
+[node name="Invent Tory" type="CanvasLayer" unique_id=472801829]
 layer = 17
 script = ExtResource("2_nwt7c")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1723726399]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -79,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.078431375, 0.078431375, 0.078431375, 0.8)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=193456217]
 offset_left = 147.0
 offset_top = -197.0
 offset_right = 463.0
@@ -93,12 +94,10 @@ theme_override_font_sizes/font_size = 40
 text = "Inventory"
 label_settings = SubResource("LabelSettings_jqulp")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_jqulp")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=161848058]
+libraries/ = SubResource("AnimationLibrary_jqulp")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=950943016]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -113,33 +112,33 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 64
 
-[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+[node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=1405025864]
 layout_mode = 2
 current_tab = 1
 tabs_visible = false
 use_hidden_tabs_for_min_size = true
 
-[node name="Inventory" type="TextureRect" parent="MarginContainer/TabContainer"]
+[node name="Inventory" type="TextureRect" parent="MarginContainer/TabContainer" unique_id=1315295629]
 visible = false
 texture_filter = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_ki15f")
 metadata/_tab_index = 0
 
-[node name="Bomb" type="Sprite2D" parent="MarginContainer/TabContainer/Inventory"]
+[node name="Bomb" type="Sprite2D" parent="MarginContainer/TabContainer/Inventory" unique_id=220603737]
 position = Vector2(108, 168)
 scale = Vector2(0.79999757, 0.79999757)
 texture = ExtResource("5_arhjh")
 hframes = 4
 vframes = 4
 
-[node name="Candle" type="Sprite2D" parent="MarginContainer/TabContainer/Inventory"]
+[node name="Candle" type="Sprite2D" parent="MarginContainer/TabContainer/Inventory" unique_id=1282623339]
 position = Vector2(266, 170)
 texture = ExtResource("5_3xuxb")
 hframes = 2
 vframes = 2
 
-[node name="Label" type="Label" parent="MarginContainer/TabContainer/Inventory"]
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Inventory" unique_id=1361403598]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 32.0
@@ -150,7 +149,7 @@ theme_override_font_sizes/font_size = 60
 text = "Inventory"
 label_settings = SubResource("LabelSettings_ki15f")
 
-[node name="BombCounter" type="Label" parent="MarginContainer/TabContainer/Inventory"]
+[node name="BombCounter" type="Label" parent="MarginContainer/TabContainer/Inventory" unique_id=497693426]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 191.0
@@ -160,7 +159,7 @@ theme_override_fonts/font = ExtResource("2_rejiv")
 theme_override_font_sizes/font_size = 21
 text = "0"
 
-[node name="CandleCounter" type="Label" parent="MarginContainer/TabContainer/Inventory"]
+[node name="CandleCounter" type="Label" parent="MarginContainer/TabContainer/Inventory" unique_id=841010039]
 layout_mode = 0
 offset_left = 302.0
 offset_top = 187.0
@@ -170,13 +169,13 @@ theme_override_fonts/font = ExtResource("2_rejiv")
 theme_override_font_sizes/font_size = 21
 text = "0"
 
-[node name="Map and Stats" type="TextureRect" parent="MarginContainer/TabContainer"]
+[node name="Map and Stats" type="TextureRect" parent="MarginContainer/TabContainer" unique_id=1776809246]
 texture_filter = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_nwt7c")
 metadata/_tab_index = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/TabContainer/Map and Stats"]
+[node name="Label2" type="Label" parent="MarginContainer/TabContainer/Map and Stats" unique_id=2088590375]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 27.0
@@ -187,21 +186,39 @@ theme_override_font_sizes/font_size = 41
 text = "Your Level"
 label_settings = SubResource("LabelSettings_ki15f")
 
-[node name="MasterKey" parent="MarginContainer/TabContainer/Map and Stats" instance=ExtResource("4_jqulp")]
+[node name="MasterKey" parent="MarginContainer/TabContainer/Map and Stats" unique_id=1816906522 instance=ExtResource("4_jqulp")]
 layout_mode = 0
 offset_left = -333.0
 offset_top = 136.99998
 offset_right = -333.0
 offset_bottom = 136.99998
 
-[node name="Character" type="TextureRect" parent="MarginContainer/TabContainer"]
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Map and Stats" unique_id=1904512953]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 141.0
+offset_right = 252.0
+offset_bottom = 181.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_rejiv")
+theme_override_font_sizes/font_size = 30
+text = "Tools:"
+
+[node name="Hammer" type="Sprite2D" parent="MarginContainer/TabContainer/Map and Stats" unique_id=2051435289]
+position = Vector2(155, 225)
+scale = Vector2(3.680001, 3.680001)
+texture = ExtResource("7_0261c")
+hframes = 2
+vframes = 3
+
+[node name="Character" type="TextureRect" parent="MarginContainer/TabContainer" unique_id=275585952]
 visible = false
 texture_filter = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_jqulp")
 metadata/_tab_index = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/TabContainer/Character"]
+[node name="Label3" type="Label" parent="MarginContainer/TabContainer/Character" unique_id=1298148561]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 39.0
@@ -212,6 +229,6 @@ theme_override_font_sizes/font_size = 60
 text = "Character"
 label_settings = SubResource("LabelSettings_ki15f")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1288116885]
 wait_time = 0.2
 one_shot = true
