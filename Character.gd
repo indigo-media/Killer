@@ -70,11 +70,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Hammer"):
 		if Gamedata.hasHammer == true:
 			$AnimatedSprite2D2.visible = true
-			if directionX < 0:
-				$AnimatedSprite2D.play("Left")
-			if directionX > 0:
-				$AnimatedSprite2D.play("Right")
+			#if directionX < 0:
+			#	$AnimatedSprite2D.play("Left")
+			#if directionX > 0:
+			#	$AnimatedSprite2D.play("Right")
 			$AnimatedSprite2D2.play("default")
+			
 			await $AnimatedSprite2D2.animation_finished 
 			$AnimatedSprite2D2.visible = false
 		else:
