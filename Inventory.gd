@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+#inventory
 @onready var tabs : TabContainer = $"MarginContainer/TabContainer"
 
 		
