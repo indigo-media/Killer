@@ -71,8 +71,8 @@ func _input(event: InputEvent) -> void:
 			islocked = false
 			Gamedata.inAnim = false
 	if event.is_action_pressed("Menu"):
-		var clone = preload("res://Exit.tscn").instantiate()
-		get_tree().root.add_child(clone)
+		var exit = preload("uid://wl3n8edne2xe").instantiate()
+		get_tree().root.add_child(exit)
 	if event.is_action_pressed("Hammer"):
 		if Gamedata.hasHammer == true:
 			$Hammer.visible = true

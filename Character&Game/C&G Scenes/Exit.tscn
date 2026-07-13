@@ -127,11 +127,11 @@ _data = {
 &"fall": SubResource("Animation_v5bdx")
 }
 
-[node name="Control" type="CanvasLayer"]
+[node name="Control" type="CanvasLayer" unique_id=1496547460]
 process_mode = 3
 script = ExtResource("1_v5bdx")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1377756416]
 modulate = Color(0.760784, 0.760784, 0.760784, 0.760784)
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,7 +144,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.172833, 0.172833, 0.172833, 1)
 
-[node name="Continue" type="Button" parent="."]
+[node name="Continue" type="Button" parent="." unique_id=1591016261]
 offset_left = 438.0
 offset_top = -529.0
 offset_right = 709.0
@@ -153,7 +153,7 @@ theme_override_fonts/font = ExtResource("1_vs230")
 theme_override_font_sizes/font_size = 40
 text = "Continue"
 
-[node name="Exit" type="Button" parent="."]
+[node name="Exit" type="Button" parent="." unique_id=580364692]
 offset_left = 438.0
 offset_top = -309.0
 offset_right = 712.0
@@ -163,11 +163,9 @@ theme_override_font_sizes/font_size = 40
 text = "Exit to
  Main Menu"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_sqxco")
-}
-autoplay = "fall"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=799641724]
+libraries/ = SubResource("AnimationLibrary_sqxco")
+autoplay = &"fall"
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

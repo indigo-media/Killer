@@ -26,7 +26,7 @@ func _on_chair_body_entered(body: Node2D) -> void:
 		if Chair == false:
 			$FfHall.play("Chair Out")
 			Chair = true
-			Dialogic.start(preload("res://Yougottakey.dtl"))
+			Dialogic.start(preload("uid://d57ssagq40p8"))
 		else:
 			$FfHall.play("Chair In")
 			Chair = false
@@ -39,7 +39,7 @@ func _on_book_body_entered(body: Node2D) -> void:
 		if Book == false:
 			$FfHall.play("BBOK")
 			Book = true
-			Dialogic.start(preload("res://laBook1.dtl"))
+			Dialogic.start(preload("uid://bji3dtah0mdcg"))
 		else:
 			$FfHall.play("KKOB")
 			Book = false

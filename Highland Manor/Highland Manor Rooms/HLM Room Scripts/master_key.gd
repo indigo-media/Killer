@@ -4,7 +4,7 @@ extends AnimatedSprite2D
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Guy":
 		body.islocked = true
-		Dialogic.start(preload("res://masterKeygottem.dtl"))
+		Dialogic.start(preload("uid://chyw7quk8xrw"))
 		Gamedata.MasterKey += 1
 		Gamedata.keyData.append(uniqueName)
 		self.play("EXPLOSION")

@@ -12,18 +12,18 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	if $LineEdit.text.length() > 0 and $LineEdit.text.length() < 16:
 		Gamedata.gamename = new_text
 		if $CheckButton.button_pressed:
-			Gamedata.charactertype = ("res://Sister.tres")
+			Gamedata.charactertype = "uid://xp37guyn37n2"
 		else:
-			Gamedata.charactertype = ("res://Brother.tres")
-		TransitionFull.transition("res://OpeningScene.tscn")
+			Gamedata.charactertype = "uid://cj5lubocbmxqq"
+		TransitionFull.transition("uid://cnns8ddsiw15g") # opening scene
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		$Brother.texture = load("res://Sister.png")
+		$Brother.texture = load("uid://mx3wspl6goeg")
 		$CheckButton.text = "Sister"
 	else:
 		
-		$Brother.texture = load("res://ActualPlayer.png")
+		$Brother.texture = load("uid://bofuu1jdwsvoo")
 		$CheckButton.text = "Brother"
 
 

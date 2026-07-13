@@ -59,8 +59,8 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Guy":
 		if activated == true:
-			var clone = preload("res://Youdied.tscn").instantiate()
-			get_tree().root.add_child(clone)
+			var youdied = preload("uid://tq3iifmcismo").instantiate()
+			get_tree().root.add_child(youdied)
 			get_tree().paused = true
 
 

@@ -6,7 +6,7 @@ enum room_state {roomIsDark, roomIsLit}
 var mat
 
 func _ready() -> void:
-	Dialogic.start(preload("res://lightsOut.dtl"))
+	Dialogic.start(preload("uid://txvew0cutj4t"))
 	if Gamedata.hasCandle > 0:
 		candle.visible = true
 		$Guy/TheRealDarkness.visible = false

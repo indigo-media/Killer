@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _on_exit_to_main_menu_pressed() -> void:
 	get_tree().paused = false
-	TransitionFull.transition("res://Title.tscn")
+	TransitionFull.transition("uid://be30br2a1sjrk")
 	queue_free()
 
 
@@ -19,6 +19,6 @@ func _on_respawn_pressed() -> void:
 		var Destination = file.get_line() 
 		TransitionFull.transition(Destination)
 	else:
-		TransitionFull.transition("res://Player's House and Neighborhood/Bedroom.tscn")
+		TransitionFull.transition("uid://baws2r3t8klad")
 	queue_free()
 	Gamedata.Health = 9

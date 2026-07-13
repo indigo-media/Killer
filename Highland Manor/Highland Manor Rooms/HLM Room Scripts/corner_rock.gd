@@ -4,7 +4,7 @@ extends Node2D
 func _on_bomb_area_body_entered(body: Node2D) -> void:
 	if body.name == "Guy":
 		if Gamedata.hasBomb > 0:
-			Dialogic.start(preload("res://Bombhasbeenplanted.dtl"))
+			Dialogic.start(preload("uid://06isaxwgqvj0"))
 			Gamedata.hasBomb -= 1
 			await Dialogic.timeline_ended
 			$RockCorner.play("Explosion")
@@ -13,7 +13,7 @@ func _on_bomb_area_body_entered(body: Node2D) -> void:
 			$"Bomb Area/CollisionShape2D".disabled = true
 			Gamedata.blownUprockwall = true
 		else:
-			Dialogic.start(preload("res://notyet.dtl"))
+			Dialogic.start(preload("uid://b73q46brgutuo"))
 
 func _ready() -> void:
 	$RockCorner.play("Before")

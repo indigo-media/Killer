@@ -11,5 +11,5 @@ func _on_continue_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().paused = false
-	TransitionFull.transition("res://Title.tscn")
+	TransitionFull.transition("uid://be30br2a1sjrk")
 	queue_free()

@@ -45,7 +45,8 @@ func _on_save_pressed(savei: int) -> void:
 		var hasNameData = saveButton.text.find(":")
 		Gamedata.savedgame = savei
 		if hasNameData < 0:
-			TransitionFull.transition("res://CreateAChar.tscn")
+			#create a character
+			TransitionFull.transition("uid://do0yxivlnp1bu")
 		else:
 			Gamedata.gamename = (saveButton.get_meta("Gamename"))
 			Gamedata.charactertype = (saveButton.get_meta("charactertype"))

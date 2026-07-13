@@ -8,7 +8,7 @@ func _ready() -> void:
 		$StaticBody2D/Door.locked = true
 		$StaticBody2D/Door2.locked = true
 		$Guy.islocked = true 
-		Dialogic.start(preload("res://HidingRoom1Encounter.dtl"))
+		Dialogic.start(preload("uid://bxruwe4stt2mh"))
 		await Dialogic.timeline_ended
 		Heartbeat.start()
 		$Guy.islocked = false 

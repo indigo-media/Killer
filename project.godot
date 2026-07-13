@@ -54,7 +54,7 @@ directories/dtl_directory={
 "yougottabomb": "res://Highland Manor/Highland Manor Dialouge/yougottabomb.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://KillerText.tres"]
+layout/style_list=["res://Other/KillerText.tres"]
 layout/default_style="res://KillerText.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"

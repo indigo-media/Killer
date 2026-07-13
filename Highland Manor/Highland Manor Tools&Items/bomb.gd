@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 		if body.name == "Guy":
-			Dialogic.start(preload("res://yougottabomb.dtl"))
+			Dialogic.start(preload("uid://b1tbwpyp38ahw"))
 			Gamedata.hasBomb += 1
 			call_deferred("queue_free")
 			

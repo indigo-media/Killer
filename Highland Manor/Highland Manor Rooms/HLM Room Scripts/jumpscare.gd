@@ -7,5 +7,5 @@ func _process(_delta: float) -> void:
 	
 
 func _on_jumpscare_01_animation_finished() -> void:
-	var store = preload("res://Youdied.tscn").instantiate()
-	get_tree().root.add_child(store)
+	var youdied = preload("uid://tq3iifmcismo").instantiate()
+	get_tree().root.add_child(youdied)

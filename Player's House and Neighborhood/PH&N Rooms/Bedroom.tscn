@@ -91,6 +91,7 @@ shape = SubResource("RectangleShape2D_htuju")
 
 [node name="Door" parent="." unique_id=596133877 instance=ExtResource("3_qnju3")]
 position = Vector2(296, 298)
+Destination = "uid://bm01vqj5qgn5h"
 
 [node name="Night Ambience" type="AudioStreamPlayer" parent="." unique_id=439205566]
 stream = ExtResource("4_6y2fv")

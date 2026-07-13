@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func _on_mk_door_body_entered(body: Node2D) -> void:
 	if body.name == "Guy":
-		Dialogic.start(preload("res://MkDoorHLM.dtl"))
+		Dialogic.start(preload("uid://dgiupviwel3sn"))
