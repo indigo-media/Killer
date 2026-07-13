@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bxjne3trq50ys"]
+
+[ext_resource type="Texture2D" uid="uid://565mjwmlj6jc" path="res://Highland Manor/Highland Manor Anims/Hall.png" id="1_6x8mn"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://Other/door.tscn" id="2_1gseh"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character&Game/C&G Scenes/Character.tscn" id="3_6kc1l"]
+[ext_resource type="PackedScene" uid="uid://g5rfl7jukq48" path="res://Highland Manor/Highland Manor Traps/spike.tscn" id="4_4dbu7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oxwna"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8dhuh"]
+normal = Vector2(0, 1)
+distance = 122.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ilvib"]
+distance = -547.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_leytm"]
+normal = Vector2(-1, 0)
+distance = -1150.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NewPiskel-1_png(6)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(575.667, 332.875)
+scale = Vector2(9.55, 9.55)
+texture = ExtResource("1_6x8mn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_oxwna")
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_8dhuh")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ilvib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_leytm")
+
+[node name="Door" parent="." instance=ExtResource("2_1gseh")]
+position = Vector2(27, 310)
+scale = Vector2(1.64267, 0.884813)
+Destination = "res://Highland_Manor_Entrance.tscn"
+
+[node name="Door2" parent="." instance=ExtResource("2_1gseh")]
+position = Vector2(1130, 312)
+scale = Vector2(1.64267, 0.884813)
+Destination = "uid://dnlkv3gpgqy53"
+
+[node name="Guy" parent="." instance=ExtResource("3_6kc1l")]
+position = Vector2(116, 318)
+
+[node name="Spike" parent="." instance=ExtResource("4_4dbu7")]
+position = Vector2(228, 92)
+
+[node name="Spike2" parent="." instance=ExtResource("4_4dbu7")]
+position = Vector2(484, 95)
+
+[node name="Spike3" parent="." instance=ExtResource("4_4dbu7")]
+position = Vector2(741, 95)
+
+[node name="Spike4" parent="." instance=ExtResource("4_4dbu7")]
+position = Vector2(965, 98)
+
+[node name="Sprite2D" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_top = -92.0
+offset_right = 1178.0
+offset_bottom = 115.0
+color = Color(0.113725, 0.113725, 0.113725, 1)

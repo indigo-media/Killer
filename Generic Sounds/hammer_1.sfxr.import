@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://dvto8vtq4v3ll"
+path="res://.godot/imported/hammer_1.sfxr-a0e68cf67134405d47360993a4695146.sample"
+
+[deps]
+
+source_file="res://Generic Sounds/hammer_1.sfxr"
+dest_files=["res://.godot/imported/hammer_1.sfxr-a0e68cf67134405d47360993a4695146.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

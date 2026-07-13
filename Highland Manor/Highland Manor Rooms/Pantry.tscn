@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://j6q5tdr2mxp0"]
+
+[ext_resource type="Texture2D" uid="uid://bkqcsxixe2uch" path="res://Highland Manor/Highland Manor Anims/Pantry.png" id="1_yykwm"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character&Game/C&G Scenes/Character.tscn" id="2_yx2jm"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://Other/door.tscn" id="3_x5iv6"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Highland Manor/Highland Manor Other/Killer Path.tscn" id="4_b5xl4"]
+[ext_resource type="AudioStream" uid="uid://dvto8vtq4v3ll" path="res://Generic Sounds/hammer_1.sfxr" id="5_nw46x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci6fr"]
+atlas = ExtResource("1_yykwm")
+region = Rect2(0, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt6n2"]
+atlas = ExtResource("1_yykwm")
+region = Rect2(60, 0, 60, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76h6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci6fr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt6n2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mthg4"]
+normal = Vector2(0, 1)
+distance = -44.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e1yrx"]
+normal = Vector2(1, 0)
+distance = 309.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mmxr8"]
+normal = Vector2(-1, 0)
+distance = -861.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2khaa"]
+distance = -669.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eup7s"]
+size = Vector2(84, 606)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp7nr"]
+size = Vector2(84, 421)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci6fr"]
+size = Vector2(179, 143.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt6n2"]
+size = Vector2(191.5, 58.75)
+
+[sub_resource type="Curve2D" id="Curve2D_qbwr2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 580.009, 1, 0, 0, 0, 0, 581.003, 11, 0, 0, 0, 0, 580.009, 387, 0, 0, 0, 0, 577.028, 659)
+}
+point_count = 4
+
+[node name="Node2D" type="Node2D" unique_id=1567980477]
+
+[node name="VerticalHall" type="AnimatedSprite2D" parent="." unique_id=225970403]
+modulate = Color(0.8819366, 0.8819366, 0.88193655, 1)
+light_mask = 513
+texture_filter = 1
+position = Vector2(586, 326)
+scale = Vector2(9.25833, 9.25833)
+sprite_frames = SubResource("SpriteFrames_76h6i")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1617567807]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=1342526463]
+position = Vector2(294, 1)
+shape = SubResource("WorldBoundaryShape2D_mthg4")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=54690205]
+shape = SubResource("WorldBoundaryShape2D_e1yrx")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=1209867383]
+shape = SubResource("WorldBoundaryShape2D_mmxr8")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=1999489616]
+position = Vector2(237, 26)
+shape = SubResource("WorldBoundaryShape2D_2khaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=984170900]
+position = Vector2(353, 390)
+shape = SubResource("RectangleShape2D_eup7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1096910614]
+position = Vector2(810, 276.5)
+shape = SubResource("RectangleShape2D_vp7nr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1792277645]
+position = Vector2(751.5, 619.75)
+shape = SubResource("RectangleShape2D_ci6fr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1882082340]
+position = Vector2(419.25, -0.375)
+shape = SubResource("RectangleShape2D_lt6n2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=499659231]
+position = Vector2(753, 3)
+shape = SubResource("RectangleShape2D_lt6n2")
+
+[node name="Guy" parent="." unique_id=449711062 instance=ExtResource("2_yx2jm")]
+position = Vector2(583, 125)
+
+[node name="Door" parent="." unique_id=681670221 instance=ExtResource("3_x5iv6")]
+position = Vector2(589, 675)
+rotation = 1.57079
+scale = Vector2(1.66667, 0.780077)
+Destination = "uid://ens7gclcbl0g"
+
+[node name="Path2D" parent="." unique_id=1200849464 instance=ExtResource("4_b5xl4")]
+curve = SubResource("Curve2D_qbwr2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1111836878]
+position = Vector2(576, 333)
+zoom = Vector2(0.75, 0.75)
+
+[node name="Door2" parent="." unique_id=1516963442 instance=ExtResource("3_x5iv6")]
+position = Vector2(586, -20)
+rotation = 1.57079
+scale = Vector2(1.72, 0.8)
+Destination = "uid://buo2d6si8sc4u"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1736297324]
+stream = ExtResource("5_nw46x")

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://eyjfkw7f505k"]
+
+[ext_resource type="Texture2D" uid="uid://g5fuc4s1nrc6" path="res://Highland Manor/Highland Manor Anims/servantsQuarters.png" id="1_apytp"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://Other/door.tscn" id="2_3gx0h"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Highland Manor/Highland Manor Other/Killer Path.tscn" id="3_56inj"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character&Game/C&G Scenes/Character.tscn" id="4_vjgew"]
+[ext_resource type="PackedScene" uid="uid://dbvugpsvqrtmd" path="res://Highland Manor/Highland Manor Other/Crates.tscn" id="5_lp6ya"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmtd7"]
+distance = -648.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpkm5"]
+normal = Vector2(1, 0)
+distance = 171.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7qhwc"]
+normal = Vector2(-1, 0)
+distance = -1034.0
+
+[sub_resource type="Curve2D" id="Curve2D_gqrta"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 434.929, 50, 0, 0, 0, 0, 432.941, 332, 0, 0, 0, 0, 964.571, 332)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_risrm"]
+size = Vector2(154, 210.25)
+
+[node name="Node2D" type="Node2D" unique_id=1288043179]
+
+[node name="FfHallCorner" type="Sprite2D" parent="." unique_id=1441664611]
+texture_filter = 1
+position = Vector2(607.903, 316)
+scale = Vector2(10.6274, 10.7)
+texture = ExtResource("1_apytp")
+
+[node name="Door" parent="." unique_id=1478893436 instance=ExtResource("2_3gx0h")]
+position = Vector2(1007, 321)
+scale = Vector2(2.5494, 0.929413)
+Destination = "res://HidingRoom1.tscn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=944479033]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=2000643565]
+shape = SubResource("WorldBoundaryShape2D_ic1db")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=1654357140]
+shape = SubResource("WorldBoundaryShape2D_rmtd7")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=648341452]
+shape = SubResource("WorldBoundaryShape2D_cpkm5")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=2030250577]
+shape = SubResource("WorldBoundaryShape2D_7qhwc")
+
+[node name="Door2" parent="." unique_id=1670555306 instance=ExtResource("2_3gx0h")]
+position = Vector2(435, 25)
+rotation = 1.57079
+scale = Vector2(1.99086, 0.790282)
+Destination = "uid://d24u6jrxnnhpa"
+
+[node name="Path2D2" parent="." unique_id=1482886959 instance=ExtResource("3_56inj")]
+curve = SubResource("Curve2D_gqrta")
+
+[node name="Guy" parent="." unique_id=739866720 instance=ExtResource("4_vjgew")]
+position = Vector2(922, 318)
+
+[node name="Node2D" parent="." unique_id=1276680683 instance=ExtResource("5_lp6ya")]
+position = Vector2(289, 101)
+
+[node name="Crates" parent="Node2D" index="1" unique_id=1891194025]
+visible = false
+
+[node name="CollisionShape2D" parent="Node2D/Area2D" parent_id_path=PackedInt32Array(1276680683, 1784700904) index="0" unique_id=597513]
+position = Vector2(-20, 10)
+shape = SubResource("RectangleShape2D_risrm")
+
+[editable path="Node2D"]

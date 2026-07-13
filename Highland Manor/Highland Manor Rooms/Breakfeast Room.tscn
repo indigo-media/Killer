@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://buo2d6si8sc4u"]
+
+[ext_resource type="Texture2D" uid="uid://7dm1cm5hkv8x" path="res://Highland Manor/Highland Manor Anims/Breakfeast Room.png" id="1_itwrg"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://Other/door.tscn" id="2_tbnqp"]
+[ext_resource type="PackedScene" uid="uid://dbvugpsvqrtmd" path="res://Highland Manor/Highland Manor Other/Crates.tscn" id="3_751v4"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Highland Manor/Highland Manor Other/Killer Path.tscn" id="4_g6km3"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character&Game/C&G Scenes/Character.tscn" id="5_06xnu"]
+[ext_resource type="PackedScene" uid="uid://g5rfl7jukq48" path="res://Highland Manor/Highland Manor Traps/spike.tscn" id="6_ti3al"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7pcn"]
+atlas = ExtResource("1_itwrg")
+region = Rect2(0, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j70ma"]
+atlas = ExtResource("1_itwrg")
+region = Rect2(60, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tjjj"]
+atlas = ExtResource("1_itwrg")
+region = Rect2(120, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2dgv"]
+atlas = ExtResource("1_itwrg")
+region = Rect2(0, 80, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhcxa"]
+atlas = ExtResource("1_itwrg")
+region = Rect2(60, 80, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwcw6"]
+atlas = ExtResource("1_itwrg")
+region = Rect2(120, 80, 60, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ow0kj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7pcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j70ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tjjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2dgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhcxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwcw6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
+normal = Vector2(0, 1)
+distance = -113.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmtd7"]
+distance = -722.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpkm5"]
+normal = Vector2(1, 0)
+distance = 282.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7qhwc"]
+normal = Vector2(-1, 0)
+distance = -934.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4npc"]
+size = Vector2(102.5, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7pcn"]
+size = Vector2(421.25, 104)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j70ma"]
+radius = 109.22454
+
+[sub_resource type="Curve2D" id="Curve2D_aprn0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 342.515, 132, 0, 0, 0, 0, 612.801, 130, 0, 0, 0, 0, 613.795, 671)
+}
+point_count = 3
+
+[node name="Node2D" type="Node2D" unique_id=1181033049]
+
+[node name="FfHallCorner" type="AnimatedSprite2D" parent="." unique_id=2030453209]
+modulate = Color(0.641934, 0.641934, 0.641934, 1)
+texture_filter = 1
+position = Vector2(607.903, 316)
+rotation = 0.002039671
+scale = Vector2(10.6274, 10.7)
+sprite_frames = SubResource("SpriteFrames_ow0kj")
+frame_progress = 0.32285383
+
+[node name="Door" parent="." unique_id=2005770102 instance=ExtResource("2_tbnqp")]
+position = Vector2(615, 709)
+rotation = 1.5708
+scale = Vector2(2.5494, 0.929413)
+Destination = "uid://j6q5tdr2mxp0"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=51010337]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=903123226]
+shape = SubResource("WorldBoundaryShape2D_ic1db")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=1692665764]
+shape = SubResource("WorldBoundaryShape2D_rmtd7")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=1617590482]
+shape = SubResource("WorldBoundaryShape2D_cpkm5")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=65940354]
+shape = SubResource("WorldBoundaryShape2D_7qhwc")
+
+[node name="Couch" type="CollisionShape2D" parent="StaticBody2D" unique_id=1425501193]
+position = Vector2(435.75, -25)
+shape = SubResource("RectangleShape2D_e4npc")
+
+[node name="Couch2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1872589236]
+position = Vector2(696.375, -53)
+shape = SubResource("RectangleShape2D_b7pcn")
+
+[node name="Couch3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1143156363]
+position = Vector2(606, 357)
+shape = SubResource("CircleShape2D_j70ma")
+
+[node name="Node2D" parent="StaticBody2D" unique_id=260354172 instance=ExtResource("3_751v4")]
+position = Vector2(472, -30)
+
+[node name="Crates" parent="StaticBody2D/Node2D" index="1" unique_id=1891194025]
+visible = false
+
+[node name="CollisionShape2D" parent="StaticBody2D/Node2D/Area2D" parent_id_path=PackedInt32Array(260354172, 1784700904) index="0" unique_id=597513]
+position = Vector2(16, 9)
+
+[node name="Door2" parent="." unique_id=808260870 instance=ExtResource("2_tbnqp")]
+position = Vector2(319, 138)
+scale = Vector2(1.99086, 0.790282)
+Destination = "uid://cmp2022h4gtv4"
+
+[node name="Path2D2" parent="." unique_id=1604354979 instance=ExtResource("4_g6km3")]
+curve = SubResource("Curve2D_aprn0")
+
+[node name="Guy" parent="." unique_id=496849818 instance=ExtResource("5_06xnu")]
+position = Vector2(417, 170.99998)
+
+[node name="Node2D2" parent="." unique_id=1901367332 instance=ExtResource("6_ti3al")]
+position = Vector2(303, 679)
+rotation = -1.5708
+
+[node name="Node2D3" parent="." unique_id=2096422816 instance=ExtResource("6_ti3al")]
+position = Vector2(936, 593)
+rotation = -4.71239
+
+[node name="Node2D4" parent="." unique_id=1249935421 instance=ExtResource("6_ti3al")]
+position = Vector2(973, 39)
+rotation = -4.71239
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1257839372]
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 286.0
+offset_bottom = 781.0
+color = Color(0.06879827, 0.06879828, 0.068798296, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=574199349]
+offset_left = 932.0
+offset_top = -96.0
+offset_right = 1206.0
+offset_bottom = 694.0
+color = Color(0.06879827, 0.06879828, 0.068798296, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1624003487]
+position = Vector2(600, 313)
+scale = Vector2(1, 2.84)
+zoom = Vector2(0.75, 0.75)
+
+[editable path="StaticBody2D/Node2D"]

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://drmln3sjxwsbi"]
+
+[ext_resource type="Texture2D" uid="uid://bwxrkqfkrnjxu" path="res://Highland Manor/Highland Manor Anims/HLM Stock Anims/HLMUpperCorner.png" id="1_ho42f"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://Other/door.tscn" id="2_p667g"]
+[ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Highland Manor/Highland Manor Other/Killer Path.tscn" id="3_fm6v0"]
+[ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character&Game/C&G Scenes/Character.tscn" id="4_nadaa"]
+[ext_resource type="PackedScene" uid="uid://btsgnyudqw142" path="res://Highland Manor/Highland Manor Other/MasterKey.tscn" id="5_ftw6x"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ic1db"]
+normal = Vector2(0, 1)
+distance = -113.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmtd7"]
+distance = -722.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cpkm5"]
+normal = Vector2(1, 0)
+distance = 282.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7qhwc"]
+normal = Vector2(-1, 0)
+distance = -934.0
+
+[sub_resource type="Curve2D" id="Curve2D_aprn0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 348.47687, 132, 0, 0, 0, 0, 698.931, 132.0716, 0, 0, 0, 0, 612.801, 130, 0, 0, 0, 0, 613.795, 671)
+}
+point_count = 4
+
+[node name="Node2D" type="Node2D" unique_id=468697681]
+
+[node name="FfHallCorner" type="Sprite2D" parent="." unique_id=1822274050]
+modulate = Color(0.641934, 0.641934, 0.641934, 1)
+texture_filter = 1
+position = Vector2(607.903, 316)
+rotation = -1.5708
+scale = Vector2(10.6274, 10.7)
+texture = ExtResource("1_ho42f")
+flip_h = true
+
+[node name="Door" parent="." unique_id=407526038 instance=ExtResource("2_p667g")]
+position = Vector2(615, 709)
+rotation = 1.5708
+scale = Vector2(2.5494, 0.929413)
+Destination = "uid://bwe2g2lo8mkn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=371415956]
+
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=1623137589]
+shape = SubResource("WorldBoundaryShape2D_ic1db")
+
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=1747860108]
+shape = SubResource("WorldBoundaryShape2D_rmtd7")
+
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=627311390]
+shape = SubResource("WorldBoundaryShape2D_cpkm5")
+
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=233503890]
+shape = SubResource("WorldBoundaryShape2D_7qhwc")
+
+[node name="Door2" parent="." unique_id=1021828828 instance=ExtResource("2_p667g")]
+position = Vector2(321, 135)
+scale = Vector2(1.99086, 0.790282)
+Destination = "uid://fx7bts3t687a"
+
+[node name="Path2D2" parent="." unique_id=1646963038 instance=ExtResource("3_fm6v0")]
+curve = SubResource("Curve2D_aprn0")
+
+[node name="Guy" parent="." unique_id=593840266 instance=ExtResource("4_nadaa")]
+position = Vector2(413, 115)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=208299967]
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 286.0
+offset_bottom = 781.0
+color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=203445465]
+offset_left = 932.0
+offset_top = -96.0
+offset_right = 1206.0
+offset_bottom = 694.0
+color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=500396400]
+position = Vector2(600, 313)
+scale = Vector2(1, 2.84)
+zoom = Vector2(0.75, 0.75)
+
+[node name="MasterKey3" parent="." unique_id=968363631 instance=ExtResource("5_ftw6x")]
+position = Vector2(619, 133)
+uniqueName = "MasterKeyDarkRoom"

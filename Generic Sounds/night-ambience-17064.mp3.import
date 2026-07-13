@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://07a1fga52aya"
+path="res://.godot/imported/night-ambience-17064.mp3-5f3ec124521e5424a6cbb5dd57566eef.mp3str"
+
+[deps]
+
+source_file="res://Generic Sounds/night-ambience-17064.mp3"
+dest_files=["res://.godot/imported/night-ambience-17064.mp3-5f3ec124521e5424a6cbb5dd57566eef.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

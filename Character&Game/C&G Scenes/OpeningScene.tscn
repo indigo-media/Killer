@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cnns8ddsiw15g"]
+
+[ext_resource type="Script" uid="uid://wtnyim81g8td" path="res://Character&Game/C&G Scripts/opening_scene.gd" id="1_a7rhm"]
+
+[node name="Node2D" type="Control" unique_id=96636782]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a7rhm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1812993349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
