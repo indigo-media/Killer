@@ -17,7 +17,11 @@ func _ready() -> void:
 			saveButton.set_meta("dest", Destination)
 			saveButton.set_meta ("Gamename", Gamename)
 			saveButton.set_meta ("charactertype", charactertype)
-			
+			var inventory_string: String = file.get_line()
+			if inventory_string.is_empty():
+				continue
+			var inventory: Dictionary = JSON.parse_string(inventory_string)
+			saveButton.set_meta ("inventory", inventory)
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
@@ -50,6 +54,11 @@ func _on_save_pressed(savei: int) -> void:
 		else:
 			Gamedata.gamename = (saveButton.get_meta("Gamename"))
 			Gamedata.charactertype = (saveButton.get_meta("charactertype"))
+			var node_data: Dictionary = saveButton.get_meta("inventory", {})
+			Gamedata.MasterKey = int(node_data["MasterKey"])
+			Gamedata.hasCandle = int(node_data["Candle"])
+			Gamedata.hasBomb = int(node_data["Bomb"])
+			
 			TransitionFull.transition(saveButton.get_meta("dest"))
 	
 func _on_delete_save_pressed() -> void:

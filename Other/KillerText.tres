@@ -47,7 +47,7 @@ scene = ExtResource("9_tmvvr")
 script = ExtResource("10_hgnko")
 name = "KillerText"
 base_overrides = {
-"global_font": "\"res://manaspc.ttf\""
+"global_font": "\"res://Other/manaspc.ttf\""
 }
 layers = Array[ExtResource("1_8g850")]([SubResource("Resource_nuu52"), SubResource("Resource_rg767"), SubResource("Resource_kyrpp"), SubResource("Resource_wcye2"), SubResource("Resource_ssae0"), SubResource("Resource_glmha"), SubResource("Resource_ew6sw"), SubResource("Resource_ot3bf")])
 metadata/_latest_layer = -1

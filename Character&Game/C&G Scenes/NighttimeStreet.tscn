@@ -139,7 +139,7 @@ libraries/ = SubResource("AnimationLibrary_31p2i")
 [node name="Highland Door" type="Area2D" parent="." unique_id=1881361831]
 position = Vector2(-232, 228)
 script = ExtResource("6_irlgv")
-Destination = "res://Level1Transition.tscn"
+Destination = "uid://btppuno11rrs"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Highland Door" unique_id=259449550]

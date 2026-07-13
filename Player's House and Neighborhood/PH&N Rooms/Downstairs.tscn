@@ -78,12 +78,12 @@ position = Vector2(783, 159)
 [node name="Door" parent="." unique_id=1882426539 instance=ExtResource("3_bimnd")]
 position = Vector2(819, 24)
 rotation = 1.56638
-Destination = "res://Bedroom.tscn"
+Destination = "uid://baws2r3t8klad"
 
 [node name="DoorToOutside" parent="." unique_id=954933553 instance=ExtResource("3_bimnd")]
 position = Vector2(574, 628)
 rotation = 1.56638
-Destination = "res://NighttimeStreet.tscn"
+Destination = "uid://1p7ehfbnyl48"
 
 [node name="Door" parent="DoorToOutside" index="0" unique_id=1087150202]
 position = Vector2(-6.6886, -27.5503)

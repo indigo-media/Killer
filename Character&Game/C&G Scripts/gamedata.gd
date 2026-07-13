@@ -69,6 +69,5 @@ func save() -> Dictionary:
 		"Candle" : hasCandle,
 		"Hammer" : hasHammer,
 		"MasterKey" : MasterKey
-		
 	}
 	return saveDict

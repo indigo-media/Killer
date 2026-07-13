@@ -100,7 +100,6 @@ autoplay = true
 
 [node name="Node2D" parent="." unique_id=474727499 instance=ExtResource("5_hns84")]
 position = Vector2(422, 262)
-Destination = "res://Bedroom.tscn"
 fanciestName = "Bedroom"
 
 [node name="Guy" parent="." unique_id=992744858 instance=ExtResource("6_8452x")]
