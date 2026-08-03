@@ -172,7 +172,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cyknw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"BBOK",
 "speed": 5.0
 }, {
@@ -198,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hlfpm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Chair In",
 "speed": 8.0
 }, {
@@ -224,7 +224,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ujcqu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Chair Out",
 "speed": 8.0
 }, {
@@ -250,7 +250,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eus2w")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Couch In",
 "speed": 8.0
 }, {
@@ -276,7 +276,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t4jfr")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Couch Out",
 "speed": 8.0
 }, {
@@ -287,7 +287,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qixpy")
 }],
-"loop": false,
+"loop": 0,
 "name": &"KKOB",
 "speed": 5.0
 }, {
@@ -313,7 +313,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_km1fv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]
@@ -339,82 +339,82 @@ _data = {
 }
 point_count = 3
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=712322767]
 script = ExtResource("1_44571")
 
-[node name="FfHall" type="AnimatedSprite2D" parent="."]
+[node name="FfHall" type="AnimatedSprite2D" parent="." unique_id=1780585433]
 texture_filter = 1
 position = Vector2(586.7991, 329.00003)
 scale = Vector2(0.3381243, 0.3381243)
 sprite_frames = SubResource("SpriteFrames_kusap")
 
-[node name="Door" parent="." instance=ExtResource("2_hwgfu")]
+[node name="Door" parent="." unique_id=787853195 instance=ExtResource("2_hwgfu")]
 position = Vector2(994.799, 329.99994)
 scale = Vector2(2.5494, 0.929413)
 Destination = "uid://neardqtrxmj8"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=411386712]
 position = Vector2(154.79913, 0)
 
-[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=1777996541]
 shape = SubResource("WorldBoundaryShape2D_ic1db")
 
-[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=219114122]
 position = Vector2(0, -1)
 shape = SubResource("WorldBoundaryShape2D_rmtd7")
 
-[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=273048191]
 position = Vector2(-29, -2)
 shape = SubResource("WorldBoundaryShape2D_cpkm5")
 
-[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=347264913]
 position = Vector2(-30, 7)
 shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=355435048]
 polygon = PackedVector2Array(139.20087, 247, 172.20087, 247, 192.20087, 243, 226.20087, 190, 233.20087, 177, 235.20087, 160, 241.20087, 125, 195.20087, 88, 194.20087, 34, 122.20087, 28, 122.20087, 84, 76.20087, 130, 44.200867, 124, 46.200867, 189, 88.20087, 189, 125.20087, 235)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1966293592]
 polygon = PackedVector2Array(453.20087, 461, 454.20087, 520, 521.20087, 523, 518.20087, 457, 551.20087, 461, 554.20087, 574, 402.20087, 570, 404.20087, 460)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1147383040]
 polygon = PackedVector2Array(588.20087, 182, 631.20087, 188, 660.20087, 219, 694.20087, 234, 736.20087, 229, 774.20087, 201, 807.20087, 187, 813.20087, 123, 775.20087, 115, 725.20087, 90, 668.20087, 89, 632.20087, 115, 597.20087, 121)
 
-[node name="Polygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="Polygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=891835086]
 polygon = PackedVector2Array(610.20087, 649, 608.20087, 602, 789.20087, 600, 789.20087, 422, 865.20087, 423, 867.20087, 656)
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1765789693]
 polygon = PackedVector2Array(626.20087, 578, 701.20087, 575, 727.20087, 536, 732.20087, 462, 696.20087, 434, 632.20087, 436, 632.20087, 480, 648.20087, 483, 648.20087, 532, 625.20087, 544)
 
-[node name="COUCH" type="Area2D" parent="."]
+[node name="COUCH" type="Area2D" parent="." unique_id=1248766453]
 
-[node name="Couch" type="CollisionPolygon2D" parent="COUCH"]
+[node name="Couch" type="CollisionPolygon2D" parent="COUCH" unique_id=963213692]
 position = Vector2(6, -1)
 polygon = PackedVector2Array(383, 428, 514, 426, 524, 611, 370, 607)
 
-[node name="Door2" parent="." instance=ExtResource("2_hwgfu")]
+[node name="Door2" parent="." unique_id=1877544983 instance=ExtResource("2_hwgfu")]
 position = Vector2(179.79913, 326)
 scale = Vector2(1.99086, 0.790282)
-Destination = "res://CornerRock.tscn"
+Destination = "uid://ntkspg1v7vj4"
 
-[node name="Path2D2" parent="." instance=ExtResource("4_kucrv")]
+[node name="Path2D2" parent="." unique_id=1631545636 instance=ExtResource("4_kucrv")]
 position = Vector2(153.11292, 0)
 curve = SubResource("Curve2D_22u10")
 
-[node name="CHAIR" type="Area2D" parent="."]
+[node name="CHAIR" type="Area2D" parent="." unique_id=1356145533]
 
-[node name="Chair" type="CollisionPolygon2D" parent="CHAIR"]
+[node name="Chair" type="CollisionPolygon2D" parent="CHAIR" unique_id=766570382]
 polygon = PackedVector2Array(394, 124, 429, 120, 440, 189, 388, 184)
 
-[node name="BOOK" type="Area2D" parent="."]
+[node name="BOOK" type="Area2D" parent="." unique_id=1807543727]
 
-[node name="Book" type="CollisionPolygon2D" parent="BOOK"]
+[node name="Book" type="CollisionPolygon2D" parent="BOOK" unique_id=1584693314]
 polygon = PackedVector2Array(606, 462, 610, 522, 673, 518, 674, 436, 606, 433)
 
-[node name="Guy" parent="." instance=ExtResource("5_kn1l0")]
+[node name="Guy" parent="." unique_id=1064845985 instance=ExtResource("5_kn1l0")]
 position = Vector2(521, 315)
 
-[node name="Node2D" parent="." instance=ExtResource("6_44571")]
+[node name="Node2D" parent="." unique_id=1721515503 instance=ExtResource("6_44571")]
 position = Vector2(270, 567)
 
 [connection signal="body_entered" from="COUCH" to="." method="_on_area_2d_body_entered"]

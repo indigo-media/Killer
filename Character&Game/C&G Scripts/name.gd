@@ -9,7 +9,7 @@ func _ready() -> void:
 	$LineEdit.grab_focus()
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
-	if $LineEdit.text.length() > 0 and $LineEdit.text.length() < 16:
+	if $LineEdit.text.length() > 0 and $LineEdit.text.length() < 17:
 		Gamedata.gamename = new_text
 		if $CheckButton.button_pressed:
 			Gamedata.charactertype = "uid://xp37guyn37n2"

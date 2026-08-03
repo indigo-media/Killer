@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b2agg0724dn6q" path="res://Character&Game/C&G Anims/normal.png" id="4_lob43"]
 [ext_resource type="Texture2D" uid="uid://d0osyuksli2p0" path="res://Character&Game/C&G Anims/Hard.png" id="5_urckf"]
 [ext_resource type="Texture2D" uid="uid://cqkk0vpy82kxh" path="res://Character&Game/C&G Anims/Incredible.png" id="6_0p2n6"]
-[ext_resource type="Texture2D" uid="uid://dakqn2o7m8t8g" path="res://Character&Game/C&G Anims/Troll.png" id="7_vy06t"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5k52"]
+load_path = "res://.godot/imported/Troll.png-ab51be39502b031f21842e6a2b769fd0.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p2n6"]
 bg_color = Color(0.419513, 0.682113, 0.268925, 1)
@@ -107,8 +109,8 @@ popup/item_1/id = 1
 popup/item_2/text = "Incredible"
 popup/item_2/icon = ExtResource("6_0p2n6")
 popup/item_2/id = 2
-popup/item_3/text = "Troll"
-popup/item_3/icon = ExtResource("7_vy06t")
+popup/item_3/text = "Nightmare"
+popup/item_3/icon = SubResource("CompressedTexture2D_q5k52")
 popup/item_3/id = 3
 
 [node name="Normal" type="Label" parent="." unique_id=102143464]

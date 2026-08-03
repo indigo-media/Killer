@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bstnmkmm4x6g8"
-path="res://.godot/imported/Troll.png-ab51be39502b031f21842e6a2b769fd0.ctex"
+uid="uid://707ywxs5cxtq"
+path="res://.godot/imported/prompt.png-e7913228aa120cb888daa505e288a83c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character&Game/C&G Anims/Troll.png"
-dest_files=["res://.godot/imported/Troll.png-ab51be39502b031f21842e6a2b769fd0.ctex"]
+source_file="res://Other/prompt.png"
+dest_files=["res://.godot/imported/prompt.png-e7913228aa120cb888daa505e288a83c.ctex"]
 
 [params]
 
