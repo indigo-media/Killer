@@ -8,7 +8,7 @@ func _ready() -> void:
 	for i in range(1, 5):
 		var file = FileAccess.open("user://save_game%d.dat" %i, FileAccess.READ)
 		if file:
-			var Destination = file.get_line().get_file()
+			var Destination = file.get_line()
 			var Gamename = file.get_line()
 			var charactertype = file.get_line() 
 			var FNAME = file.get_line()

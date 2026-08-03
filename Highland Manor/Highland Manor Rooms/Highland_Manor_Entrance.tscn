@@ -70,13 +70,12 @@ position = Vector2(597, 486)
 
 [node name="Node2D" parent="." unique_id=1347570598 instance=ExtResource("4_gu7co")]
 position = Vector2(377, 259)
-Destination = "res://Highland_Manor_Entrance.tscn"
 fanciestName = "HLM"
 
 [node name="Door" parent="." unique_id=209815998 instance=ExtResource("5_gkp76")]
 position = Vector2(863, 295)
 scale = Vector2(2.06816, 0.919624)
-Destination = "res://SpikeHall1.tscn"
+Destination = "uid://bxjne3trq50ys"
 
 [node name="Plinth" type="Area2D" parent="." unique_id=246576378]
 script = ExtResource("6_83vb2")
@@ -95,7 +94,7 @@ shape = SubResource("RectangleShape2D_k0hst")
 [node name="Door2" parent="." unique_id=1017589216 instance=ExtResource("5_gkp76")]
 position = Vector2(281, 294)
 scale = Vector2(-2.01587, 0.90729)
-Destination = "res://HidingRoom1.tscn"
+Destination = "uid://by1nub72cyt7e"
 
 [node name="Path2D2" parent="." unique_id=422350341 instance=ExtResource("7_cl4ud")]
 curve = SubResource("Curve2D_qpp54")

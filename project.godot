@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Killer"
 run/main_scene="res://Character&Game/C&G Scenes/Title.tscn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://ppftwtjaor6k"
 
 [autoload]
@@ -91,6 +91,11 @@ folder_colors={
 "res://Character&Game/": "red",
 "res://Generic Sounds/": "gray",
 "res://Highland Manor/": "purple",
+"res://Highland Manor/Highland Manor Anims/": "purple",
+"res://Highland Manor/Highland Manor Dialouge/": "purple",
+"res://Highland Manor/Highland Manor Other/": "purple",
+"res://Highland Manor/Highland Manor Rooms/": "purple",
+"res://Highland Manor/Highland Manor Tools&Items/": "purple",
 "res://Other/": "blue",
 "res://Player's House and Neighborhood/": "green",
 "res://Resources/": "orange"

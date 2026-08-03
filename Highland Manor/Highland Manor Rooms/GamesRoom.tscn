@@ -27,9 +27,9 @@ _data = {
 }
 point_count = 4
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1697568940]
 
-[node name="VerticalHall" type="Sprite2D" parent="."]
+[node name="VerticalHall" type="Sprite2D" parent="." unique_id=1497785945]
 modulate = Color(0.838897, 0.838897, 0.838897, 1)
 light_mask = 513
 texture_filter = 1
@@ -37,49 +37,49 @@ position = Vector2(586, 326)
 scale = Vector2(9.25833, 9.25833)
 texture = ExtResource("1_t6ow8")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=622328525]
 
-[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=1931207729]
 position = Vector2(294, 1)
 shape = SubResource("WorldBoundaryShape2D_mthg4")
 
-[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=658310663]
 shape = SubResource("WorldBoundaryShape2D_e1yrx")
 
-[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=882933520]
 shape = SubResource("WorldBoundaryShape2D_mmxr8")
 
-[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=358181521]
 position = Vector2(237, 26)
 shape = SubResource("WorldBoundaryShape2D_2khaa")
 
-[node name="Door" parent="." instance=ExtResource("2_sho4n")]
+[node name="Door" parent="." unique_id=401520347 instance=ExtResource("2_sho4n")]
 position = Vector2(589, 675)
 rotation = 1.57079
 scale = Vector2(1.66667, 0.780077)
 Destination = "uid://d24u6jrxnnhpa"
 
-[node name="Path2D" parent="." instance=ExtResource("3_o6kjb")]
+[node name="Path2D" parent="." unique_id=1372202170 instance=ExtResource("3_o6kjb")]
 curve = SubResource("Curve2D_qbwr2")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1854609999]
 position = Vector2(576, 333)
 zoom = Vector2(0.75, 0.75)
 
-[node name="Door2" parent="." instance=ExtResource("2_sho4n")]
+[node name="Door2" parent="." unique_id=341588560 instance=ExtResource("2_sho4n")]
 position = Vector2(586, -20)
 rotation = 1.57079
 scale = Vector2(1.72, 0.8)
-Destination = "res://CornerRock.tscn"
+Destination = "uid://ntkspg1v7vj4"
 
-[node name="Node2D" parent="." instance=ExtResource("4_v4wuf")]
+[node name="Node2D" parent="." unique_id=7715681 instance=ExtResource("4_v4wuf")]
 position = Vector2(583, 100)
 
-[node name="Node2D2" parent="." instance=ExtResource("4_v4wuf")]
+[node name="Node2D2" parent="." unique_id=1408127963 instance=ExtResource("4_v4wuf")]
 position = Vector2(587, 239)
 
-[node name="Node2D3" parent="." instance=ExtResource("4_v4wuf")]
+[node name="Node2D3" parent="." unique_id=800922498 instance=ExtResource("4_v4wuf")]
 position = Vector2(579, 387)
 
-[node name="Guy" parent="." instance=ExtResource("5_tnjd0")]
+[node name="Guy" parent="." unique_id=1211376011 instance=ExtResource("5_tnjd0")]
 position = Vector2(585, 518)
