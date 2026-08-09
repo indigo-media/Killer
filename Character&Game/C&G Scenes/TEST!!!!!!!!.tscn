@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://do0yxivlnp1bu"]
 
-[ext_resource type="Script" uid="uid://cb0m51k4v04ea" path="res://Character&Game/C&G Scripts/name.gd" id="1_ivn07"]
-[ext_resource type="Theme" uid="uid://bokj63lg7xdm4" path="res://Character&Game/C&G Anims/theme_pixelfont.tres" id="1_urckf"]
-[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://Other/manaspc.ttf" id="2_nx4m6"]
-[ext_resource type="Texture2D" uid="uid://bofuu1jdwsvoo" path="res://Character&Game/C&G Anims/ActualPlayer.png" id="3_arcrk"]
-[ext_resource type="Texture2D" uid="uid://b2agg0724dn6q" path="res://Character&Game/C&G Anims/normal.png" id="4_lob43"]
-[ext_resource type="Texture2D" uid="uid://d0osyuksli2p0" path="res://Character&Game/C&G Anims/Hard.png" id="5_urckf"]
-[ext_resource type="Texture2D" uid="uid://cqkk0vpy82kxh" path="res://Character&Game/C&G Anims/Incredible.png" id="6_0p2n6"]
+[ext_resource type="Theme" uid="uid://bokj63lg7xdm4" path="res://Character&Game/C&G Anims/theme_pixelfont.tres" id="1_c8tbd"]
+[ext_resource type="Script" uid="uid://cb0m51k4v04ea" path="res://Character&Game/C&G Scripts/name.gd" id="2_y7ptl"]
+[ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://Other/manaspc.ttf" id="3_oeiqs"]
+[ext_resource type="Texture2D" uid="uid://bofuu1jdwsvoo" path="res://Character&Game/C&G Anims/ActualPlayer.png" id="4_6d4kj"]
+[ext_resource type="Texture2D" uid="uid://b2agg0724dn6q" path="res://Character&Game/C&G Anims/normal.png" id="5_tsfy4"]
+[ext_resource type="Texture2D" uid="uid://d0osyuksli2p0" path="res://Character&Game/C&G Anims/Hard.png" id="6_qo0cu"]
+[ext_resource type="Texture2D" uid="uid://cqkk0vpy82kxh" path="res://Character&Game/C&G Anims/Incredible.png" id="7_ji5ha"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5k52"]
 load_path = "res://.godot/imported/Troll.png-ab51be39502b031f21842e6a2b769fd0.ctex"
@@ -26,8 +26,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_urckf")
-script = ExtResource("1_ivn07")
+theme = ExtResource("1_c8tbd")
+script = ExtResource("2_y7ptl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -51,7 +51,7 @@ offset_right = 577.0
 offset_bottom = -188.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_fonts/font = ExtResource("3_oeiqs")
 theme_override_font_sizes/font_size = 40
 placeholder_text = "[Enter Name] "
 max_length = 16
@@ -66,7 +66,7 @@ offset_top = 15.0
 offset_right = 584.0
 offset_bottom = 65.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_fonts/font = ExtResource("3_oeiqs")
 theme_override_font_sizes/font_size = 40
 text = "Your Character:"
 
@@ -74,7 +74,7 @@ text = "Your Character:"
 texture_filter = 1
 position = Vector2(161, 226)
 scale = Vector2(9.19687, 9.19687)
-texture = ExtResource("3_arcrk")
+texture = ExtResource("4_6d4kj")
 hframes = 8
 vframes = 2
 
@@ -84,7 +84,7 @@ offset_left = 53.0
 offset_top = 301.0
 offset_right = 288.0
 offset_bottom = 393.0
-theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_fonts/font = ExtResource("3_oeiqs")
 theme_override_font_sizes/font_size = 40
 text = "Brother"
 expand_icon = true
@@ -95,19 +95,19 @@ offset_left = 770.0
 offset_top = 178.0
 offset_right = 1104.0
 offset_bottom = 246.0
-theme_override_fonts/font = ExtResource("2_nx4m6")
+theme_override_fonts/font = ExtResource("3_oeiqs")
 theme_override_font_sizes/font_size = 40
 expand_icon = true
 selected = 0
 item_count = 4
 popup/item_0/text = "Normal"
-popup/item_0/icon = ExtResource("4_lob43")
+popup/item_0/icon = ExtResource("5_tsfy4")
 popup/item_0/id = 0
 popup/item_1/text = "Hard"
-popup/item_1/icon = ExtResource("5_urckf")
+popup/item_1/icon = ExtResource("6_qo0cu")
 popup/item_1/id = 1
 popup/item_2/text = "Incredible"
-popup/item_2/icon = ExtResource("6_0p2n6")
+popup/item_2/icon = ExtResource("7_ji5ha")
 popup/item_2/id = 2
 popup/item_3/text = "Is this Still Nightmare?"
 popup/item_3/icon = SubResource("CompressedTexture2D_q5k52")
