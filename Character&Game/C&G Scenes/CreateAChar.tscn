@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://do0yxivlnp1bu"]
+[gd_scene load_steps=10 format=3 uid="uid://do0yxivlnp1bu"]
 
 [ext_resource type="Script" uid="uid://cb0m51k4v04ea" path="res://Character&Game/C&G Scripts/name.gd" id="1_ivn07"]
 [ext_resource type="Theme" uid="uid://bokj63lg7xdm4" path="res://Character&Game/C&G Anims/theme_pixelfont.tres" id="1_urckf"]
@@ -19,7 +19,7 @@ border_width_right = 8
 border_width_bottom = 8
 border_color = Color(0.264447, 0.468324, 0.281286, 1)
 
-[node name="Control" type="Control" unique_id=1838129673]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,7 +29,7 @@ grow_vertical = 2
 theme = ExtResource("1_urckf")
 script = ExtResource("1_ivn07")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=126379708]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.172549, 0.172549, 0.172549, 1)
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=144768178]
+[node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,7 +56,7 @@ theme_override_font_sizes/font_size = 40
 placeholder_text = "[Enter Name] "
 max_length = 16
 
-[node name="Label" type="Label" parent="." unique_id=1924390626]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -70,7 +70,7 @@ theme_override_fonts/font = ExtResource("2_nx4m6")
 theme_override_font_sizes/font_size = 40
 text = "Your Character:"
 
-[node name="Brother" type="Sprite2D" parent="." unique_id=219595972]
+[node name="Brother" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(161, 226)
 scale = Vector2(9.19687, 9.19687)
@@ -78,7 +78,7 @@ texture = ExtResource("3_arcrk")
 hframes = 8
 vframes = 2
 
-[node name="CheckButton" type="CheckButton" parent="." unique_id=1423896291]
+[node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 301.0
@@ -89,7 +89,7 @@ theme_override_font_sizes/font_size = 40
 text = "Brother"
 expand_icon = true
 
-[node name="OptionButton" type="OptionButton" parent="." unique_id=390859428]
+[node name="OptionButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 770.0
 offset_top = 178.0
@@ -109,11 +109,11 @@ popup/item_1/id = 1
 popup/item_2/text = "Incredible"
 popup/item_2/icon = ExtResource("6_0p2n6")
 popup/item_2/id = 2
-popup/item_3/text = "Nightmare"
+popup/item_3/text = "Is this Still Nightmare?"
 popup/item_3/icon = SubResource("CompressedTexture2D_q5k52")
 popup/item_3/id = 3
 
-[node name="Normal" type="Label" parent="." unique_id=102143464]
+[node name="Normal" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.051
@@ -123,7 +123,7 @@ offset_top = 285.0
 offset_right = 596.248
 offset_bottom = 285.32
 
-[node name="Hard" type="Label" parent="." unique_id=1643464514]
+[node name="Hard" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.051
@@ -133,7 +133,7 @@ offset_top = 285.0
 offset_right = 596.248
 offset_bottom = 285.32
 
-[node name="Incredible" type="Label" parent="." unique_id=1358261820]
+[node name="Incredible" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.051
@@ -143,7 +143,7 @@ offset_top = 285.0
 offset_right = 596.248
 offset_bottom = 285.32
 
-[node name="Troll" type="Label" parent="." unique_id=364441787]
+[node name="Troll" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.051
@@ -153,7 +153,7 @@ offset_top = 284.0
 offset_right = 594.248
 offset_bottom = 284.32
 
-[node name="Play" type="Button" parent="." unique_id=2014846418]
+[node name="Play" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 3
