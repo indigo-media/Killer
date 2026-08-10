@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://ens7gclcbl0g"]
 
 [ext_resource type="Texture2D" uid="uid://mxmemjtk8cdt" path="res://Highland Manor/Highland Manor Anims/Corridor01.png" id="1_1u3h3"]
+[ext_resource type="Script" uid="uid://hxgc3eaywcpw" path="res://Highland Manor/Highland Manor Rooms/corridor01.gd" id="1_t5rmn"]
 [ext_resource type="PackedScene" uid="uid://ddmofayag5ey4" path="res://Character&Game/C&G Scenes/Character.tscn" id="2_wyr4c"]
 [ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://Other/door.tscn" id="3_aog0k"]
 [ext_resource type="PackedScene" uid="uid://o7ufnti6aecb" path="res://Highland Manor/Highland Manor Other/Killer Path.tscn" id="4_t5rmn"]
 [ext_resource type="PackedScene" uid="uid://cm61haikpjw2j" path="res://Character&Game/C&G Scenes/interactable.tscn" id="5_wyr4c"]
+[ext_resource type="PackedScene" uid="uid://chopqydbmvihl" path="res://firstAid.tscn" id="7_5kxt1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mthg4"]
 normal = Vector2(0, 1)
@@ -30,7 +32,45 @@ point_count = 5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x7em"]
 size = Vector2(207, 254)
 
+[sub_resource type="Animation" id="Animation_t5rmn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(706, -395)]
+}
+
+[sub_resource type="Animation" id="Animation_5kxt1"]
+resource_name = "firstAidCorridor01"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(549, 217), Vector2(555, 488)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p8e3d"]
+_data = {
+&"RESET": SubResource("Animation_t5rmn"),
+&"firstAidCorridor01": SubResource("Animation_5kxt1")
+}
+
 [node name="Node2D" type="Node2D" unique_id=620540428]
+script = ExtResource("1_t5rmn")
 
 [node name="VerticalHall" type="Sprite2D" parent="." unique_id=1615352913]
 modulate = Color(0.6627451, 0.6627451, 0.6627451, 1)
@@ -57,7 +97,7 @@ position = Vector2(237, 26)
 shape = SubResource("WorldBoundaryShape2D_2khaa")
 
 [node name="Guy" parent="." unique_id=1037189117 instance=ExtResource("2_wyr4c")]
-position = Vector2(583, 109)
+position = Vector2(698, 536)
 
 [node name="Door" parent="." unique_id=1548117170 instance=ExtResource("3_aog0k")]
 position = Vector2(329, 583)
@@ -78,9 +118,17 @@ rotation = 1.57079
 scale = Vector2(1.72, 0.8)
 Destination = "uid://j6q5tdr2mxp0"
 
-[node name="Interactable" parent="." unique_id=187263496 instance=ExtResource("5_wyr4c")]
-position = Vector2(707, 482)
+[node name="Chest" parent="." unique_id=187263496 instance=ExtResource("5_wyr4c")]
+position = Vector2(812, 391)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=812450583]
-position = Vector2(44.5, 73)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest" unique_id=812450583]
+position = Vector2(-62, 165)
 shape = SubResource("RectangleShape2D_7x7em")
+
+[node name="Node2D" parent="." unique_id=317391078 instance=ExtResource("7_5kxt1")]
+position = Vector2(706, -395)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=494600461]
+libraries/ = SubResource("AnimationLibrary_p8e3d")
+
+[connection signal="interacted" from="Chest" to="." method="_on_chest_interacted"]

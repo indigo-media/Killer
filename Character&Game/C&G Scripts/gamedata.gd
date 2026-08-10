@@ -6,7 +6,7 @@ var savedgame = 1
 
 var gamename = ""
 
-var charactertype = ("res://Brother.tres")
+var charactertype = ("uid://cj5lubocbmxqq")
 
 var inAnim = false
 

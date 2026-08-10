@@ -4,22 +4,158 @@
 [ext_resource type="FontFile" uid="uid://fuxcjhmcntkl" path="res://Other/manaspc.ttf" id="2_rodyd"]
 [ext_resource type="Texture2D" uid="uid://707ywxs5cxtq" path="res://Other/prompt.png" id="3_jk3rv"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_euq1h"]
+atlas = ExtResource("3_jk3rv")
+region = Rect2(0, 0, 40, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rodyd"]
+atlas = ExtResource("3_jk3rv")
+region = Rect2(0, 15, 40, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7x7em"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euq1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rodyd")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_euq1h"]
+resource_name = "Pressed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Prompt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(20, 7), Vector2(120, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-82, -7), Vector2(20, -7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Prompt:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rodyd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Prompt:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-82, -7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Prompt:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jk3rv"]
+_data = {
+&"Pressed": SubResource("Animation_euq1h"),
+&"RESET": SubResource("Animation_rodyd")
+}
+
 [node name="Interactable" type="Area2D" unique_id=187263496]
 script = ExtResource("1_euq1h")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=17278862]
-offset_left = -1.0
-offset_top = 3.0
-offset_right = 39.0
-offset_bottom = 43.0
+[node name="Prompt" type="AnimatedSprite2D" parent="." unique_id=423021928]
+position = Vector2(20, 7)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_7x7em")
+frame_progress = 0.37977144
 
-[node name="Label" type="Label" parent="PanelContainer" unique_id=428192098]
-layout_mode = 2
+[node name="Label" type="Label" parent="." unique_id=428192098]
+offset_left = -82.0
+offset_top = -7.0
+offset_right = 78.0
+offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("2_rodyd")
+theme_override_font_sizes/font_size = 26
+text = "Interact"
+metadata/_edit_use_anchors_ = true
 
-[node name="Prompt" type="Sprite2D" parent="PanelContainer" unique_id=1603329414]
-position = Vector2(20, 12)
-texture = ExtResource("3_jk3rv")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1015313824]
+libraries/ = SubResource("AnimationLibrary_jk3rv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
