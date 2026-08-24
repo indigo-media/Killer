@@ -22,15 +22,15 @@ var MasterKey = 0
 
 var Health = 9
 
-enum Levels{NoLevel, HLM, HSW, HFG, GCH, SMH, ACO, NWA, OVM}
+enum Levels{NoLevel, HLM, HSW, HFG, GCH, SMH, ACO, RVE, RRHS, NWA, OVM}
 
 var levelGenral: Levels = Levels.NoLevel
 
 func getScaredBro():
 	if levelGenral == Levels.NoLevel:
-		return"res://Youdied.tscn"
+		return "uid://tq3iifmcismo"
 	elif levelGenral == Levels.HLM:
-		return"res://jumpscare.tscn"
+		return "uid://esmejeem2d85"
 
 var inLevel = false
 
@@ -57,6 +57,9 @@ signal healthChanged(Damage:int)
 func _takeDamage(Damage:int):
 	Health -= Damage
 	healthChanged.emit(-Damage)
+	
+
+		
 	
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout

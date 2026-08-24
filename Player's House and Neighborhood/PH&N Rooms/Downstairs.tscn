@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cat8emsb2imyt" path="res://Player's House and Neighborhood/FirstNote.png" id="6_4h68b"]
 [ext_resource type="AudioStream" uid="uid://07a1fga52aya" path="res://Generic Sounds/night-ambience-17064.mp3" id="7_vevy7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4ypc"]
-size = Vector2(31.3772, 227.1)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4p4rd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t46yh"]
@@ -57,7 +54,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p88t6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -77,17 +74,21 @@ position = Vector2(783, 159)
 
 [node name="Door" parent="." unique_id=1882426539 instance=ExtResource("3_bimnd")]
 position = Vector2(819, 24)
-rotation = 1.56638
 Destination = "uid://baws2r3t8klad"
+
+[node name="Interactable" parent="Door" index="0" unique_id=187263496]
+deleteOnFinish = false
 
 [node name="DoorToOutside" parent="." unique_id=954933553 instance=ExtResource("3_bimnd")]
 position = Vector2(574, 628)
-rotation = 1.56638
 Destination = "uid://1p7ehfbnyl48"
 
-[node name="Door" parent="DoorToOutside" index="0" unique_id=1087150202]
-position = Vector2(-6.6886, -27.5503)
-shape = SubResource("RectangleShape2D_v4ypc")
+[node name="Interactable" parent="DoorToOutside" index="0" unique_id=187263496]
+position = Vector2(-2.1961946, -182.0115)
+deleteOnFinish = false
+
+[node name="Door" parent="DoorToOutside/Interactable" index="3" unique_id=1087150202]
+position = Vector2(21.196194, 173.01149)
 
 [node name="Edges" type="StaticBody2D" parent="." unique_id=915780081]
 
@@ -114,7 +115,7 @@ position = Vector2(510, 171)
 shape = SubResource("RectangleShape2D_kaqn6")
 
 [node name="Couch" type="CollisionShape2D" parent="Furniture_Misc_" unique_id=2076541321]
-position = Vector2(829, 606.75)
+position = Vector2(830, 598)
 shape = SubResource("RectangleShape2D_eehdv")
 
 [node name="Couch & Shelf" type="CollisionShape2D" parent="Furniture_Misc_" unique_id=2066797046]
@@ -122,6 +123,7 @@ position = Vector2(880.375, 416)
 shape = SubResource("RectangleShape2D_fnj7d")
 
 [node name="IconFirstNote" type="Sprite2D" parent="." unique_id=206901274]
+visible = false
 texture_filter = 1
 position = Vector2(587, 528)
 scale = Vector2(2.5, 2.5)
@@ -150,4 +152,5 @@ autoplay = true
 
 [connection signal="body_entered" from="IconFirstNote/Note" to="IconFirstNote/Note" method="_on_body_entered"]
 
+[editable path="Door"]
 [editable path="DoorToOutside"]

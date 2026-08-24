@@ -26,9 +26,9 @@ _data = {
 }
 point_count = 3
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1181578885]
 
-[node name="FfHallCorner" type="Sprite2D" parent="."]
+[node name="FfHallCorner" type="Sprite2D" parent="." unique_id=288605082]
 modulate = Color(0.641934, 0.641934, 0.641934, 1)
 texture_filter = 1
 position = Vector2(607.903, 316)
@@ -37,52 +37,49 @@ scale = Vector2(10.6274, 10.7)
 texture = ExtResource("1_6gjt8")
 flip_h = true
 
-[node name="Door" parent="." instance=ExtResource("2_qqy1i")]
+[node name="Door" parent="." unique_id=1638870093 instance=ExtResource("2_qqy1i")]
 position = Vector2(615, 709)
-rotation = 1.5708
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://bwe2g2lo8mkn"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=366892318]
 
-[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=19712518]
 shape = SubResource("WorldBoundaryShape2D_ic1db")
 
-[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=382527815]
 shape = SubResource("WorldBoundaryShape2D_rmtd7")
 
-[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=1537174664]
 shape = SubResource("WorldBoundaryShape2D_cpkm5")
 
-[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=194588480]
 shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
-[node name="Door2" parent="." instance=ExtResource("2_qqy1i")]
+[node name="Door2" parent="." unique_id=880735299 instance=ExtResource("2_qqy1i")]
 position = Vector2(319, 138)
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://fx7bts3t687a"
 
-[node name="Path2D2" parent="." instance=ExtResource("3_t6mf4")]
+[node name="Path2D2" parent="." unique_id=1116528102 instance=ExtResource("3_t6mf4")]
 curve = SubResource("Curve2D_aprn0")
 
-[node name="Guy" parent="." instance=ExtResource("4_0kx3e")]
+[node name="Guy" parent="." unique_id=1210969822 instance=ExtResource("4_0kx3e")]
 position = Vector2(413, 115)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1559471678]
 offset_left = 12.0
 offset_top = -9.0
 offset_right = 286.0
 offset_bottom = 781.0
 color = Color(0.113725, 0.113725, 0.113725, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2006417151]
 offset_left = 932.0
 offset_top = -96.0
 offset_right = 1206.0
 offset_bottom = 694.0
 color = Color(0.113725, 0.113725, 0.113725, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1795660855]
 position = Vector2(600, 313)
 scale = Vector2(1, 2.84)
 zoom = Vector2(0.75, 0.75)

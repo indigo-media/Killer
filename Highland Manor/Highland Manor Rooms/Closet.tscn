@@ -45,8 +45,6 @@ shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
 [node name="Door2" parent="." unique_id=1601067639 instance=ExtResource("2_frulk")]
 position = Vector2(497, 618)
-rotation = 1.5708
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://ntkspg1v7vj4"
 
 [node name="Guy" parent="." unique_id=52545775 instance=ExtResource("3_4ltuy")]

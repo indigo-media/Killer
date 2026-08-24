@@ -32,10 +32,10 @@ _data = {
 }
 point_count = 5
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=584888886]
 position = Vector2(1, 0)
 
-[node name="1Doorstoneroom" type="Sprite2D" parent="."]
+[node name="1Doorstoneroom" type="Sprite2D" parent="." unique_id=1803694528]
 texture_filter = 1
 position = Vector2(468.9379, 323.9379)
 scale = Vector2(1.8003451, 1.8003451)
@@ -43,54 +43,52 @@ texture = ExtResource("1_fxlpp")
 flip_h = true
 flip_v = true
 
-[node name="Door" parent="." instance=ExtResource("2_nsos4")]
+[node name="Door" parent="." unique_id=453250649 instance=ExtResource("2_nsos4")]
 position = Vector2(171.99998, 355)
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://bxjne3trq50ys"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1644917328]
 
-[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=1587060418]
 shape = SubResource("WorldBoundaryShape2D_ic1db")
 
-[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=674912192]
 shape = SubResource("WorldBoundaryShape2D_rmtd7")
 
-[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=1076826700]
 position = Vector2(-29, -2)
 shape = SubResource("WorldBoundaryShape2D_cpkm5")
 
-[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=142337913]
 position = Vector2(-30, 7)
 shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=830292876]
 position = Vector2(464, 64)
 scale = Vector2(0.9665552, -3.3478215)
 shape = SubResource("RectangleShape2D_jndet")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1571988112]
 position = Vector2(734.663, 152.87505)
 scale = Vector2(0.9665552, -3.3478215)
 shape = SubResource("RectangleShape2D_g4wuj")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=387915738]
 position = Vector2(745.00006, 578)
 scale = Vector2(0.9665552, -3.3478215)
 shape = SubResource("RectangleShape2D_g4wuj")
 
-[node name="Door2" parent="." instance=ExtResource("2_nsos4")]
-position = Vector2(762, 363)
-scale = Vector2(1.99086, 0.790282)
+[node name="Door2" parent="." unique_id=1687387197 instance=ExtResource("2_nsos4")]
+position = Vector2(894, 371)
 Destination = "uid://b8thj2yo2n85p"
 
-[node name="Path2D2" parent="." instance=ExtResource("3_gv05j")]
+[node name="Path2D2" parent="." unique_id=161820720 instance=ExtResource("3_gv05j")]
 position = Vector2(875, 25)
 curve = SubResource("Curve2D_22u10")
 
-[node name="Guy" parent="." instance=ExtResource("4_pasrn")]
+[node name="Guy" parent="." unique_id=1619638688 instance=ExtResource("4_pasrn")]
 position = Vector2(283, 294)
 
-[node name="Bomb" parent="." instance=ExtResource("5_fxlpp")]
+[node name="Bomb" parent="." unique_id=1669358810 instance=ExtResource("5_fxlpp")]
 position = Vector2(512, 302)
 scale = Vector2(0.9166666, 0.9166666)

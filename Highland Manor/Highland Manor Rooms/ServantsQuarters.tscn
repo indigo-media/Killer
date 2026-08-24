@@ -38,8 +38,7 @@ scale = Vector2(10.6274, 10.7)
 texture = ExtResource("1_apytp")
 
 [node name="Door" parent="." unique_id=1478893436 instance=ExtResource("2_3gx0h")]
-position = Vector2(1007, 321)
-scale = Vector2(2.5494, 0.929413)
+position = Vector2(1024, 323)
 Destination = "res://HidingRoom1.tscn"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=944479033]
@@ -58,8 +57,6 @@ shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
 [node name="Door2" parent="." unique_id=1670555306 instance=ExtResource("2_3gx0h")]
 position = Vector2(435, 25)
-rotation = 1.57079
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://d24u6jrxnnhpa"
 
 [node name="Path2D2" parent="." unique_id=1482886959 instance=ExtResource("3_56inj")]

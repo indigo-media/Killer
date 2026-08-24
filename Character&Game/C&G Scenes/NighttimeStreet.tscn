@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://07a1fga52aya" path="res://Generic Sounds/night-ambience-17064.mp3" id="3_ecg2y"]
 [ext_resource type="PackedScene" uid="uid://c110dexaids8c" path="res://Player's House and Neighborhood/AXMAN1/Axman.tscn" id="4_h0fig"]
 [ext_resource type="Script" uid="uid://mrmvujgnp1y7" path="res://Player's House and Neighborhood/AXMAN1/AxmanStreetSpawn.gd" id="5_6t15k"]
-[ext_resource type="Script" uid="uid://comqugpqyov3x" path="res://Other/door.gd" id="6_irlgv"]
+[ext_resource type="PackedScene" uid="uid://bjqmmbe7rrh7k" path="res://Other/door.tscn" id="6_udmg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypui2"]
 size = Vector2(1006, 1872)
@@ -59,8 +59,8 @@ _data = {
 &"Trigger": SubResource("Animation_ph7ag")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxkdn"]
-size = Vector2(311.5, 263.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wqyu"]
+size = Vector2(451, 346.5)
 
 [node name="Node2D" type="Node2D" unique_id=2100454174]
 
@@ -136,15 +136,18 @@ shape = SubResource("RectangleShape2D_p8vqf")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=1084678457]
 libraries/ = SubResource("AnimationLibrary_31p2i")
 
-[node name="Highland Door" type="Area2D" parent="." unique_id=1881361831]
-position = Vector2(-232, 228)
-script = ExtResource("6_irlgv")
+[node name="Door" parent="." unique_id=1967987802 instance=ExtResource("6_udmg2")]
+position = Vector2(2843, 1889)
 Destination = "uid://btppuno11rrs"
-metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Highland Door" unique_id=259449550]
-position = Vector2(3131.25, 1434.25)
-shape = SubResource("RectangleShape2D_mxkdn")
+[node name="Interactable" parent="Door" index="0" unique_id=187263496]
+position = Vector2(57, -270)
+deleteOnFinish = false
+
+[node name="Door" parent="Door/Interactable" index="3" unique_id=1087150202]
+position = Vector2(26, 222)
+shape = SubResource("RectangleShape2D_8wqyu")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Highland Door" to="Highland Door" method="_on_body_entered"]
+
+[editable path="Door"]

@@ -58,8 +58,6 @@ position = Vector2(585, 518)
 
 [node name="Door" parent="." unique_id=1824015963 instance=ExtResource("3_macvl")]
 position = Vector2(589, 675)
-rotation = 1.57079
-scale = Vector2(1.66667, 0.780077)
 Destination = "uid://eyjfkw7f505k"
 
 [node name="Node2D" parent="." unique_id=144965192 instance=ExtResource("4_yb4f0")]
@@ -71,8 +69,6 @@ curve = SubResource("Curve2D_qbwr2")
 
 [node name="Door2" parent="." unique_id=1704024086 instance=ExtResource("3_macvl")]
 position = Vector2(594, -20)
-rotation = 1.57079
-scale = Vector2(1.76, 0.68)
 Destination = "uid://c8o44hgfxi8ns"
 
 [node name="Node2D2" parent="." unique_id=1957585780 instance=ExtResource("6_fe72b")]

@@ -105,6 +105,8 @@ func _updateHealth(Damage:int):
 	elif  Damage < 0:
 		$Hurt.play()
 		$AnimationPlayer.play("Hurt")
+	elif Damage > 0:
+		$AnimationPlayer.play("Heal")
 	if  Gamedata.Health == 1:
 		$CanvasLayer/Health.play("Almost Death!")
 		

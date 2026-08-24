@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://bjqmmbe7rrh7k"]
 
 [ext_resource type="Script" uid="uid://comqugpqyov3x" path="res://Other/door.gd" id="1_8dmjx"]
+[ext_resource type="PackedScene" uid="uid://cm61haikpjw2j" path="res://Character&Game/C&G Scenes/interactable.tscn" id="2_nmb0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owhkh"]
-size = Vector2(18, 172)
+size = Vector2(262, 257)
 
-[node name="Door" type="Area2D" unique_id=499092610]
+[node name="Door" type="Node2D" unique_id=1967987802]
 script = ExtResource("1_8dmjx")
 Destination = "res://Downstairs.tscn"
 
-[node name="Door" type="CollisionShape2D" parent="." unique_id=1087150202]
+[node name="Interactable" parent="." unique_id=187263496 instance=ExtResource("2_nmb0p")]
+position = Vector2(0, -179)
+deleteOnFinish = false
+
+[node name="Door" type="CollisionShape2D" parent="Interactable" unique_id=1087150202]
+position = Vector2(0, 179)
 shape = SubResource("RectangleShape2D_owhkh")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

@@ -35,12 +35,10 @@ texture = ExtResource("1_nhndw")
 
 [node name="Door" parent="." unique_id=1705875404 instance=ExtResource("2_aqtry")]
 position = Vector2(987, 196)
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://cmp2022h4gtv4"
 
 [node name="Door3" parent="." unique_id=2072039214 instance=ExtResource("2_aqtry")]
 position = Vector2(987, 553)
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://qoycdsp4xlr5"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=887199154]
@@ -65,7 +63,6 @@ polygon = PackedVector2Array(537, 438, 625, 461, 1005, 462, 1002, 408, 650, 410,
 
 [node name="Door2" parent="." unique_id=1813809154 instance=ExtResource("2_aqtry")]
 position = Vector2(166, 325)
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://crcd38lkxc6p3"
 
 [node name="Path2D2" parent="." unique_id=679641868 instance=ExtResource("3_bfdat")]

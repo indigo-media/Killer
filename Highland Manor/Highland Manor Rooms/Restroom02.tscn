@@ -35,7 +35,6 @@ texture = ExtResource("1_cxem7")
 
 [node name="Door" parent="." unique_id=1375998960 instance=ExtResource("2_480sj")]
 position = Vector2(984, 328)
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://d3fdq82vyq3jm"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1352420005]
@@ -56,7 +55,6 @@ shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
 [node name="Door2" parent="." unique_id=850392284 instance=ExtResource("2_480sj")]
 position = Vector2(166, 325)
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://bk56vob6rdl4e"
 
 [node name="Path2D2" parent="." unique_id=496896395 instance=ExtResource("3_xd1cn")]

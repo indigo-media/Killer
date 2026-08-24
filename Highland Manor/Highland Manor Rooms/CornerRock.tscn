@@ -44,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ykds")
 }],
-"loop": true,
+"loop": 1,
 "name": &"After",
 "speed": 0.0
 }, {
@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xjp1g")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Before",
 "speed": 0.0
 }, {
@@ -75,7 +75,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2qwt8")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Explosion",
 "speed": 5.0
 }]
@@ -107,10 +107,10 @@ point_count = 4
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukt85"]
 size = Vector2(551, 177)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1162344048]
 script = ExtResource("1_7ykds")
 
-[node name="RockCorner" type="AnimatedSprite2D" parent="."]
+[node name="RockCorner" type="AnimatedSprite2D" parent="." unique_id=880198459]
 texture_filter = 1
 position = Vector2(595, 306.00003)
 rotation = 1.5708
@@ -118,52 +118,47 @@ scale = Vector2(9.64609, 9.64609)
 sprite_frames = SubResource("SpriteFrames_7eu8g")
 animation = &"Before"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1494962746]
 
-[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=1790091787]
 position = Vector2(294, 1)
 shape = SubResource("WorldBoundaryShape2D_mthg4")
 
-[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=1578446171]
 shape = SubResource("WorldBoundaryShape2D_e1yrx")
 
-[node name="East" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="East" type="CollisionShape2D" parent="StaticBody2D" unique_id=1096863435]
 shape = SubResource("WorldBoundaryShape2D_mmxr8")
 
-[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=1751153381]
 position = Vector2(237, 26)
 shape = SubResource("WorldBoundaryShape2D_2khaa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630059596]
 position = Vector2(597, 61.5)
 shape = SubResource("RectangleShape2D_8qhu4")
 
-[node name="Guy" parent="." instance=ExtResource("2_km153")]
+[node name="Guy" parent="." unique_id=1719589775 instance=ExtResource("2_km153")]
 position = Vector2(585, 518)
 
-[node name="Door" parent="." instance=ExtResource("3_15e4h")]
+[node name="Door" parent="." unique_id=2088904532 instance=ExtResource("3_15e4h")]
 position = Vector2(589, 675)
-rotation = 1.57079
-scale = Vector2(1.66667, 0.780077)
 Destination = "uid://c8o44hgfxi8ns"
 
-[node name="Path2D" parent="." instance=ExtResource("4_tayhx")]
+[node name="Path2D" parent="." unique_id=992028141 instance=ExtResource("4_tayhx")]
 curve = SubResource("Curve2D_lefus")
 
-[node name="Door2" parent="." instance=ExtResource("3_15e4h")]
+[node name="Door2" parent="." unique_id=1562182045 instance=ExtResource("3_15e4h")]
 position = Vector2(858, 211)
-scale = Vector2(2, 0.688127)
 Destination = "uid://crcd38lkxc6p3"
 
-[node name="Door3" parent="." instance=ExtResource("3_15e4h")]
+[node name="Door3" parent="." unique_id=862587616 instance=ExtResource("3_15e4h")]
 position = Vector2(589, -50)
-rotation = 1.5526073
-scale = Vector2(2, 0.688127)
 Destination = "uid://dhryfnulvjpxi"
 
-[node name="Bomb Area" type="Area2D" parent="."]
+[node name="Bomb Area" type="Area2D" parent="." unique_id=1329699737]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bomb Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bomb Area" unique_id=2001671781]
 position = Vector2(601.5, 109.5)
 shape = SubResource("RectangleShape2D_ukt85")
 

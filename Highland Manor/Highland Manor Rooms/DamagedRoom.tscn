@@ -60,7 +60,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_lrfic")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
@@ -171,7 +171,6 @@ texture = ExtResource("2_ocyth")
 
 [node name="Door" parent="." unique_id=337575391 instance=ExtResource("3_bsgeg")]
 position = Vector2(984, 328)
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://drmln3sjxwsbi"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=695218105]
@@ -192,7 +191,6 @@ shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
 [node name="Door2" parent="." unique_id=1508703300 instance=ExtResource("3_bsgeg")]
 position = Vector2(166, 325)
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://qoycdsp4xlr5"
 
 [node name="Path2D2" parent="." unique_id=1115472140 instance=ExtResource("4_w1ok1")]

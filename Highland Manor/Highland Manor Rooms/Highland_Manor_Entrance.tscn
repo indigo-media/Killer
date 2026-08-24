@@ -74,8 +74,10 @@ fanciestName = "HLM"
 
 [node name="Door" parent="." unique_id=209815998 instance=ExtResource("5_gkp76")]
 position = Vector2(863, 295)
-scale = Vector2(2.06816, 0.919624)
 Destination = "uid://bxjne3trq50ys"
+
+[node name="Interactable" parent="Door" index="0" unique_id=187263496]
+deleteOnFinish = false
 
 [node name="Plinth" type="Area2D" parent="." unique_id=246576378]
 script = ExtResource("6_83vb2")
@@ -93,11 +95,16 @@ shape = SubResource("RectangleShape2D_k0hst")
 
 [node name="Door2" parent="." unique_id=1017589216 instance=ExtResource("5_gkp76")]
 position = Vector2(281, 294)
-scale = Vector2(-2.01587, 0.90729)
 Destination = "uid://by1nub72cyt7e"
+
+[node name="Interactable" parent="Door2" index="0" unique_id=187263496]
+deleteOnFinish = false
 
 [node name="Path2D2" parent="." unique_id=422350341 instance=ExtResource("7_cl4ud")]
 curve = SubResource("Curve2D_qpp54")
 
 [connection signal="body_entered" from="Plinth" to="Plinth" method="_on_body_entered"]
 [connection signal="body_entered" from="Mk Door" to="." method="_on_mk_door_body_entered"]
+
+[editable path="Door"]
+[editable path="Door2"]

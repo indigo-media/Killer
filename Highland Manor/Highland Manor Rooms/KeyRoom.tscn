@@ -31,8 +31,6 @@ texture = ExtResource("1_rhsp4")
 
 [node name="Door" parent="." unique_id=1199161386 instance=ExtResource("2_k1hnf")]
 position = Vector2(625, 617.38586)
-rotation = 1.5645605
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://ntkspg1v7vj4"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=441927792]

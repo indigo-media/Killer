@@ -19,56 +19,56 @@ distance = -547.0
 normal = Vector2(-1, 0)
 distance = -1150.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=834379960]
 
-[node name="NewPiskel-1_png(6)" type="Sprite2D" parent="."]
+[node name="NewPiskel-1_png(6)" type="Sprite2D" parent="." unique_id=1647801151]
 texture_filter = 1
 position = Vector2(575.667, 332.875)
 scale = Vector2(9.55, 9.55)
 texture = ExtResource("1_6x8mn")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=146963048]
 
-[node name="West" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="West" type="CollisionShape2D" parent="StaticBody2D" unique_id=1938858913]
 shape = SubResource("WorldBoundaryShape2D_oxwna")
 
-[node name="North" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="North" type="CollisionShape2D" parent="StaticBody2D" unique_id=50482487]
 shape = SubResource("WorldBoundaryShape2D_8dhuh")
 
-[node name="South" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="South" type="CollisionShape2D" parent="StaticBody2D" unique_id=173581462]
 shape = SubResource("WorldBoundaryShape2D_ilvib")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=56978197]
 shape = SubResource("WorldBoundaryShape2D_leytm")
 
-[node name="Door" parent="." instance=ExtResource("2_1gseh")]
+[node name="Door" parent="." unique_id=950644439 instance=ExtResource("2_1gseh")]
 position = Vector2(27, 310)
-scale = Vector2(1.64267, 0.884813)
 Destination = "res://Highland_Manor_Entrance.tscn"
 
-[node name="Door2" parent="." instance=ExtResource("2_1gseh")]
+[node name="Door2" parent="." unique_id=2126007422 instance=ExtResource("2_1gseh")]
 position = Vector2(1130, 312)
-scale = Vector2(1.64267, 0.884813)
 Destination = "uid://dnlkv3gpgqy53"
 
-[node name="Guy" parent="." instance=ExtResource("3_6kc1l")]
+[node name="Guy" parent="." unique_id=2016810808 instance=ExtResource("3_6kc1l")]
 position = Vector2(116, 318)
 
-[node name="Spike" parent="." instance=ExtResource("4_4dbu7")]
+[node name="Spike" parent="." unique_id=1089099166 instance=ExtResource("4_4dbu7")]
 position = Vector2(228, 92)
 
-[node name="Spike2" parent="." instance=ExtResource("4_4dbu7")]
+[node name="Spike2" parent="." unique_id=473483606 instance=ExtResource("4_4dbu7")]
 position = Vector2(484, 95)
 
-[node name="Spike3" parent="." instance=ExtResource("4_4dbu7")]
+[node name="Spike3" parent="." unique_id=2132421101 instance=ExtResource("4_4dbu7")]
 position = Vector2(741, 95)
 
-[node name="Spike4" parent="." instance=ExtResource("4_4dbu7")]
+[node name="Spike4" parent="." unique_id=163545191 instance=ExtResource("4_4dbu7")]
 position = Vector2(965, 98)
 
-[node name="Sprite2D" type="ColorRect" parent="."]
+[node name="Sprite2D" type="ColorRect" parent="." unique_id=783607072]
 custom_minimum_size = Vector2(100, 100)
 offset_top = -92.0
 offset_right = 1178.0
 offset_bottom = 115.0
 color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[editable path="Door"]

@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cxxw8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Almost Death!",
 "speed": 2.5
 }, {
@@ -112,12 +112,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p1ouj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Health",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -164,6 +164,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rre4s"]
+resource_name = "Heal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.38333344, 1, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_atbvg"]
@@ -213,6 +229,7 @@ tracks/1/keys = {
 _data = {
 &"Death": SubResource("Animation_e24yd"),
 &"Falling Floor": SubResource("Animation_5gddd"),
+&"Heal": SubResource("Animation_rre4s"),
 &"Hurt": SubResource("Animation_atbvg"),
 &"RESET": SubResource("Animation_cxxw8")
 }
@@ -294,7 +311,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i8md4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 10.0
 }, {
@@ -302,7 +319,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7lurk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"new_animation",
 "speed": 5.0
 }]
@@ -323,6 +340,7 @@ sprite_frames = ExtResource("2_0w3mg")
 animation = &"Idle (Right)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2062440408]
+visible = false
 position = Vector2(0, 16.357141)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_c1pgo")

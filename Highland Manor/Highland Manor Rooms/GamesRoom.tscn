@@ -55,8 +55,6 @@ shape = SubResource("WorldBoundaryShape2D_2khaa")
 
 [node name="Door" parent="." unique_id=401520347 instance=ExtResource("2_sho4n")]
 position = Vector2(589, 675)
-rotation = 1.57079
-scale = Vector2(1.66667, 0.780077)
 Destination = "uid://d24u6jrxnnhpa"
 
 [node name="Path2D" parent="." unique_id=1372202170 instance=ExtResource("3_o6kjb")]
@@ -68,8 +66,6 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="Door2" parent="." unique_id=341588560 instance=ExtResource("2_sho4n")]
 position = Vector2(586, -20)
-rotation = 1.57079
-scale = Vector2(1.72, 0.8)
 Destination = "uid://ntkspg1v7vj4"
 
 [node name="Node2D" parent="." unique_id=7715681 instance=ExtResource("4_v4wuf")]

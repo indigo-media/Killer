@@ -96,26 +96,15 @@ shape = SubResource("WorldBoundaryShape2D_mmxr8")
 position = Vector2(237, 26)
 shape = SubResource("WorldBoundaryShape2D_2khaa")
 
-[node name="Guy" parent="." unique_id=1037189117 instance=ExtResource("2_wyr4c")]
-position = Vector2(698, 536)
-
 [node name="Door" parent="." unique_id=1548117170 instance=ExtResource("3_aog0k")]
 position = Vector2(329, 583)
-rotation = 3.1415927
-scale = Vector2(1.66667, 0.780077)
 Destination = "uid://b8thj2yo2n85p"
 
 [node name="Path2D" parent="." unique_id=756716519 instance=ExtResource("4_t5rmn")]
 curve = SubResource("Curve2D_qbwr2")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1041454322]
-position = Vector2(576, 333)
-zoom = Vector2(0.75, 0.75)
-
 [node name="Door2" parent="." unique_id=1640377582 instance=ExtResource("3_aog0k")]
 position = Vector2(588, -20)
-rotation = 1.57079
-scale = Vector2(1.72, 0.8)
 Destination = "uid://j6q5tdr2mxp0"
 
 [node name="Chest" parent="." unique_id=187263496 instance=ExtResource("5_wyr4c")]
@@ -130,5 +119,8 @@ position = Vector2(706, -395)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=494600461]
 libraries/ = SubResource("AnimationLibrary_p8e3d")
+
+[node name="Guy" parent="." unique_id=1037189117 instance=ExtResource("2_wyr4c")]
+position = Vector2(587, 105.00009)
 
 [connection signal="interacted" from="Chest" to="." method="_on_chest_interacted"]

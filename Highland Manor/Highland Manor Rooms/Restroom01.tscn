@@ -38,7 +38,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g0g6g")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 1.5
 }]
@@ -85,7 +85,6 @@ autoplay = "default"
 
 [node name="Door" parent="." unique_id=1750576896 instance=ExtResource("2_arp7p")]
 position = Vector2(768, 285)
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://ens7gclcbl0g"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=568952616]
@@ -105,8 +104,7 @@ position = Vector2(-30, 7)
 shape = SubResource("WorldBoundaryShape2D_7qhwc")
 
 [node name="Door2" parent="." unique_id=1649004919 instance=ExtResource("2_arp7p")]
-position = Vector2(169, 306)
-scale = Vector2(1.99086, 0.790282)
+position = Vector2(33, 303.27744)
 Destination = "uid://dnlkv3gpgqy53"
 
 [node name="Path2D2" parent="." unique_id=2077230843 instance=ExtResource("3_pj145")]

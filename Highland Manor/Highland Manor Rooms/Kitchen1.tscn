@@ -23,7 +23,7 @@ region = Rect2(0, 0, 80, 60)
 [sub_resource type="SpriteFrames" id="SpriteFrames_rbwww"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"Reset",
 "speed": 5.0
 }, {
@@ -34,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_osjsb")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -92,7 +92,6 @@ sprite_frames = SubResource("SpriteFrames_rbwww")
 
 [node name="Door" parent="." unique_id=1662584695 instance=ExtResource("4_6jjv8")]
 position = Vector2(984, 328)
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://buo2d6si8sc4u"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=880287173]
@@ -133,7 +132,6 @@ shape = SubResource("RectangleShape2D_rbwww")
 
 [node name="Door2" parent="." unique_id=204048446 instance=ExtResource("4_6jjv8")]
 position = Vector2(166, 325)
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://neardqtrxmj8"
 
 [node name="Path2D2" parent="." unique_id=993059289 instance=ExtResource("5_4gcnc")]

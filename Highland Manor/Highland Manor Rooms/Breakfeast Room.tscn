@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lwcw6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -100,8 +100,6 @@ frame_progress = 0.32285383
 
 [node name="Door" parent="." unique_id=2005770102 instance=ExtResource("2_tbnqp")]
 position = Vector2(615, 709)
-rotation = 1.5708
-scale = Vector2(2.5494, 0.929413)
 Destination = "uid://j6q5tdr2mxp0"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=51010337]
@@ -141,7 +139,6 @@ position = Vector2(16, 9)
 
 [node name="Door2" parent="." unique_id=808260870 instance=ExtResource("2_tbnqp")]
 position = Vector2(319, 138)
-scale = Vector2(1.99086, 0.790282)
 Destination = "uid://cmp2022h4gtv4"
 
 [node name="Path2D2" parent="." unique_id=1604354979 instance=ExtResource("4_g6km3")]

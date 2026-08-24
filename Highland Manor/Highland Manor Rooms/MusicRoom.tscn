@@ -57,8 +57,6 @@ position = Vector2(583, 109)
 
 [node name="Door" parent="." unique_id=1183565076 instance=ExtResource("3_bvvvw")]
 position = Vector2(589, 675)
-rotation = 1.57079
-scale = Vector2(1.66667, 0.780077)
 Destination = "uid://d3fdq82vyq3jm"
 
 [node name="Path2D" parent="." unique_id=1327755853 instance=ExtResource("4_jxvft")]
@@ -70,6 +68,4 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="Door2" parent="." unique_id=140374254 instance=ExtResource("3_bvvvw")]
 position = Vector2(586, -20)
-rotation = 1.57079
-scale = Vector2(1.72, 0.8)
 Destination = "uid://bwe2g2lo8mkn"

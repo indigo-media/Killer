@@ -1,9 +1,9 @@
-extends Area2D
+extends Node2D
 @export_file("*.tscn") var Destination: String 
 
 var locked = false
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Guy":
-		if locked == false:
-			TransitionFull.transition(Destination)
+func _on_interactable_interacted() -> void:
+	if locked == false:
+		await $Interactable/Prompt.animation_finished
+		TransitionFull.transition(Destination)
